@@ -51,21 +51,31 @@ def main():
 
     app_url = f"http://127.0.0.1:{port}"
 
-    # Create native Windows Desktop Window using pywebview (Edge Chromium WebView2)
-    window = webview.create_window(
-        title="동도 롸이팅 마스터 - 중학 영어작문 1등급 메이커",
-        url=app_url,
-        width=1280,
-        height=860,
-        min_size=(960, 640),
-        resizable=True,
-        fullscreen=False,
-        confirm_close=False,
-        text_select=True,
-        zoomable=True
-    )
-
-    webview.start(gui="edgechromium", debug=False)
+    try:
+        # Create native Windows Desktop Window using pywebview (Edge Chromium WebView2)
+        window = webview.create_window(
+            title="동도 롸이팅 마스터 - 중학 영어작문 1등급 메이커",
+            url=app_url,
+            width=1280,
+            height=860,
+            min_size=(960, 640),
+            resizable=True,
+            fullscreen=False,
+            confirm_close=False,
+            text_select=True,
+            zoomable=True
+        )
+        webview.start(gui="edgechromium", debug=False)
+    except Exception as e:
+        import webbrowser
+        webbrowser.open(app_url)
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            pass
+    finally:
+        os._exit(0)
 
 if __name__ == "__main__":
     main()
