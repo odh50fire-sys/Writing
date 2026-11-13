@@ -1,1 +1,49 @@
-[]
+[
+  {
+    "id": "essay_1794542627",
+    "unitTitle": "Lesson 1. Friends Around the World",
+    "topic": "An Invention That Changed Our Lives",
+    "topicId": "g2_u2_d1",
+    "sourceBadge": "🏫 현재 교재 맞춤 (YBM(박준언) 중등 영어 2 (2026 최신))",
+    "createdAt": "2026-11-13",
+    "score": 97,
+    "rubricScores": {
+      "relevance": 22,
+      "structure": 25,
+      "grammar": 25,
+      "vocabulary": 25
+    },
+    "studentText": "I think having good habits is very important for middle school students. If we study hard every day, we can get good scores. Also, playing soccer with friends makes us healthy. I like read books because it is good.",
+    "feedback": "🏆 완벽에 가까운 명문입니다! 주제와 문맥, 어법과 어휘까지 완벽하게 소화했습니다.",
+    "lexicalUpgrades": [
+      {
+        "original": "think",
+        "alternatives": [
+          "believe that (~라고 확신하다)",
+          "in my perspective (내 관점에서는)",
+          "consider (~로 여기다)"
+        ],
+        "tip": "'I think' 대신 'I believe that' 또는 'From my perspective'로 도입하면 수성구 상위권 에세이 느낌을 줍니다."
+      },
+      {
+        "original": "good",
+        "alternatives": [
+          "beneficial (유익한)",
+          "splendid (훌륭한)",
+          "favorable (호의적인)"
+        ],
+        "tip": "'good' 대신 'beneficial'이나 'splendid'를 쓰면 문장의 품격이 한 단계 상승합니다."
+      },
+      {
+        "original": "very",
+        "alternatives": [
+          "extremely (극도로)",
+          "remarkably (현저히)",
+          "greatly (대단히)"
+        ],
+        "tip": "'very'를 반복하기보다 'extremely'나 'remarkably'를 배치하면 강조 효과가 배가됩니다."
+      }
+    ],
+    "modelRewrite": "The printing press is regarded as one of the greatest inventions in human history. It was invented by Johannes Gutenberg in the 15th century. Before this invention, all books were written by hand. Thanks to the printing press, people had an affordable way to read and acquire knowledge. It completely changed modern education."
+  }
+]

@@ -245,6 +245,473 @@ def save_json(filepath, data):
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+# ==========================================
+# 창의 자유 영작 마스터 풀 (모든 교재 주제 소진 시 랜덤 제출)
+# ==========================================
+RANDOM_CREATIVE_TOPIC_POOL = [
+    {
+        "id": "creative_topic_future_school",
+        "title": "My Dream Future School",
+        "prompt": "10년 뒤 인공지능과 첨단 기술이 도입된 미래 학교의 모습을 4~5문장으로 상상하여 작성하시오.",
+        "conditions": [
+            "미래 시제(will 또는 be going to) 문장을 2개 이상 포함할 것",
+            "학교 생활에서 가장 기대되는 변화(로봇 튜터, 홀로그램 수업 등)를 1가지 구체적으로 언급할 것",
+            "총 분량: 35~50단어 내외"
+        ],
+        "sampleEssay": "In the future, our school will have friendly robot teachers. They will help each student learn at their own pace. Also, students will study science through amazing 3D holograms. School will be much more exciting and creative.",
+        "rubricGuide": "미래 시제(will/be going to) 활용 30점, 창의적 세부 묘사 30점, 문장 연결 및 철자 40점"
+    },
+    {
+        "id": "creative_topic_eco_lifestyle",
+        "title": "Small Actions for Our Green Earth",
+        "prompt": "지구 온난화와 기후 위기를 극복하기 위해 중학생으로서 매일 실천할 수 있는 친환경 약속을 4~5문장으로 작성하시오.",
+        "conditions": [
+            "조동사 should 또는 must가 포함된 문장을 2개 이상 작성할 것",
+            "텀블러 사용, 분리배출, 대중교통 이용 등 일상적 실천 사항 2가지 제시할 것",
+            "총 분량: 35~50단어 내외"
+        ],
+        "sampleEssay": "To protect our environment, we must take action in our daily lives. First, we should carry our own tumblers instead of disposable plastic cups. In addition, we should turn off lights when leaving the room. Small habits will save our planet.",
+        "rubricGuide": "의무/권고 조동사(should, must) 30점, 실천 행동 구체성 30점, 접속사 및 어휘력 40점"
+    },
+    {
+        "id": "creative_topic_smartphone_detox",
+        "title": "A Day Without My Smartphone",
+        "prompt": "스마트폰을 하루 동안 전혀 사용하지 않는다면 무엇을 하고 무엇을 느낄지 4~5문장으로 작성하시오.",
+        "conditions": [
+            "조건 접속사 if절 문장을 1개 이상 포함할 것",
+            "스마트폰 대신 가족이나 친구와 함께 보낼 활동을 1가지 이상 서술할 것",
+            "총 분량: 35~50단어 내외"
+        ],
+        "sampleEssay": "If I do not use my smartphone for a day, I will read interesting books. I can also ride a bicycle in the park with my best friends. We will talk face to face without looking at screens. It will be a peaceful and meaningful day.",
+        "rubricGuide": "조건문 if절 시제 일치 30점, 활동 표현의 구체성 30점, 문맥 흐름 및 어법 40점"
+    },
+    {
+        "id": "creative_topic_daegu_tour",
+        "title": "Welcome to Daegu: A Special Guide",
+        "prompt": "대구를 처음 방문한 외국인 친구에게 소개하고 싶은 명소와 음식을 4~5문장으로 추천하는 글을 작성하시오.",
+        "conditions": [
+            "최상급(the most...) 또는 비교급 표현을 1개 이상 포함할 것",
+            "수성못(Suseong Lake), 동성로, 앞산 등 구체적 장소 1곳과 추천 음식을 포함할 것",
+            "총 분량: 35~50단어 내외"
+        ],
+        "sampleEssay": "Welcome to Daegu, the most energetic city in Korea! You should definitely visit Suseong Lake in the evening because the night view is splendid. Also, you must try delicious Daegu-style noodles. You will make unforgettable memories here.",
+        "rubricGuide": "최상급/비교급 어법 30점, 추천 명소 및 이유 전개 30점, 어휘 다양성 40점"
+    },
+    {
+        "id": "creative_topic_role_model",
+        "title": "The Person I Admire Most",
+        "prompt": "자신이 가장 존경하는 인물(가족, 위인, 멘토 등)과 그를 존경하는 이유를 4~5문장으로 작성하시오.",
+        "conditions": [
+            "이유를 나타내는 접속사 because 또는 as 문장을 2개 이상 포함할 것",
+            "해당 인물의 성품이나 업적을 묘사하는 형용사(diligent, caring, brave 등)를 2개 이상 사용할 것",
+            "총 분량: 35~50단어 내외"
+        ],
+        "sampleEssay": "The person I admire most is my mother. She is always diligent and warm-hearted. I respect her because she always listens to my worries patiently. Thanks to her love, I can face difficult challenges with confidence.",
+        "rubricGuide": "이유 접속사(because) 구문력 30점, 인물 묘사 형용사 30점, 문장 완성도 40점"
+    },
+    {
+        "id": "creative_topic_secret_hobby",
+        "title": "My Favorite Way to Relieve Stress",
+        "prompt": "시험이나 공부로 쌓인 스트레스를 해소하는 나만의 취미 활동을 4~5문장으로 소개하시오.",
+        "conditions": [
+            "동명사(-ing) 또는 to부정사를 주어나 목적어로 1개 이상 활용할 것",
+            "스트레스 해소 후 기분이나 효과를 나타내는 표현을 포함할 것",
+            "총 분량: 35~50단어 내외"
+        ],
+        "sampleEssay": "Listening to energetic music is my favorite way to relieve stress. When I put on my headphones, all my worries disappear. I also enjoy drawing cartoons in my room. These hobbies refresh my mind and give me new energy.",
+        "rubricGuide": "동명사/to부정사 활용 30점, 심경 및 변화 서술 30점, 자연스러운 흐름 40점"
+    }
+]
+
+def select_free_writing_topic(user_id, textbook_id, exclude_topic_id=None):
+    completed_topics = set()
+    user_dir = os.path.join(USERS_DIR, user_id)
+    if os.path.exists(user_dir):
+        essays = load_json(os.path.join(user_dir, "essays.json"), [])
+        for e in essays:
+            if e.get("topic"):
+                completed_topics.add(e["topic"].strip())
+            if e.get("topicId"):
+                completed_topics.add(e["topicId"].strip())
+
+    if exclude_topic_id:
+        completed_topics.add(exclude_topic_id.strip())
+
+    # 1단계: 현재 선택된 교재 단원들의 typeD 주제 중 미완료 주제 우선 탐색
+    cur_tb_path = os.path.join(CURRICULUM_DIR, f"{textbook_id}.json")
+    if os.path.exists(cur_tb_path):
+        cur_tb = load_json(cur_tb_path, {})
+        for u in cur_tb.get("units", []):
+            for t in u.get("typeD", []):
+                t_id = t.get("id", "").strip()
+                t_title = t.get("title", "").strip()
+                if t_id not in completed_topics and t_title not in completed_topics:
+                    return {
+                        "topic": t,
+                        "sourceType": "current_textbook",
+                        "sourceBadge": f"🏫 현재 교재 맞춤 ({cur_tb.get('title', '선택 교재')})",
+                        "unitTitle": u.get("title", "")
+                    }
+
+    # 2단계: 현재 교재의 주제를 모두 풀었을 경우, 다른 교재(11종 라이브러리)에서 미완료 주제 순환 발굴
+    catalog_path = os.path.join(CURRICULUM_DIR, "catalog.json")
+    catalog_list = load_json(catalog_path, [])
+    for cat_item in catalog_list:
+        other_id = cat_item.get("id")
+        if other_id == textbook_id:
+            continue
+        other_path = os.path.join(CURRICULUM_DIR, f"{other_id}.json")
+        if os.path.exists(other_path):
+            other_tb = load_json(other_path, {})
+            for u in other_tb.get("units", []):
+                for t in u.get("typeD", []):
+                    t_id = t.get("id", "").strip()
+                    t_title = t.get("title", "").strip()
+                    if t_id not in completed_topics and t_title not in completed_topics:
+                        return {
+                            "topic": t,
+                            "sourceType": "other_textbook",
+                            "sourceBadge": f"🔄 타 교재 순환 추천 ({other_tb.get('title', other_id)})",
+                            "unitTitle": u.get("title", "")
+                        }
+
+    # 3단계: 모든 교재의 주제를 100% 완료한 경우, 창의 자유 영작 마스터 풀에서 미완료 또는 랜덤 출제
+    available_pool = [
+        t for t in RANDOM_CREATIVE_TOPIC_POOL 
+        if t["id"] not in completed_topics and t["title"] not in completed_topics
+    ]
+    if not available_pool:
+        available_pool = RANDOM_CREATIVE_TOPIC_POOL
+
+    import random
+    picked = random.choice(available_pool)
+    return {
+        "topic": picked,
+        "sourceType": "random_pool",
+        "sourceBadge": "🎲 창의 자유 영작 마스터 풀 (랜덤 출제)",
+        "unitTitle": "전국 상위권 서술형 창의 작문"
+    }
+
+def evaluate_free_writing(payload):
+    student_text = str(payload.get("studentText", "")).strip()
+    topic = payload.get("topic", {})
+    topic_title = topic.get("title", "자유 영작 주제")
+    prompt = topic.get("prompt", "")
+    conditions = topic.get("conditions", [])
+    sample_essay = topic.get("sampleEssay", "")
+
+    if not student_text:
+        return {
+            "score": 0,
+            "passed": False,
+            "rubricScores": {
+                "relevance": 0,
+                "structure": 0,
+                "grammar": 0,
+                "vocabulary": 0
+            },
+            "feedback": "작성된 에세이가 없습니다. 문장을 작성해 주세요!",
+            "corrections": [],
+            "lexicalUpgrades": [],
+            "sentenceCombineTip": None,
+            "modelRewrite": sample_essay,
+            "praises": []
+        }
+
+    raw_sentences = [s.strip() for s in re.split(r'[.!?]+', student_text) if len(s.strip()) > 1]
+    raw_words = re.findall(r"[A-Za-z0-9'\-]+", student_text)
+    word_count = len(raw_words)
+    sentence_count = len(raw_sentences)
+
+    # 1. Rubric: Task Achievement & Relevance (25점 만점)
+    rel_score = 25
+    rel_deductions = []
+    
+    if word_count < 25:
+        rel_deductions.append(f"총 단어 수 부족 ({word_count}단어 작성, 권장: 35~50단어)")
+        rel_score -= min(12, (25 - word_count) // 2)
+    elif word_count > 90:
+        rel_deductions.append(f"분량 다소 초과 ({word_count}단어 작성, 35~60단어 권장)")
+        rel_score -= 2
+
+    if sentence_count < 3:
+        rel_deductions.append(f"문장 수 부족 ({sentence_count}문장 작성, 최소 3~5문장 필요)")
+        rel_score -= 6
+    
+    # Topic keyword alignment check
+    prompt_keywords = set([w.lower() for w in re.findall(r"[A-Za-z]{3,}", prompt + " " + topic_title)])
+    std_words_lower = set([w.lower() for w in raw_words])
+    overlap = prompt_keywords.intersection(std_words_lower)
+    if prompt_keywords and len(overlap) == 0 and len(raw_words) > 10:
+        rel_score -= 3
+        rel_deductions.append("주제 관련 핵심 키워드 활용이 다소 아쉽습니다.")
+
+    rel_score = max(5, min(25, rel_score))
+
+    # 2. Rubric: Sentence Structure & Complexity (25점 만점)
+    struct_score = 25
+    struct_deductions = []
+    connectors_found = []
+    KEY_CONNECTORS = [
+        "and", "but", "so", "because", "although", "while", "if", "when", 
+        "after", "before", "since", "which", "who", "that", "first", "also", 
+        "in addition", "therefore", "however", "finally", "instead"
+    ]
+    lower_text = student_text.lower()
+    for conn in KEY_CONNECTORS:
+        if f" {conn} " in f" {lower_text} ":
+            connectors_found.append(conn)
+
+    if len(connectors_found) == 0:
+        struct_score -= 6
+        struct_deductions.append("문장 연결어(접속사)가 없어 문장 간 호흡이 다소 단절되어 보입니다.")
+    elif len(connectors_found) >= 2:
+        struct_score = 25
+    else:
+        struct_score -= 2
+
+    if raw_sentences:
+        lengths = [len(s.split()) for s in raw_sentences]
+        if max(lengths) - min(lengths) < 2 and len(raw_sentences) >= 3:
+            struct_score -= 2
+            struct_deductions.append("문장의 길이가 모두 비슷합니다. 긴 문장과 짧은 문장을 섞어 리듬감을 살려보세요.")
+
+    struct_score = max(5, min(25, struct_score))
+
+    # 3. Rubric: Grammar & Mechanical Accuracy (25점 만점)
+    gram_score = 25
+    corrections = []
+
+    # Mechanics: Capitalization at start of each sentence
+    for idx, s in enumerate(raw_sentences):
+        if s and not s[0].isupper():
+            corrections.append({
+                "original": s[:20] + "...",
+                "corrected": s[0].upper() + s[1:20] + "...",
+                "reason": "영어 문장의 첫 글자는 반드시 대문자로 시작해야 합니다."
+            })
+            gram_score -= 3
+
+    # Mechanics: Punctuation at end
+    if not student_text.strip().endswith(('.', '!', '?')):
+        corrections.append({
+            "original": student_text[-20:],
+            "corrected": student_text[-20:] + ".",
+            "reason": "문장의 끝에는 마침표(.)나 느낌표(!) 등 문장 부호를 빠뜨리지 않아야 합니다."
+        })
+        gram_score -= 3
+
+    # Subject-verb agreement (3rd person singular present)
+    SINGULAR_SUBJECTS = ["he", "she", "it", "my friend", "my brother", "my sister", "my mother", "my father", "my teacher", "everyone", "everybody"]
+    BASE_VERBS_MAP = {
+        "like": "likes", "want": "wants", "play": "plays", "go": "goes", "have": "has",
+        "study": "studies", "watch": "watches", "read": "reads", "live": "lives",
+        "make": "makes", "need": "needs", "help": "helps", "eat": "eats", "run": "runs"
+    }
+    for subj in SINGULAR_SUBJECTS:
+        for base, inflected in BASE_VERBS_MAP.items():
+            pattern = rf"\b{subj}\s+{base}\b"
+            if re.search(pattern, lower_text):
+                corrections.append({
+                    "original": f"{subj} {base}",
+                    "corrected": f"{subj} {inflected}",
+                    "reason": f"주어({subj})가 3인칭 단수이므로 동사 원형 '{base}' 대신 -s/es를 붙인 '{inflected}'를 써야 합니다."
+                })
+                gram_score -= 4
+
+    # Be-verb agreement
+    BE_MISTAKES = [
+        (r"\bi\s+is\b", "I is", "I am", "1인칭 주어 I의 be동사는 am입니다."),
+        (r"\bthey\s+was\b", "they was", "they were", "복수 주어 they의 과거 be동사는 were입니다."),
+        (r"\bwe\s+is\b", "we is", "we are", "복수 주어 we의 be동사는 are입니다."),
+        (r"\byou\s+is\b", "you is", "you are", "2인칭 주어 you의 be동사는 are입니다."),
+        (r"\bhe\s+are\b", "he are", "he is", "3인칭 단수 주어 he의 be동사는 is입니다."),
+        (r"\bshe\s+are\b", "she are", "she is", "3인칭 단수 주어 she의 be동사는 is입니다.")
+    ]
+    for pat, orig, corr, rsn in BE_MISTAKES:
+        if re.search(pat, lower_text):
+            corrections.append({
+                "original": orig,
+                "corrected": corr,
+                "reason": rsn
+            })
+            gram_score -= 4
+
+    # Double verbs without to/ing
+    DOUBLE_VERB_PATTERNS = [
+        (r"\blike\s+play\b", "like play", "like playing (또는 like to play)", "like 뒤에는 동명사(-ing)나 to부정사가 와야 합니다."),
+        (r"\benjoy\s+to\b", "enjoy to", "enjoy -ing", "enjoy 뒤에는 to부정사가 아닌 동명사(-ing)를 목적어로 씁니다."),
+        (r"\bwant\s+playing\b", "want playing", "want to play", "want 뒤에는 동명사 대신 to부정사를 씁니다.")
+    ]
+    for pat, orig, corr, rsn in DOUBLE_VERB_PATTERNS:
+        if re.search(pat, lower_text):
+            corrections.append({
+                "original": orig,
+                "corrected": corr,
+                "reason": rsn
+            })
+            gram_score -= 3
+
+    # Common prepositions
+    PREP_MISTAKES = [
+        (r"\blisten\s+music\b", "listen music", "listen to music", "listen은 자동사이므로 음악을 들을 때 전치사 to가 반드시 필요합니다."),
+        (r"\barrive\s+to\b", "arrive to", "arrive at (또는 arrive in)", "도착하다는 arrive at(장소) 또는 arrive in(도시/국가)을 씁니다."),
+        (r"\bgraduate\s+school\b", "graduate school", "graduate from school", "학교를 졸업하다는 전치사 from을 함께 씁니다.")
+    ]
+    for pat, orig, corr, rsn in PREP_MISTAKES:
+        if re.search(pat, lower_text):
+            corrections.append({
+                "original": orig,
+                "corrected": corr,
+                "reason": rsn
+            })
+            gram_score -= 3
+
+    gram_score = max(5, min(25, gram_score))
+
+    # 4. Rubric: Vocabulary Variety & Appropriateness (25점 만점)
+    vocab_score = 25
+    unique_words = set([w.lower() for w in raw_words])
+    unique_ratio = len(unique_words) / max(1, word_count)
+    if unique_ratio < 0.55 and word_count > 25:
+        vocab_score -= 3
+    elif unique_ratio > 0.70:
+        vocab_score = 25
+
+    vocab_score = max(5, min(25, vocab_score))
+
+    total_score = rel_score + struct_score + gram_score + vocab_score
+    passed = total_score >= 80
+
+    # 5. 작문 스킬 향상: 고급 어휘 1:1 추천 (Lexical Upgrades)
+    UPGRADE_DICT = {
+        "good": {
+            "alternatives": ["beneficial (유익한)", "splendid (훌륭한)", "favorable (호의적인)"],
+            "tip": "'good' 대신 'beneficial'이나 'splendid'를 쓰면 문장의 품격이 한 단계 상승합니다."
+        },
+        "bad": {
+            "alternatives": ["harmful (해로운)", "unfavorable (불리한)", "challenging (힘든)"],
+            "tip": "'bad' 대신 'harmful' 또는 'unfavorable'을 사용해 보세요."
+        },
+        "happy": {
+            "alternatives": ["delighted (매우 기쁜)", "thrilled (짜릿하게 신난)", "pleased (만족스러운)"],
+            "tip": "'happy' 대신 'delighted'를 활용하면 감정 표현이 훨씬 생생해집니다."
+        },
+        "very": {
+            "alternatives": ["extremely (극도로)", "remarkably (현저히)", "greatly (대단히)"],
+            "tip": "'very'를 반복하기보다 'extremely'나 'remarkably'를 배치하면 강조 효과가 배가됩니다."
+        },
+        "think": {
+            "alternatives": ["believe that (~라고 확신하다)", "in my perspective (내 관점에서는)", "consider (~로 여기다)"],
+            "tip": "'I think' 대신 'I believe that' 또는 'From my perspective'로 도입하면 수성구 상위권 에세이 느낌을 줍니다."
+        },
+        "like": {
+            "alternatives": ["am fond of (~을 무척 좋아하다)", "prefer (~을 선호하다)", "admire (동경하다)"],
+            "tip": "'like' 대신 'be fond of'나 'prefer'를 쓰면 다양한 어휘 구사력 가산점을 받습니다."
+        },
+        "important": {
+            "alternatives": ["crucial (중대한)", "essential (필수적인)", "significant (유의미한)"],
+            "tip": "'important' 대신 'crucial'이나 'essential'을 활용하면 핵심 논지가 강력해집니다."
+        },
+        "help": {
+            "alternatives": ["assist (지원하다)", "contribute to (~에 기여하다)"],
+            "tip": "'help' 대신 'assist'나 'contribute to'를 활용해 보세요."
+        },
+        "many": {
+            "alternatives": ["numerous (수많은)", "a variety of (다양한)", "a wide range of (폭넓은)"],
+            "tip": "'many' 대신 'numerous'나 'a variety of'를 쓰면 문장이 훨씬 풍성해집니다."
+        },
+        "interesting": {
+            "alternatives": ["fascinating (매혹적인)", "engaging (몰입감을 주는)"],
+            "tip": "'interesting' 대신 'fascinating'이나 'engaging'을 활용해 보세요."
+        }
+    }
+
+    lexical_upgrades = []
+    found_upgrade_keys = set()
+    for w in raw_words:
+        w_low = w.lower()
+        if w_low in UPGRADE_DICT and w_low not in found_upgrade_keys:
+            found_upgrade_keys.add(w_low)
+            lexical_upgrades.append({
+                "original": w_low,
+                "alternatives": UPGRADE_DICT[w_low]["alternatives"],
+                "tip": UPGRADE_DICT[w_low]["tip"]
+            })
+            if len(lexical_upgrades) >= 3:
+                break
+
+    if not lexical_upgrades:
+        lexical_upgrades.append({
+            "original": "like / enjoy",
+            "alternatives": ["be fond of (~을 애호하다)", "prefer (~을 선호하다)"],
+            "tip": "선호나 취향을 나타낼 때 'be fond of'나 'prefer'를 곁들이면 표현력이 다채로워집니다."
+        })
+        lexical_upgrades.append({
+            "original": "very / really",
+            "alternatives": ["extremely (극도로)", "remarkably (눈에 띄게)"],
+            "tip": "강조 부사로 'extremely'나 'remarkably'를 활용하면 어조의 설득력이 강해집니다."
+        })
+
+    # 6. 문장 결합 및 복문 변형 예시 (Sentence Combining Pro-Tip)
+    sentence_combine_tip = None
+    if len(raw_sentences) >= 2:
+        s1 = raw_sentences[0].rstrip(".!?")
+        s2 = raw_sentences[1].rstrip(".!?")
+        sentence_combine_tip = {
+            "originalPair": [raw_sentences[0], raw_sentences[1]],
+            "proTip": "두 개의 짧은 단문을 관계대명사(who/which) 또는 이유/조건 접속사(Because/Although)를 활용해 하나의 복문으로 합치면 감점 없는 고득점 에세이가 완성됩니다.",
+            "example": f"💡 복문 업그레이드 예시: {s1}, which helps {s2.lower()}."
+        }
+    else:
+        sentence_combine_tip = {
+            "originalPair": ["I have a hobby. It is reading books."],
+            "proTip": "단문을 연속으로 쓰기보다 관계대명사나 종속접속사(Because, When, Although)로 결합해 보세요.",
+            "example": "💡 복문 업그레이드 예시: My favorite hobby is reading books, which expands my imagination."
+        }
+
+    # Praises
+    praises = []
+    if total_score >= 90:
+        praises.append("🌟 동도중 내신 1등급 수준의 완벽한 문장력과 논리 전개입니다!")
+    if len(connectors_found) >= 2:
+        praises.append(f"🔗 접속사({', '.join(connectors_found[:3])})를 효과적으로 배치하여 글의 결속성이 뛰어납니다.")
+    if word_count >= 35 and word_count <= 60:
+        praises.append(f"📏 수행평가 루브릭 권장 분량({word_count}단어)을 매우 정확하게 준수했습니다.")
+    if len(unique_words) / max(1, word_count) > 0.65:
+        praises.append("🎨 다양한 어휘를 골고루 구사하여 단어 반복이 적고 표현이 풍성합니다.")
+
+    # General feedback
+    if total_score >= 95:
+        feedback = "🏆 완벽에 가까운 명문입니다! 주제와 문맥, 어법과 어휘까지 완벽하게 소화했습니다."
+    elif total_score >= 85:
+        feedback = "👏 매우 우수한 에세이입니다! 아래 추천 어휘와 문장 결합 팁을 적용하면 100점 만점에 도달합니다."
+    elif total_score >= 70:
+        feedback = "💡 좋은 아이디어가 잘 드러난 글입니다. 지적된 문법 교정 사항을 확인하고 더 세련된 어휘로 다듬어 보세요!"
+    else:
+        feedback = "🌱 첫걸음으로 훌륭합니다. 안내된 모범 에세이와 교정 노트를 참고하여 한 번 더 연습해 보세요!"
+
+    return {
+        "score": total_score,
+        "passed": passed,
+        "rubricScores": {
+            "relevance": rel_score,
+            "structure": struct_score,
+            "grammar": gram_score,
+            "vocabulary": vocab_score
+        },
+        "feedback": feedback,
+        "relDeductions": rel_deductions,
+        "structDeductions": struct_deductions,
+        "corrections": corrections,
+        "lexicalUpgrades": lexical_upgrades,
+        "sentenceCombineTip": sentence_combine_tip,
+        "modelRewrite": sample_essay or (student_text + " (Well-written)"),
+        "praises": praises,
+        "wordCount": word_count,
+        "sentenceCount": sentence_count
+    }
+
 class WritingAppHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=WEB_DIR, **kwargs)
@@ -370,6 +837,13 @@ class WritingAppHandler(SimpleHTTPRequestHandler):
             session_path = os.path.join(USERS_DIR, user_id, "session.json")
             session_data = load_json(session_path, {})
             self.send_json(session_data)
+
+        elif path == "/api/free_writing_topic":
+            user_id = query.get("userId", ["minho"])[0]
+            tb_id = query.get("textbookId", ["ybm_park_grade1"])[0]
+            exclude_id = query.get("excludeTopicId", [""])[0]
+            topic_info = select_free_writing_topic(user_id, tb_id, exclude_id)
+            self.send_json(topic_info)
 
         else:
             self.send_error(404, "API endpoint not found")
@@ -621,10 +1095,15 @@ class WritingAppHandler(SimpleHTTPRequestHandler):
                     "id": f"essay_{int(datetime.datetime.now().timestamp())}",
                     "unitTitle": unit_title,
                     "topic": essay_item.get("title", "수행평가 미니 에세이"),
+                    "topicId": essay_item.get("topicId", ""),
+                    "sourceBadge": essay_item.get("sourceBadge", ""),
                     "createdAt": today_str,
                     "score": essay_item.get("score", 95),
+                    "rubricScores": essay_item.get("rubricScores", {}),
                     "studentText": essay_item.get("studentText", ""),
-                    "feedback": essay_item.get("feedback", "조건을 모두 충족한 훌륭한 작문입니다.")
+                    "feedback": essay_item.get("feedback", "조건을 모두 충족한 훌륭한 작문입니다."),
+                    "lexicalUpgrades": essay_item.get("lexicalUpgrades", []),
+                    "modelRewrite": essay_item.get("modelRewrite", "")
                 })
                 save_json(essay_path, essays)
 
@@ -669,6 +1148,10 @@ class WritingAppHandler(SimpleHTTPRequestHandler):
             session_path = os.path.join(user_dir, "session.json")
             save_json(session_path, session_data)
             self.send_json({"success": True})
+
+        elif path == "/api/evaluate_free_writing":
+            result = evaluate_free_writing(payload)
+            self.send_json(result)
 
         else:
             self.send_error(404, "API endpoint not found")

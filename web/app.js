@@ -753,6 +753,17 @@ function updateStepPills() {
   }
 }
 
+function jumpToStep(stepNumber) {
+  if (stepNumber < 1 || stepNumber > 4) return;
+  state.currentStep = stepNumber;
+  state.stepSubIndex = 0;
+  updateStepPills();
+  renderCurrentStepProblem();
+  if (typeof saveSessionNow === "function") {
+    saveSessionNow();
+  }
+}
+
 function renderCurrentStepProblem() {
   const container = document.getElementById("problem-card");
   const resultPanel = document.getElementById("grade-result-panel");
@@ -886,57 +897,86 @@ function renderCurrentStepProblem() {
       </div>
     `;
   }
-  // Step 4: Type D Paragraph Essay
+  // Step 4: 학습 마무리 실전 Free 작문 & AI 코칭
   else if (state.currentStep === 4) {
-    const typeDList = state.currentRoutine.step4_typeD || [];
-    const item = typeDList[0];
-    if (!item) {
-      container.innerHTML = `<div>Step 4 문제가 없습니다.</div>`;
+    if (!state.currentFreeWritingTopic) {
+      container.innerHTML = `
+        <div class="text-center py-12 text-gray-500 space-y-3">
+          <div class="text-4xl animate-bounce-slow">✨</div>
+          <div class="text-sm font-bold text-gray-700">오늘의 학습 마무리 Free 영작 주제를 불러오는 중입니다...</div>
+          <div class="text-xs text-indigo-500">교재 커리큘럼 및 창의 영작 풀에서 중복 없는 주제를 엄선합니다.</div>
+        </div>
+      `;
+      loadFreeWritingTopic().then(() => renderCurrentStepProblem());
       return;
     }
-    const savedAns = state.stepAnswers[4][0] || "";
+
+    const topicData = state.currentFreeWritingTopic;
+    const item = topicData.topic || {};
+    const savedAns = (state.stepAnswers[4] && state.stepAnswers[4][0]) || "";
 
     container.innerHTML = `
-      <div class="space-y-5">
-        <div class="flex items-center justify-between border-b pb-3">
-          <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Step 4. 실전 수행평가 미니 에세이 (세특 대비)</span>
-          <span class="text-xs text-emerald-600 font-bold">학교생활기록부 직결</span>
-        </div>
-        <div>
-          <h4 class="text-base sm:text-lg font-extrabold text-gray-900">${item.title}</h4>
-          <p class="text-xs text-gray-600 mt-1 leading-relaxed">${item.prompt}</p>
+      <div class="space-y-5 animate-fade-in">
+        <!-- Step 4 Top Branding & Origin Badge -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-black text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">
+              Step 4. 학습 마무리 실전 Free 작문 & AI 코칭
+            </span>
+            <span class="text-xs px-2.5 py-0.5 rounded-full font-bold shadow-xs ${topicData.sourceType === 'random_pool' ? 'bg-amber-100 text-amber-900 border border-amber-300' : (topicData.sourceType === 'other_textbook' ? 'bg-purple-100 text-purple-900 border border-purple-300' : 'bg-emerald-100 text-emerald-900 border border-emerald-300')}">
+              ${topicData.sourceBadge || '🏫 현재 교재 맞춤'}
+            </span>
+          </div>
+          <button type="button" onclick="loadFreeWritingTopic(true)" class="text-xs px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold border border-amber-300 transition-all flex items-center gap-1.5 self-start sm:self-auto cursor-pointer shadow-2xs" title="다른 교재나 풀에서 다른 주제를 추천받습니다">
+            <span>🔄</span> <span>다른 주제 추천받기</span>
+          </button>
         </div>
 
-        <!-- Conditions -->
-        <div class="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100 space-y-2">
-          <div class="text-xs font-bold text-indigo-900 flex items-center gap-1.5">
-            <span>📋</span> 수행평가 감점 없는 작성 조건
+        <div>
+          <div class="text-[11px] font-bold text-indigo-500 uppercase tracking-wide">Daily Finale Free Writing Topic</div>
+          <h4 class="text-lg sm:text-xl font-black text-gray-900 mt-0.5">${item.title}</h4>
+          <p class="text-xs sm:text-sm text-gray-700 mt-1 leading-relaxed bg-indigo-50/50 p-3.5 rounded-2xl border border-indigo-100/80">
+            <strong class="text-indigo-900">🎯 작문 미션:</strong> ${item.prompt}
+          </p>
+        </div>
+
+        <!-- Conditions Checklist -->
+        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/90 space-y-2">
+          <div class="text-xs font-bold text-amber-950 flex items-center gap-1.5">
+            <span>📋</span> 수행평가 감점 없는 작성 조건 가이드
           </div>
-          <ul class="text-xs text-indigo-800 space-y-1 list-disc list-inside">
-            ${item.conditions.map(c => `<li>${c}</li>`).join("")}
+          <ul class="text-xs text-amber-900 space-y-1 list-disc list-inside">
+            ${(item.conditions || []).map(c => `<li>${c}</li>`).join("")}
           </ul>
         </div>
 
+        <!-- Live Writing Textarea -->
         <div class="space-y-2">
           <div class="flex items-center justify-between">
-            <label class="text-xs font-bold text-gray-600">나만의 단락 에세이 작성 (4~5문장):</label>
-            <span id="char-word-count" class="text-[11px] text-gray-400 font-medium">0 단어</span>
+            <label class="text-xs font-bold text-gray-700 flex items-center gap-1.5">
+              <span>✍️</span> <span>나만의 자유 에세이 작성:</span>
+            </label>
+            <div class="flex items-center gap-2">
+              <span id="free-sentence-count" class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-gray-100 text-gray-600">0문장</span>
+              <span id="free-word-count" class="text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">0단어 (권장: 35~50단어)</span>
+            </div>
           </div>
-          <textarea id="input-answer" rows="5" oninput="updateWordCount(this); state.stepAnswers[4][0] = this.value; triggerAutoSave();" placeholder="Hello, everyone! My name is..." class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:outline-indigo-500 font-medium text-sm leading-relaxed">${savedAns}</textarea>
+          <textarea id="input-answer" rows="6" oninput="updateFreeWritingStats(this); state.stepAnswers[4][0] = this.value; triggerAutoSave();" placeholder="자신의 생각과 표현을 자유롭게 영어 문장으로 완성해 보세요..." class="w-full px-4 py-3 rounded-2xl border-2 border-indigo-100 focus:border-indigo-500 focus:outline-none font-medium text-sm leading-relaxed shadow-xs transition-all">${savedAns}</textarea>
         </div>
 
-        <button onclick="submitStep4Answer()" class="w-full py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold rounded-2xl text-sm transition-all shadow-lg shadow-indigo-100">
-          에세이 최종 채점 및 세특 보관함 저장
+        <button onclick="submitStep4Answer()" id="step4-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-700 hover:to-purple-800 text-white font-black rounded-2xl text-sm transition-all shadow-lg shadow-indigo-200 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer">
+          <span>🚀</span> <span>AI 작문 스킬 정밀 평가 & 피드백 받기</span>
         </button>
       </div>
     `;
+
     setTimeout(() => {
       const el = document.getElementById("input-answer");
       if (el) {
-        updateWordCount(el);
+        updateFreeWritingStats(el);
         el.focus();
       }
-    }, 50);
+    }, 60);
   }
 
   // 이전에 이미 채점한 결과가 있다면 자동으로 채점 패널 복원
@@ -1237,42 +1277,94 @@ function submitStep3Answer() {
   showGradingResult(gradeResult);
 }
 
-async function submitStep4Answer() {
-  const typeDList = state.currentRoutine.step4_typeD || [];
-  const item = typeDList[0];
-  if (!item) return;
+async function loadFreeWritingTopic(forceChange = false) {
+  if (!forceChange && state.currentFreeWritingTopic) {
+    return state.currentFreeWritingTopic;
+  }
+  const excludeId = (forceChange && state.currentFreeWritingTopic && state.currentFreeWritingTopic.topic) 
+    ? state.currentFreeWritingTopic.topic.id : "";
+  try {
+    const res = await fetch(`/api/free_writing_topic?userId=${state.activeUserId}&textbookId=${state.currentTextbookId || 'ybm_park_grade1'}&excludeTopicId=${excludeId}&_t=${Date.now()}`);
+    const data = await res.json();
+    state.currentFreeWritingTopic = data;
+    if (forceChange) {
+      state.stepAnswers[4] = {};
+      state.stepGrades[4] = {};
+      const resultPanel = document.getElementById("grade-result-panel");
+      if (resultPanel) resultPanel.classList.add("hidden");
+      renderCurrentStepProblem();
+      showToast(`새로운 주제 '${data.topic ? data.topic.title : "주제"}'가 준비되었습니다!`, "✨");
+    }
+    return data;
+  } catch (err) {
+    console.error("Failed to load free writing topic:", err);
+  }
+}
 
+function updateFreeWritingStats(textarea) {
+  if (!textarea) return;
+  const text = textarea.value.trim();
+  const words = text ? text.split(/\s+/).filter(w => w.length > 0) : [];
+  const wordCount = words.length;
+  const sentences = text ? text.split(/[.!?]+/).filter(s => s.trim().length > 1) : [];
+  const sentenceCount = sentences.length;
+
+  const wEl = document.getElementById("free-word-count");
+  const sEl = document.getElementById("free-sentence-count");
+
+  if (sEl) sEl.textContent = `${sentenceCount}문장`;
+  if (wEl) {
+    if (wordCount >= 35 && wordCount <= 60) {
+      wEl.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-300";
+      wEl.textContent = `${wordCount}단어 (적정 분량 달성 ✓)`;
+    } else if (wordCount < 25) {
+      wEl.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-700 border border-amber-300";
+      wEl.textContent = `${wordCount}단어 (권장: 35~50단어)`;
+    } else {
+      wEl.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200";
+      wEl.textContent = `${wordCount}단어 (권장: 35~50단어)`;
+    }
+  }
+}
+
+async function submitStep4Answer() {
+  const currentTopic = state.currentFreeWritingTopic ? state.currentFreeWritingTopic.topic : ((state.currentRoutine && state.currentRoutine.step4_typeD && state.currentRoutine.step4_typeD[0]) || {});
   const inputEl = document.getElementById("input-answer");
   const userAns = inputEl ? inputEl.value.trim() : "";
   state.stepAnswers[4][0] = userAns;
 
-  const btn = document.querySelector("#problem-card button");
+  if (!userAns) {
+    showToast("에세이 문장을 먼저 작성해 주세요!", "⚠️");
+    if (inputEl) inputEl.focus();
+    return;
+  }
+
+  const btn = document.getElementById("step4-submit-btn") || document.querySelector("#problem-card button");
   const originalText = btn ? btn.innerHTML : "";
   if (btn) {
     btn.disabled = true;
-    btn.innerHTML = `<span>⏳ 에세이 루브릭 정밀 채점 중...</span>`;
+    btn.innerHTML = `<span>⏳</span> <span>AI 어시스턴트가 4대 루브릭(주제/문맥/구조/문법) 및 어휘 추천을 정밀 분석 중...</span>`;
   }
 
   try {
-    const res = await fetch("/api/grade", {
+    const res = await fetch("/api/evaluate_free_writing", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        type: "typeD",
-        studentAnswer: userAns,
-        sampleAnswer: item.sampleEssay || item.sampleAnswer || "",
-        targetWordCount: null
+        userId: state.activeUserId,
+        studentText: userAns,
+        topic: currentTopic
       })
     });
-    const gradeResult = await res.json();
-    state.stepGrades[4][0] = gradeResult;
+    const result = await res.json();
+    state.stepGrades[4][0] = result;
     saveSessionNow();
 
-    if (gradeResult.passed) triggerConfetti();
-    showGradingResult(gradeResult);
+    if (result.passed) triggerConfetti();
+    showFreeWritingEvaluation(result);
   } catch (err) {
-    console.error("Grading failed:", err);
-    showToast("채점 서버 통신 중 오류가 발생했습니다.", "❌");
+    console.error("Free writing evaluation failed:", err);
+    showToast("작문 평가 서버 통신 중 오류가 발생했습니다.", "❌");
   } finally {
     if (btn) {
       btn.disabled = false;
@@ -1281,12 +1373,210 @@ async function submitStep4Answer() {
   }
 }
 
+function showFreeWritingEvaluation(result) {
+  const panel = document.getElementById("grade-result-panel");
+  if (!panel) return;
+  panel.classList.remove("hidden");
+
+  const isPassed = result.passed;
+  panel.className = `rounded-3xl p-6 sm:p-7 border transition-all animate-fade-in space-y-6 ${isPassed ? 'bg-gradient-to-br from-emerald-50/90 to-indigo-50/80 border-emerald-300 shadow-md' : 'bg-red-50/90 border-red-300 shadow-md'}`;
+
+  const currentTopic = state.currentFreeWritingTopic ? state.currentFreeWritingTopic.topic : {};
+  const topicTitle = currentTopic.title || "실전 Free 작문";
+  const sourceBadge = state.currentFreeWritingTopic ? state.currentFreeWritingTopic.sourceBadge : "🏫 현재 교재 맞춤";
+
+  const rScores = result.rubricScores || { relevance: 20, structure: 20, grammar: 20, vocabulary: 20 };
+
+  panel.innerHTML = `
+    <!-- Top Evaluation Header -->
+    <div class="flex items-center justify-between border-b pb-4">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl p-2 rounded-2xl bg-white shadow-xs">${isPassed ? '🏆' : '💡'}</span>
+        <div>
+          <div class="flex items-center gap-2">
+            <h4 class="font-black text-base sm:text-lg ${isPassed ? 'text-emerald-950' : 'text-red-950'}">
+              ${isPassed ? '동도중 루브릭 기준 만점 통과!' : '작문 역량 강화를 위한 AI 피드백'}
+            </h4>
+            <span class="text-xs px-2.5 py-0.5 rounded-full font-bold bg-white text-indigo-700 border border-indigo-200">
+              ${sourceBadge}
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm font-medium ${isPassed ? 'text-emerald-800' : 'text-red-800'} mt-1">
+            ${result.feedback}
+          </p>
+        </div>
+      </div>
+      <div class="text-right">
+        <div class="text-3xl sm:text-4xl font-black ${isPassed ? 'text-emerald-600' : 'text-red-600'}">${result.score}점</div>
+        <div class="text-[10px] text-gray-500 font-bold">100점 만점 루브릭</div>
+      </div>
+    </div>
+
+    <!-- 4 Rubric Subscore Columns -->
+    <div class="space-y-2">
+      <div class="text-xs font-bold text-gray-700 flex items-center gap-1.5">
+        <span>📊</span> <span>4대 핵심 역량 정밀 진단표 (각 25점 만점):</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+        <div class="p-3 bg-white rounded-2xl border border-gray-200 shadow-2xs space-y-1">
+          <div class="text-[11px] font-bold text-gray-500 flex items-center justify-between">
+            <span>🎯 주제·맥락</span>
+            <span class="font-black text-indigo-600">${rScores.relevance}/25</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-indigo-500 h-full rounded-full" style="width: ${(rScores.relevance / 25) * 100}%"></div>
+          </div>
+          <div class="text-[10px] text-gray-400">주제 적합성 및 완결성</div>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-gray-200 shadow-2xs space-y-1">
+          <div class="text-[11px] font-bold text-gray-500 flex items-center justify-between">
+            <span>📐 문장 구조</span>
+            <span class="font-black text-purple-600">${rScores.structure}/25</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-purple-500 h-full rounded-full" style="width: ${(rScores.structure / 25) * 100}%"></div>
+          </div>
+          <div class="text-[10px] text-gray-400">접속사 및 복문 호흡</div>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-gray-200 shadow-2xs space-y-1">
+          <div class="text-[11px] font-bold text-gray-500 flex items-center justify-between">
+            <span>🔍 문법 정밀도</span>
+            <span class="font-black text-emerald-600">${rScores.grammar}/25</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full rounded-full" style="width: ${(rScores.grammar / 25) * 100}%"></div>
+          </div>
+          <div class="text-[10px] text-gray-400">시제·수일치·구두점</div>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-gray-200 shadow-2xs space-y-1">
+          <div class="text-[11px] font-bold text-gray-500 flex items-center justify-between">
+            <span>📖 어휘 다양성</span>
+            <span class="font-black text-amber-600">${rScores.vocabulary}/25</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-amber-500 h-full rounded-full" style="width: ${(rScores.vocabulary / 25) * 100}%"></div>
+          </div>
+          <div class="text-[10px] text-gray-400">어휘 풍부성 & 표현</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real-time Grammar & Mechanics Corrections -->
+    ${result.corrections && result.corrections.length > 0 ? `
+      <div class="p-4 rounded-2xl bg-white border border-red-200 space-y-2.5 shadow-2xs">
+        <div class="text-xs font-bold text-red-900 flex items-center gap-1.5">
+          <span>⚠️</span> <span>실시간 문법 & 감점 방지 교정 노트:</span>
+        </div>
+        <div class="space-y-2">
+          ${result.corrections.map(c => `
+            <div class="p-2.5 rounded-xl bg-red-50/70 border border-red-100 text-xs space-y-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="line-through text-red-600 font-mono font-bold bg-white px-2 py-0.5 rounded border border-red-200">${c.original}</span>
+                <span class="text-gray-400">➔</span>
+                <span class="text-emerald-700 font-mono font-black bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300">${c.corrected}</span>
+              </div>
+              <div class="text-[11px] text-gray-600 font-medium">💡 ${c.reason}</div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    ` : `
+      <div class="p-3.5 rounded-2xl bg-emerald-100/70 border border-emerald-300 text-xs text-emerald-950 font-bold flex items-center gap-2">
+        <span>✨</span> <span>감점 없는 완벽한 문법과 구두점을 달성했습니다! (No Grammar Errors)</span>
+      </div>
+    `}
+
+    <!-- Writing Skill Booster 1: Lexical Upgrades (어휘 업그레이드 추천) -->
+    ${result.lexicalUpgrades && result.lexicalUpgrades.length > 0 ? `
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 space-y-2.5 shadow-2xs">
+        <div class="text-xs font-bold text-amber-950 flex items-center justify-between">
+          <span class="flex items-center gap-1.5">
+            <span>💡</span> <span>작문 스킬 향상 코칭: 상위권 세련된 대체 어휘 추천</span>
+          </span>
+          <span class="text-[10px] text-amber-800 bg-amber-200/60 px-2 py-0.5 rounded-full font-bold">Lexical Boost</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          ${result.lexicalUpgrades.map(u => `
+            <div class="p-3 rounded-xl bg-white border border-amber-200/80 text-xs space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-gray-500 text-[11px] bg-gray-100 px-1.5 py-0.5 rounded">${u.original}</span>
+                <span class="text-amber-500 font-black">➔</span>
+                <span class="font-bold text-amber-900">${u.alternatives.join(", ")}</span>
+              </div>
+              <p class="text-[11px] text-gray-600 leading-snug">${u.tip}</p>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    ` : ''}
+
+    <!-- Writing Skill Booster 2: Sentence Combining Pro-Tip (문장 결합 및 복문 팁) -->
+    ${result.sentenceCombineTip ? `
+      <div class="p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 space-y-2 shadow-2xs">
+        <div class="text-xs font-bold text-indigo-950 flex items-center justify-between">
+          <span class="flex items-center gap-1.5">
+            <span>🪄</span> <span>고득점 영작 테크닉: 복문(Complex Sentence) 결합 팁</span>
+          </span>
+          <span class="text-[10px] text-indigo-800 bg-indigo-100 px-2 py-0.5 rounded-full font-bold">Pro Tip</span>
+        </div>
+        <p class="text-xs text-indigo-900 leading-relaxed font-medium">
+          ${result.sentenceCombineTip.proTip}
+        </p>
+        <div class="p-3 rounded-xl bg-white border border-indigo-100 text-xs font-mono font-bold text-indigo-800 leading-relaxed select-all">
+          ${result.sentenceCombineTip.example}
+        </div>
+      </div>
+    ` : ''}
+
+    <!-- Model Essay Rewrite (모범 패러프레이징) -->
+    <div class="p-4 rounded-2xl bg-white border border-gray-200 space-y-2 shadow-2xs">
+      <div class="text-xs font-bold text-gray-800 flex items-center justify-between">
+        <span class="flex items-center gap-1.5">
+          <span>🏆</span> <span>원어민식 동도중 1등급 모범 패러프레이징 에세이:</span>
+        </span>
+        <button type="button" onclick="copyEssayText('${encodeURIComponent(result.modelRewrite || "")}')" class="text-[11px] text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-1">
+          <span>📋</span> <span>모범문장 복사</span>
+        </button>
+      </div>
+      <p class="text-xs font-mono text-gray-800 leading-relaxed bg-gray-50/70 p-3.5 rounded-xl border border-gray-100 select-all">
+        ${result.modelRewrite}
+      </p>
+    </div>
+
+    <!-- Final Action Buttons -->
+    <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t">
+      <button onclick="retryCurrentProblem()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs">
+        <span>✏️</span> <span>피드백 반영하여 다시 다듬기</span>
+      </button>
+
+      <button onclick="triggerEssayRoutineFinish()" class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600 hover:from-emerald-700 hover:to-indigo-700 text-white font-black rounded-xl text-xs sm:text-sm transition-all shadow-md shadow-emerald-200 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
+        <span>📥</span> <span>세특 에세이 보관함 저장 & 오늘 루틴 최종 완료 ➔</span>
+      </button>
+    </div>
+  `;
+
+  panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
 function triggerEssayRoutineFinish() {
-  const typeDList = (state.currentRoutine && state.currentRoutine.step4_typeD) || [];
-  const item = typeDList[0] || {};
+  const currentTopic = state.currentFreeWritingTopic ? state.currentFreeWritingTopic.topic : ((state.currentRoutine && state.currentRoutine.step4_typeD && state.currentRoutine.step4_typeD[0]) || {});
   const userAns = (state.stepAnswers[4] && state.stepAnswers[4][0]) || "";
   const gradeResult = (state.stepGrades[4] && state.stepGrades[4][0]) || { score: 90, feedback: "루틴 완료" };
-  finishDailyRoutine(item.title || "수행평가 미니 에세이", userAns, gradeResult.score, gradeResult.feedback);
+  
+  finishDailyRoutine(
+    currentTopic.title || "실전 Free 작문",
+    userAns,
+    gradeResult.score,
+    gradeResult.feedback,
+    currentTopic.id || "",
+    state.currentFreeWritingTopic ? state.currentFreeWritingTopic.sourceBadge : "",
+    gradeResult.rubricScores || {},
+    gradeResult.lexicalUpgrades || [],
+    gradeResult.modelRewrite || ""
+  );
 }
 
 function showGradingResult(result) {
@@ -1447,18 +1737,18 @@ function getStepListLength(step) {
   return 1;
 }
 
-async function finishDailyRoutine(essayTitle, essayText, essayScore, essayFeedback) {
+async function finishDailyRoutine(essayTitle, essayText, essayScore, essayFeedback, topicId = "", sourceBadge = "", rubricScores = {}, lexicalUpgrades = [], modelRewrite = "") {
   // 틀린 문제 수집
   const wrongItems = [];
-  const typeAList = state.currentRoutine.step2_typeA || [];
+  const typeAList = (state.currentRoutine && state.currentRoutine.step2_typeA) || [];
   for (let i = 0; i < typeAList.length; i++) {
-    const g = state.stepGrades[2][i];
+    const g = state.stepGrades[2] && state.stepGrades[2][i];
     if (g && !g.passed) {
       wrongItems.push({
         problemId: typeAList[i].id,
         problemType: "typeA",
         korean: typeAList[i].korean,
-        studentAnswer: state.stepAnswers[2][i] || "",
+        studentAnswer: (state.stepAnswers[2] && state.stepAnswers[2][i]) || "",
         sampleAnswer: typeAList[i].sampleAnswer,
         deductions: g.deductions || []
       });
@@ -1467,15 +1757,20 @@ async function finishDailyRoutine(essayTitle, essayText, essayScore, essayFeedba
 
   const payload = {
     userId: state.activeUserId,
-    unitTitle: state.currentRoutine.title,
+    unitTitle: (state.currentRoutine && state.currentRoutine.title) || "Daily Routine",
     durationMinutes: Math.round((30 * 60 - state.timerSeconds) / 60) || 28,
     overallScore: essayScore || 92,
     wrongItems: wrongItems,
     essayItem: essayText ? {
       title: essayTitle,
+      topicId: topicId,
+      sourceBadge: sourceBadge,
       studentText: essayText,
       score: essayScore,
-      feedback: essayFeedback
+      feedback: essayFeedback,
+      rubricScores: rubricScores,
+      lexicalUpgrades: lexicalUpgrades,
+      modelRewrite: modelRewrite
     } : null
   };
 
@@ -1523,7 +1818,8 @@ function startTimer() {
       updateTimerDisplay();
     } else {
       pauseTimer();
-      alert("⏰ 오늘의 목표 학습 시간(30분)이 종료되었습니다! 마무리 작문을 제출해 주세요.");
+      showToast("⏰ 오늘의 목표 학습 시간이 완료되었습니다! 마무리 Free 작문을 작성해 주세요.", "⏰");
+      jumpToStep(4);
     }
   }, 1000);
 }
@@ -1726,9 +2022,12 @@ function renderEssays() {
   container.innerHTML = essays.map(es => `
     <div class="p-5 rounded-2xl border border-indigo-100 bg-white shadow-sm space-y-3">
       <div class="flex items-center justify-between border-b pb-2">
-        <div>
-          <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">${es.unitTitle}</span>
-          <h4 class="font-extrabold text-gray-800 text-sm mt-1">${es.topic}</h4>
+        <div class="space-y-1">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">${es.unitTitle || 'Daily Free Writing'}</span>
+            ${es.sourceBadge ? `<span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">${es.sourceBadge}</span>` : ''}
+          </div>
+          <h4 class="font-extrabold text-gray-800 text-sm">${es.topic}</h4>
         </div>
         <div class="text-right">
           <span class="text-base font-black text-indigo-600">${es.score || 95}점</span>
@@ -1738,9 +2037,17 @@ function renderEssays() {
       <p class="text-xs font-mono text-gray-700 leading-relaxed bg-gray-50/80 p-3.5 rounded-xl border border-gray-100 select-all">
         ${es.studentText}
       </p>
+      ${es.modelRewrite ? `
+        <details class="text-xs bg-indigo-50/40 p-2.5 rounded-xl border border-indigo-100/80">
+          <summary class="font-bold text-indigo-700 cursor-pointer">🏆 AI 모범 패러프레이징 에세이 확인하기</summary>
+          <div class="mt-2 text-xs font-mono text-gray-700 bg-white p-2.5 rounded-lg border border-indigo-100 leading-relaxed select-all">
+            ${es.modelRewrite}
+          </div>
+        </details>
+      ` : ''}
       <div class="flex items-center justify-between text-xs text-gray-500 pt-1">
-        <div><span class="font-bold text-indigo-600">피드백:</span> ${es.feedback || '훌륭한 작문입니다.'}</div>
-        <button onclick="copyEssayText('${es.id}')" class="px-3 py-1 bg-white hover:bg-gray-100 border rounded-lg text-[11px] font-bold transition-all">
+        <div class="text-[11px] text-gray-600"><span class="font-bold text-indigo-600">피드백:</span> ${es.feedback || '훌륭한 작문입니다.'}</div>
+        <button onclick="copyEssayText('${es.id}')" class="px-3 py-1 bg-white hover:bg-gray-100 border rounded-lg text-[11px] font-bold transition-all shadow-2xs cursor-pointer">
           복사하기
         </button>
       </div>

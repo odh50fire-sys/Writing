@@ -1,18 +1,18 @@
 {
   "level": 1,
   "levelTitle": "새싹 영작러",
-  "exp": 0,
+  "exp": 98,
   "nextLevelExp": 150,
   "streakDays": 1,
   "lastStudyDate": "2026-11-13",
-  "totalStudyMinutes": 0,
-  "completedProblemsCount": 0,
+  "totalStudyMinutes": 5,
+  "completedProblemsCount": 7,
   "radar": {
-    "condition": 50,
-    "agreement": 50,
-    "tense": 50,
-    "mechanics": 50,
-    "structure": 50
+    "condition": 52,
+    "agreement": 52,
+    "tense": 52,
+    "mechanics": 52,
+    "structure": 52
   },
   "badges": [
     {
@@ -54,5 +54,5 @@
     "selectedLevelTitle": "새싹 영작러",
     "testedAt": "2026-11-13"
   },
-  "flawlessStreak": 0
+  "flawlessStreak": 1
 }
