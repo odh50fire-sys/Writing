@@ -1,0 +1,25 @@
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Logs & Temp
+*.log
+tmp/
+temp/
+scratch/
+browser_evidence/
+.system_generated/
+
+# OS specific
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,197 @@
+{
+  "textbookId": "ybm_park_grade3",
+  "title": "YBM(박준언) 중등 영어 3 (2027 최신)",
+  "grade": 3,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Lesson 1. Stories of Hope",
+      "topic": "희망과 도전, 관계대명사 계속적 용법",
+      "targetGrammar": [
+        "관계대명사의 계속적 용법 (, which / , who)",
+        "과거완료 시제 (had + p.p.)"
+      ],
+      "warmup": [
+        {
+          "id": "g3_u1_w1",
+          "question": "He gave me a book, __________ (that / which) was very inspiring. (알맞은 것을 고르시오)",
+          "answer": "which",
+          "explanation": "계속적 용법(콤마 뒤)에서는 that을 쓸 수 없으며 which를 써야 합니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "g3_u1_a1",
+          "korean": "그는 나에게 값비싼 시계를 주었는데, 그것은 나를 매우 행복하게 만들었다.",
+          "conditions": [
+            "'He gave me an expensive watch', 'make me very happy'를 사용할 것",
+            "앞 문장 전체를 선행사로 받는 계속적 용법의 관계대명사 ', which'를 사용할 것"
+          ],
+          "requiredWords": [
+            ", which made me very happy"
+          ],
+          "sampleAnswer": "He gave me an expensive watch, which made me very happy.",
+          "explanation": "앞 절 전체를 선행사로 받는 계속적 용법의 , which 구문입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "g3_u1_b1",
+          "passage": "I met my old mentor at the library, ⓐthat ⓑgave me valuable advice.",
+          "wrongSymbol": "ⓐ",
+          "correction": "who",
+          "reason": "콤마 뒤 관계대명사 계속적 용법에는 that을 쓸 수 없으므로 선행사가 사람일 때는 who를 써야 합니다.",
+          "alternativeCorrections": [
+            "that",
+            "That",
+            "Who"
+          ]
+        }
+      ],
+      "typeD": [
+        {
+          "id": "g3_u1_d1",
+          "title": "A Turning Point in My Life",
+          "prompt": "인생의 큰 전환점이 되었던 소중한 경험을 5~6문장으로 서술하시오.",
+          "conditions": [
+            "관계대명사 계속적 용법(, which 또는 , who)을 1회 이상 사용할 것",
+            "과거완료(had + p.p.) 시제를 1회 이상 사용할 것",
+            "총 분량: 55~70단어 내외"
+          ],
+          "sampleEssay": "Last summer, I joined a volunteer camp in a remote mountain village. Before the trip, I had never experienced living without internet access. During the camp, I taught basic English to local children, which brought immense joy to my heart. Seeing their bright smiles completely changed my perspective on life. It was truly an unforgettable milestone for me.",
+          "rubricGuide": "관계대명사 계속적 용법 40점, 과거완료 시제 30점, 문장 완성도 30점"
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Lesson 2. If I Could Change the World",
+      "topic": "상상과 가정, 환경 및 사회 참여",
+      "targetGrammar": [
+        "가정법 과거 (If + 주어 + 과거동사, 주어 + 조동사과거 + 동원)",
+        "분사구문 (능동형/수동형)"
+      ],
+      "warmup": [
+        {
+          "id": "g3_u2_w1",
+          "question": "If I __________ (am / were) you, I would take that opportunity. (가정법 과거형을 고르시오)",
+          "answer": "were",
+          "explanation": "가정법 과거에서 be동사는 인칭에 상관없이 were를 기본으로 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "g3_u2_a1",
+          "korean": "만약 내가 날개가 있다면, 나는 지금 당장 너에게 날아갈 텐데.",
+          "conditions": [
+            "가정법 과거 공식을 적용할 것 (If + 과거동사, would + 동원)",
+            "'have wings', 'fly to you right now'를 사용할 것"
+          ],
+          "requiredWords": [
+            "If I had wings, I would fly to you right now"
+          ],
+          "sampleAnswer": "If I had wings, I would fly to you right now.",
+          "explanation": "If I had wings, I would fly to you right now 가정법 구문입니다."
+        },
+        {
+          "id": "g3_u2_a2",
+          "korean": "길을 따라 걷고 있을 때, 나는 우연히 오랜 친구를 마주쳤다.",
+          "conditions": [
+            "'While I was walking along the street'를 분사구문으로 축약할 것",
+            "주절에 'run into an old friend'의 과거형을 쓸 것"
+          ],
+          "requiredWords": [
+            "Walking along the street, I ran into an old friend"
+          ],
+          "sampleAnswer": "Walking along the street, I ran into an old friend.",
+          "explanation": "Walking along the street 분사구문입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "g3_u2_b1",
+          "passage": "If I ⓐam a billionaire, I ⓑwould donate half of my fortune to children in need.",
+          "wrongSymbol": "ⓐ",
+          "correction": "were",
+          "reason": "현재 사실의 반대를 가정하는 가정법 과거이므로 If절의 동사는 과거형인 were를 써야 합니다.",
+          "alternativeCorrections": [
+            "Were"
+          ]
+        }
+      ],
+      "typeD": [
+        {
+          "id": "g3_u2_d1",
+          "title": "If I Had a Superpower",
+          "prompt": "만약 나에게 한 가지 초능력이 생긴다면 무엇을 하고 싶은지 상상하는 에세이를 5~6문장으로 쓰시오.",
+          "conditions": [
+            "가정법 과거 구문을 2회 이상 사용할 것",
+            "분사구문을 1회 이상 사용할 것",
+            "총 분량: 60~75단어 내외"
+          ],
+          "sampleEssay": "If I had a superpower, I would choose the ability to heal sick people instantly. Travelling across the world, I would visit hospital rooms where patients are suffering from incurable diseases. If I cured their pain, their families would regain hope and happiness. Bringing warmth and health to humanity would be my lifelong mission.",
+          "rubricGuide": "가정법 과거 시제 일치 40점, 분사구문 30점, 창의적 내용 30점"
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Lesson 3. The Power of Words and Ideas",
+      "topic": "관계부사와 It that 강조구문",
+      "targetGrammar": [
+        "관계부사 (where, when, why, how)",
+        "It ~ that 강조구문"
+      ],
+      "warmup": [
+        {
+          "id": "g3_u3_w1",
+          "question": "This is the town __________ (where / which) I was born and raised.",
+          "answer": "where",
+          "explanation": "장소 선행사 the town 뒤에 완전한 절이 이어지므로 관계부사 where가 알맞습니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "g3_u3_a1",
+          "korean": "민수가 그의 첫사랑을 만난 것은 바로 어제 그 카페에서였다.",
+          "conditions": [
+            "'in that cafe yesterday'를 강조하는 'It was ~ that' 구문을 작성할 것",
+            "'Minsu met his first love'를 that 절 뒤에 완성할 것"
+          ],
+          "requiredWords": [
+            "It was in that cafe yesterday that Minsu met his first love"
+          ],
+          "sampleAnswer": "It was in that cafe yesterday that Minsu met his first love.",
+          "explanation": "It was 부사구 that 강조구문입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "g3_u3_b1",
+          "passage": "It was ⓐyesterday ⓑwhich Minho lost his smartphone in the park.",
+          "wrongSymbol": "ⓑ",
+          "correction": "that",
+          "reason": "It was ~ that 강조구문에서 부사 yesterday가 강조되었으므로 which가 아닌 that을 써야 합니다.",
+          "alternativeCorrections": [
+            "Which",
+            "That"
+          ]
+        }
+      ],
+      "typeD": [
+        {
+          "id": "g3_u3_d1",
+          "title": "My Most Cherished Place",
+          "prompt": "나에게 가장 특별한 추억이 깃든 장소를 소개하는 글을 5~6문장으로 쓰시오.",
+          "conditions": [
+            "관계부사(where)를 1회 이상 사용할 것",
+            "It ~ that 강조구문을 1회 이상 사용할 것",
+            "총 분량: 55~70단어 내외"
+          ],
+          "sampleEssay": "Near my house, there is a quiet hill where I frequently go to watch sunsets. It was on this peaceful hill that I first dreamed of becoming an astronomer. Under the starry night sky, I spent countless hours stargazing and meditating. Whenever I feel exhausted from heavy schoolwork, this hill recharges my spirit.",
+          "rubricGuide": "관계부사 정확도 40점, It that 강조구문 30점, 감성 표현 30점"
+        }
+      ]
+    }
+  ]
+}

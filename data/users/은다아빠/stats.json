@@ -1,0 +1,58 @@
+{
+  "level": 1,
+  "levelTitle": "새싹 영작러",
+  "exp": 0,
+  "nextLevelExp": 150,
+  "streakDays": 1,
+  "lastStudyDate": "2026-11-13",
+  "totalStudyMinutes": 0,
+  "completedProblemsCount": 0,
+  "radar": {
+    "condition": 50,
+    "agreement": 50,
+    "tense": 50,
+    "mechanics": 50,
+    "structure": 50
+  },
+  "badges": [
+    {
+      "id": "first_step",
+      "name": "첫 걸음",
+      "desc": "첫 번째 영작 미션을 완료함",
+      "icon": "🌱",
+      "unlocked": false
+    },
+    {
+      "id": "streak_3",
+      "name": "3일 연속 학습",
+      "desc": "3일 연속으로 매일 30분 학습 달성",
+      "icon": "🔥",
+      "unlocked": false
+    },
+    {
+      "id": "subject_verb",
+      "name": "수 일치 마스터",
+      "desc": "3인칭 단수 -s 감점 없이 5회 연속 통과",
+      "icon": "🎯",
+      "unlocked": false
+    },
+    {
+      "id": "essay_master",
+      "name": "수행평가 챔피언",
+      "desc": "단락 에세이 90점 이상 달성",
+      "icon": "👑",
+      "unlocked": false
+    }
+  ],
+  "recommendedLevel": 1,
+  "recommendedLevelTitle": "새싹 영작러",
+  "placementRecord": {
+    "score": 0,
+    "recommendedLevel": 1,
+    "recommendedLevelTitle": "새싹 영작러",
+    "selectedLevel": 1,
+    "selectedLevelTitle": "새싹 영작러",
+    "testedAt": "2026-11-13"
+  },
+  "flawlessStreak": 0
+}

@@ -1,0 +1,213 @@
+{
+  "textbookId": "ebs_middle_writing",
+  "title": "EBS 중학 영어 서술형 공인 문항 뱅크 (교육부 표준 루브릭)",
+  "category": "official",
+  "targetAudience": "공신력 있는 국가 공인 교육 자료! 교육부 표준 루브릭 기반으로 감점 없는 서술형 대비에 최적",
+  "grade": 2,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Section 1. 교육부 표준 루브릭: 주어-동사 수 일치 및 조건 제시형 문장 완성",
+      "targetGrammar": [
+        "3인칭 단수 일반동사 -s/-es",
+        "복합 주어 및 동명사구 수 일치",
+        "대문자/구두점 감점 방지"
+      ],
+      "warmup": [
+        {
+          "id": "ebs1_w1",
+          "korean": "매일 운동하는 것은 건강에 좋다.",
+          "sentence": "Exercising every day [is / are] good for your health.",
+          "options": [
+            "is",
+            "are"
+          ],
+          "answer": "is",
+          "explanation": "동명사구(Exercising every day) 주어는 단수 취급하므로 is가 정답입니다."
+        },
+        {
+          "id": "ebs1_w2",
+          "korean": "그는 주말마다 자전거를 탄다.",
+          "sentence": "He [rides / ride] a bicycle every weekend.",
+          "options": [
+            "rides",
+            "ride"
+          ],
+          "answer": "rides",
+          "explanation": "주어 He가 3인칭 단수 현재형이므로 동사에 -s를 붙인 rides가 알맞습니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "ebs1_ta1",
+          "korean": "건강한 아침 식사를 하는 것은 학생들의 집중력을 향상시킨다.",
+          "conditions": [
+            "'Eating a healthy breakfast', 'improve students' concentration', 'helps'를 사용할 것",
+            "동명사구 주어에 따른 단수 동사 변형과 목적격 보어(동사원형) 규칙을 지킬 것"
+          ],
+          "requiredWords": [
+            "Eating a healthy breakfast helps improve students' concentration"
+          ],
+          "sampleAnswer": "Eating a healthy breakfast helps improve students' concentration.",
+          "explanation": "동명사구 주어 Eating a healthy breakfast 뒤에 단수동사 helps를 쓰고 help의 보어로 improve를 연결합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "ebs1_tb1",
+          "passage": "Reading good books ⓐexpand our knowledge and ⓑmakes us wise thinkers.",
+          "question": "어법상 틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "expands",
+          "alternativeCorrections": [
+            "expands"
+          ],
+          "explanation": "주어가 동명사구(Reading good books)이므로 단수 취급하여 동사에 -s를 붙여 expands로 고쳐야 합니다.",
+          "reason": "주어가 동명사구(Reading good books)이므로 단수 취급하여 동사에 -s를 붙여 expands로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "ebs1_td1",
+          "title": "교육부 표준 루브릭 서술형: 규칙적인 생활 습관의 중요성",
+          "prompt": "규칙적인 생활 습관이 청소년에게 미치는 긍정적 영향에 대해 주어-동사 수 일치 규칙을 엄격히 지켜 3문장 이상 서술하시오.",
+          "conditions": [
+            "첫 글자 대문자, 마침표 등 구두점 규칙(Mechanics)을 철저히 준수할 것",
+            "동명사구 주어 또는 3인칭 단수 주어를 포함할 것",
+            "총 30단어 이상 완결된 문장으로 서술할 것"
+          ],
+          "sampleAnswer": "Maintaining a regular daily routine is essential for growing teenagers. Getting enough sleep every night helps our brain stay focused during school classes. Developing healthy habits during middle school builds a solid foundation for a successful future.",
+          "sampleEssay": "Maintaining a regular daily routine is essential for growing teenagers. Getting enough sleep every night helps our brain stay focused during school classes. Developing healthy habits during middle school builds a solid foundation for a successful future."
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Section 2. 교육부 표준 루브릭: 시제 일치 및 수동태 표준 채점 기준",
+      "targetGrammar": [
+        "현재완료와 과거 시제의 구별",
+        "수동태의 올바른 시제 변형",
+        "by 행위자 생략 원칙"
+      ],
+      "warmup": [
+        {
+          "id": "ebs2_w1",
+          "korean": "그 새로운 학교 도서관은 지난달에 완공되었다.",
+          "sentence": "The new school library [was completed / has completed] last month.",
+          "options": [
+            "was completed",
+            "has completed"
+          ],
+          "answer": "was completed",
+          "explanation": "도서관이 완공된 수동의 의미이며, last month라는 명확한 과거 시점이 있으므로 단순과거 수동태 was completed가 정답입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "ebs2_ta1",
+          "korean": "많은 환경 보호 캠페인들이 작년부터 우리 학교에서 조직되어 왔다.",
+          "conditions": [
+            "'Many environmental campaigns', 'organize in our school since last year'를 사용할 것",
+            "현재완료 수동태(have been + p.p.)를 사용할 것"
+          ],
+          "requiredWords": [
+            "Many environmental campaigns have been organized in our school since last year"
+          ],
+          "sampleAnswer": "Many environmental campaigns have been organized in our school since last year.",
+          "explanation": "복수 주어 Many environmental campaigns 뒤에 현재완료 수동태 have been organized를 씁니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "ebs2_tb1",
+          "passage": "The historical novel ⓐhas written by the author ⓑthree centuries ago.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "was written",
+          "alternativeCorrections": [
+            "was written"
+          ],
+          "explanation": "소설이 쓰여진 수동의 의미이며, three centuries ago라는 명확한 과거 시점이 있으므로 was written으로 고쳐야 합니다.",
+          "reason": "소설이 쓰여진 수동의 의미이며, three centuries ago라는 명확한 과거 시점이 있으므로 was written으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "ebs2_td1",
+          "title": "교육부 표준 루브릭 서술형: 우리 학교의 자랑거리",
+          "prompt": "자신의 학교에서 자랑하고 싶은 시설, 전통, 또는 활동에 대해 수동태와 시제 구문을 활용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "수동태(is loved, was founded, has been kept 등)를 1회 이상 사용할 것",
+            "교육부 무감점 표준 루브릭에 맞춰 문장 완성도를 높일 것"
+          ],
+          "sampleAnswer": "Our school has a beautiful green garden which was created by students and teachers together. Many colorful flowers are planted every spring, providing a peaceful resting place. This green tradition has been maintained proudly for over twenty years.",
+          "sampleEssay": "Our school has a beautiful green garden which was created by students and teachers together. Many colorful flowers are planted every spring, providing a peaceful resting place. This green tradition has been maintained proudly for over twenty years."
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Section 3. 교육부 표준 루브릭: 관계대명사 문장 결합과 감점 방지 훈련",
+      "targetGrammar": [
+        "두 문장을 주격/목적격 관계대명사로 결합",
+        "선행사와 관계사절 동사의 수 일치",
+        "전치사의 위치"
+      ],
+      "warmup": [
+        {
+          "id": "ebs3_w1",
+          "korean": "도움이 필요한 저 사람들을 도와주자.",
+          "sentence": "Let's help those people who [need / needs] our assistance.",
+          "options": [
+            "need",
+            "needs"
+          ],
+          "answer": "need",
+          "explanation": "선행사 those people이 복수이므로 관계사절 동사는 need가 정답입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "ebs3_ta1",
+          "korean": "나는 자신의 꿈을 이루기 위해 매일 최선을 다하는 학생들을 존경한다.",
+          "conditions": [
+            "'I respect students', 'try their best every day to achieve their dreams'를 사용할 것",
+            "주격 관계대명사 who를 사용하고 복수 선행사에 수 일치시킬 것"
+          ],
+          "requiredWords": [
+            "I respect students who try their best every day to achieve their dreams"
+          ],
+          "sampleAnswer": "I respect students who try their best every day to achieve their dreams.",
+          "explanation": "선행사 students가 복수이므로 who 뒤에 try로 수 일치합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "ebs3_tb1",
+          "passage": "He solved the complex math problem ⓐwho ⓑwas considered impossible by many classmates.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "which",
+          "alternativeCorrections": [
+            "that"
+          ],
+          "explanation": "선행사 the complex math problem이 사물이므로 who가 아닌 which 또는 that으로 고쳐야 합니다.",
+          "reason": "선행사 the complex math problem이 사물이므로 who가 아닌 which 또는 that으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "ebs3_td1",
+          "title": "교육부 표준 루브릭 서술형: 나의 미래 비전과 진로",
+          "prompt": "자신이 꿈꾸는 미래의 직업과 그 일을 하고 싶은 이유를 관계대명사(who, which, that)를 활용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "관계대명사절을 1회 이상 포함할 것",
+            "동사의 수 일치 및 구두점에 감점 요인이 없도록 완벽한 3문장으로 쓸 것"
+          ],
+          "sampleAnswer": "I want to become an AI software engineer who solves environmental problems through technology. I hope to develop smart systems which can reduce energy waste in modern cities. Working with passionate colleagues, I will create meaningful innovations that benefit human society.",
+          "sampleEssay": "I want to become an AI software engineer who solves environmental problems through technology. I hope to develop smart systems which can reduce energy waste in modern cities. Working with passionate colleagues, I will create meaningful innovations that benefit human society."
+        }
+      ]
+    }
+  ]
+}

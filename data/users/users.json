@@ -1,0 +1,13 @@
+{
+  "activeUserId": "은다아빠",
+  "users": [
+    {
+      "id": "은다아빠",
+      "name": "은다아빠",
+      "grade": 1,
+      "avatar": "🐶",
+      "targetSchool": "대구 동도중학교",
+      "createdAt": "2026-11-13"
+    }
+  ]
+}

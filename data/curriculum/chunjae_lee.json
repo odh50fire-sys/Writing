@@ -1,0 +1,212 @@
+{
+  "textbookId": "chunjae_lee",
+  "title": "천재(이재영) 중등 영어 (전국 2위 최다 채택)",
+  "category": "nationwide",
+  "targetAudience": "전국에서 가장 채택률이 높은 교과서이므로, 타 학교 학생이나 타 교재를 쓰는 학습자까지 완벽히 포섭",
+  "grade": 2,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Lesson 1. A Fresh Start (be동사와 빈도부사)",
+      "targetGrammar": [
+        "빈도부사의 위치 (be/조동사 뒤, 일반동사 앞)",
+        "감각동사 + 형용사"
+      ],
+      "warmup": [
+        {
+          "id": "cj1_w1",
+          "korean": "그녀는 항상 아침 일찍 일어난다.",
+          "sentence": "She [always gets up / gets up always] early in the morning.",
+          "options": [
+            "always gets up",
+            "gets up always"
+          ],
+          "answer": "always gets up",
+          "explanation": "빈도부사 always는 일반동사(gets up) 앞에 위치합니다."
+        },
+        {
+          "id": "cj1_w2",
+          "korean": "그 수프는 매우 짠 맛이 난다.",
+          "sentence": "The soup tastes [salty / saltily].",
+          "options": [
+            "salty",
+            "saltily"
+          ],
+          "answer": "salty",
+          "explanation": "감각동사 taste 뒤에는 부사가 아닌 형용사 salty가 보어로 와야 합니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "cj1_ta1",
+          "korean": "그는 수업 시간에 결코 늦지 않고 항상 집중한다.",
+          "conditions": [
+            "'He is never late for class', 'always focuses on the lesson'을 사용할 것",
+            "빈도부사의 위치 규칙을 올바르게 지킬 것"
+          ],
+          "requiredWords": [
+            "He is never late for class",
+            "always focuses on the lesson"
+          ],
+          "sampleAnswer": "He is never late for class and always focuses on the lesson.",
+          "explanation": "be동사 뒤에 never (is never), 일반동사 앞에 always (always focuses)를 사용합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "cj1_tb1",
+          "passage": "Minho ⓐgets always to school on time, but yesterday he ⓑwas ten minutes late.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "always gets",
+          "alternativeCorrections": [
+            "always gets"
+          ],
+          "explanation": "빈도부사 always는 일반동사 gets 앞에 위치해야 하므로 gets always를 always gets로 고쳐야 합니다.",
+          "reason": "빈도부사 always는 일반동사 gets 앞에 위치해야 하므로 gets always를 always gets로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "cj1_td1",
+          "title": "천재(이재영) 단원 수행평가: 나의 건강한 아침 일과",
+          "prompt": "자신의 일상적인 생활 습관에 대해 빈도부사(always, usually, often 등)를 활용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "빈도부사를 최소 2회 이상 올바른 위치에 사용할 것",
+            "3인칭 단수 또는 1인칭 주어에 따른 동사 수 일치를 지킬 것"
+          ],
+          "sampleAnswer": "I always wake up at six thirty on weekdays. I usually stretch my body and drink a glass of fresh water. Then I often walk to school with my best friends to stay healthy.",
+          "sampleEssay": "I always wake up at six thirty on weekdays. I usually stretch my body and drink a glass of fresh water. Then I often walk to school with my best friends to stay healthy."
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Lesson 2. Delicious Journey (수여동사와 3형식 전환)",
+      "targetGrammar": [
+        "4형식 수여동사 (give/send/buy)",
+        "전치사 to/for/of를 이용한 3형식 전환"
+      ],
+      "warmup": [
+        {
+          "id": "cj2_w1",
+          "korean": "엄마는 나에게 맛있는 케이크를 만들어 주셨다.",
+          "sentence": "My mom made a delicious cake [for / to] me.",
+          "options": [
+            "for",
+            "to"
+          ],
+          "answer": "for",
+          "explanation": "동사 make는 3형식으로 전환할 때 전치사 for를 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "cj2_ta1",
+          "korean": "나는 생일 선물로 그녀에게 예쁜 꽃 한 다발을 주었다.",
+          "conditions": [
+            "'I gave a bunch of pretty flowers to her', 'for her birthday gift'를 사용할 것",
+            "수여동사의 3형식 전치사 to 구문을 사용할 것"
+          ],
+          "requiredWords": [
+            "I gave a bunch of pretty flowers to her",
+            "for her birthday gift"
+          ],
+          "sampleAnswer": "I gave a bunch of pretty flowers to her for her birthday gift.",
+          "explanation": "give + 직접목적어 + to 간접목적어 구조입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "cj2_tb1",
+          "passage": "My father ⓐbought a new computer ⓑto me as a graduation present.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "b",
+          "correction": "for me",
+          "alternativeCorrections": [
+            "for me"
+          ],
+          "explanation": "수여동사 buy는 3형식 전환 시 간접목적어 앞에 전치사 to가 아닌 for를 쓰므로 to me를 for me로 고쳐야 합니다.",
+          "reason": "수여동사 buy는 3형식 전환 시 간접목적어 앞에 전치사 to가 아닌 for를 쓰므로 to me를 for me로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "cj2_td1",
+          "title": "천재(이재영) 단원 수행평가: 감사한 마음 전하기",
+          "prompt": "친구, 부모님, 선생님 등 고마운 사람에게 마음을 표현했던 경험에 대해 수여동사(give, send, make 등)를 활용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "수여동사(4형식 또는 3형식 전치사 구문)를 1회 이상 사용할 것",
+            "완전한 문장으로 30단어 이상 서술할 것"
+          ],
+          "sampleAnswer": "Last Teacher's Day, our class wrote sincere thank-you letters to our homeroom teacher. We gave a beautiful bouquet of flowers to her with big smiles. She looked very touched and gave all of us warm hugs.",
+          "sampleEssay": "Last Teacher's Day, our class wrote sincere thank-you letters to our homeroom teacher. We gave a beautiful bouquet of flowers to her with big smiles. She looked very touched and gave all of us warm hugs."
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Lesson 3. Nature's Wonders (수동태와 목적격 관계대명사)",
+      "targetGrammar": [
+        "수동태 be + p.p.",
+        "목적격 관계대명사 which/that 생략"
+      ],
+      "warmup": [
+        {
+          "id": "cj3_w1",
+          "korean": "그 오래된 궁전은 수많은 관광객들에 의해 방문된다.",
+          "sentence": "The ancient palace [is visited / visits] by thousands of tourists.",
+          "options": [
+            "is visited",
+            "visits"
+          ],
+          "answer": "is visited",
+          "explanation": "궁전이 방문을 받는 수동의 의미이므로 is visited가 정답입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "cj3_ta1",
+          "korean": "이것은 내가 작년 여름방학에 방문했던 그 아름다운 섬이다.",
+          "conditions": [
+            "'This is the beautiful island', 'I visited last summer vacation', 'which'를 사용할 것",
+            "목적격 관계대명사를 활용할 것"
+          ],
+          "requiredWords": [
+            "This is the beautiful island which I visited last summer vacation"
+          ],
+          "sampleAnswer": "This is the beautiful island which I visited last summer vacation.",
+          "explanation": "the beautiful island 뒤에 목적격 관계대명사 which I visited last summer vacation을 씁니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "cj3_tb1",
+          "passage": "The special recipe ⓐhanded down from generation to generation ⓑby my grandmother.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "was handed down",
+          "alternativeCorrections": [
+            "was handed down",
+            "has been handed down"
+          ],
+          "explanation": "비법이 전수된 수동의 의미이므로 능동 과거동사 handed down이 아닌 수동태 was handed down으로 고쳐야 합니다.",
+          "reason": "비법이 전수된 수동의 의미이므로 능동 과거동사 handed down이 아닌 수동태 was handed down으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "cj3_td1",
+          "title": "천재(이재영) 단원 수행평가: 내가 경험한 자연의 신비",
+          "prompt": "자신이 여행했거나 감명 깊게 보았던 자연 명소에 대해 수동태와 목적격 관계대명사를 활용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "수동태(is protected, was formed 등) 구문을 1회 이상 사용할 것",
+            "관계대명사 문장을 1회 이상 사용할 것"
+          ],
+          "sampleAnswer": "Jeju Island is a magnificent volcanic island which was designated as a World Heritage site. Its unique natural landscape was formed by ancient volcanic activities millions of years ago. I hope this precious treasure will be preserved cleanly forever.",
+          "sampleEssay": "Jeju Island is a magnificent volcanic island which was designated as a World Heritage site. Its unique natural landscape was formed by ancient volcanic activities millions of years ago. I hope this precious treasure will be preserved cleanly forever."
+        }
+      ]
+    }
+  ]
+}

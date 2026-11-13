@@ -1,0 +1,223 @@
+{
+  "textbookId": "donga_yoon",
+  "title": "동아(윤정미) 중등 영어 (전국 1위 최다 채택)",
+  "category": "nationwide",
+  "targetAudience": "전국에서 가장 채택률이 높은 교과서이므로, 타 학교 학생이나 타 교재를 쓰는 학습자까지 완벽히 포섭",
+  "grade": 2,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Lesson 1. Words of Wisdom (to부정사의 형용사적 용법)",
+      "targetGrammar": [
+        "to부정사의 형용사적 용법",
+        "접속사 that (명사절 목적어)"
+      ],
+      "warmup": [
+        {
+          "id": "dy1_w1",
+          "korean": "나는 마실 차가운 무언가가 필요하다.",
+          "sentence": "I need something cold [to drink / drinking].",
+          "options": [
+            "to drink",
+            "drinking"
+          ],
+          "answer": "to drink",
+          "explanation": "-thing으로 끝나는 대명사는 [형용사 + to부정사] 순서로 수식하므로 to drink가 정답입니다."
+        },
+        {
+          "id": "dy1_w2",
+          "korean": "나는 우리가 이번 경기에서 이길 수 있다고 믿는다.",
+          "sentence": "I believe [that / what] we can win this game.",
+          "options": [
+            "that",
+            "what"
+          ],
+          "answer": "that",
+          "explanation": "완전한 절을 이끌며 동사 believe의 목적어 역할을 하는 명사절 접속사 that이 알맞습니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "dy1_ta1",
+          "korean": "그는 이번 주말에 읽을 재미있는 책 몇 권을 가지고 있다.",
+          "conditions": [
+            "'He has some interesting books', 'to read', 'this weekend'를 사용할 것",
+            "to부정사의 형용사적 용법을 명사 뒤에 배치할 것"
+          ],
+          "requiredWords": [
+            "He has some interesting books",
+            "to read this weekend"
+          ],
+          "sampleAnswer": "He has some interesting books to read this weekend.",
+          "explanation": "some interesting books 뒤에 이를 수식하는 형용사적 용법 to read this weekend를 연결합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "dy1_tb1",
+          "passage": "Do you have ⓐcold anything ⓑto drink on this hot summer afternoon?",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "anything cold",
+          "alternativeCorrections": [
+            "anything cold"
+          ],
+          "explanation": "-thing으로 끝나는 부정대명사는 형용사가 뒤에서 수식하므로 cold anything을 anything cold로 고쳐야 합니다.",
+          "reason": "-thing으로 끝나는 부정대명사는 형용사가 뒤에서 수식하므로 cold anything을 anything cold로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "dy1_td1",
+          "title": "동아(윤정미) 단원 수행평가: 나의 주말 계획 소개",
+          "prompt": "이번 주말에 하고 싶은 일이나 필요한 것들에 대해 to부정사의 형용사적 용법(something to do, time to rest 등)을 포함하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "to부정사의 형용사적 용법을 1회 이상 사용할 것",
+            "접속사 that을 포함한 문장을 1회 이상 작성할 것"
+          ],
+          "sampleAnswer": "I have many interesting things to do this weekend. I believe that spending quality time with my family is very important. Therefore, I will prepare some delicious snacks to share with them at the park.",
+          "sampleEssay": "I have many interesting things to do this weekend. I believe that spending quality time with my family is very important. Therefore, I will prepare some delicious snacks to share with them at the park."
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Lesson 2. Stories for All Time (과거진행형과 조건의 if)",
+      "targetGrammar": [
+        "과거진행형 was/were + V-ing",
+        "조건의 접속사 if"
+      ],
+      "warmup": [
+        {
+          "id": "dy2_w1",
+          "korean": "전화가 울렸을 때, 나는 샤워를 하고 있었다.",
+          "sentence": "When the phone rang, I [was taking / took] a shower.",
+          "options": [
+            "was taking",
+            "took"
+          ],
+          "answer": "was taking",
+          "explanation": "과거 특정 시점에 진행 중이었던 동작이므로 과거진행형 was taking이 알맞습니다."
+        },
+        {
+          "id": "dy2_w2",
+          "korean": "만약 내일 비가 온다면, 우리는 집에 머물 것이다.",
+          "sentence": "If it [rains / will rain] tomorrow, we will stay at home.",
+          "options": [
+            "rains",
+            "will rain"
+          ],
+          "answer": "rains",
+          "explanation": "조건을 나타내는 if 부사절에서는 미래 시제 대신 현재 시제(rains)를 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "dy2_ta1",
+          "korean": "만약 네가 도움이 필요하다면, 언제든지 나에게 전화해라.",
+          "conditions": [
+            "'If you need any help', 'call me anytime'을 사용할 것",
+            "if 조건절 규칙을 지킬 것"
+          ],
+          "requiredWords": [
+            "If you need any help",
+            "call me anytime"
+          ],
+          "sampleAnswer": "If you need any help, call me anytime.",
+          "explanation": "If you need any help (조건절), call me anytime (명령문 주절) 구조입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "dy2_tb1",
+          "passage": "If it ⓐwill be sunny this Saturday, our family ⓑis going to have a picnic.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "is",
+          "alternativeCorrections": [
+            "is"
+          ],
+          "explanation": "조건의 if절에서는 미래 시제(will be) 대신 현재 시제(is)를 써야 하므로 will be를 is로 고쳐야 합니다.",
+          "reason": "조건의 if절에서는 미래 시제(will be) 대신 현재 시제(is)를 써야 하므로 will be를 is로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "dy2_td1",
+          "title": "동아(윤정미) 단원 수행평가: 어제 있었던 특별한 순간",
+          "prompt": "어제 특정 시간에 자신이 하고 있었던 일과 조건에 관한 생각을 과거진행형 및 if절을 활용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "과거진행형(was/were -ing) 문장을 1회 이상 사용할 것",
+            "조건의 접속사 if 문장을 1회 이상 사용할 것"
+          ],
+          "sampleAnswer": "Yesterday afternoon, I was practicing the guitar in my room. My little sister came in and asked me to play her favorite song. If I practice more diligently every day, I will be able to play much better for my family.",
+          "sampleEssay": "Yesterday afternoon, I was practicing the guitar in my room. My little sister came in and asked me to play her favorite song. If I practice more diligently every day, I will be able to play much better for my family."
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Lesson 3. The Power of Music (주격 관계대명사)",
+      "targetGrammar": [
+        "주격 관계대명사 who/which",
+        "시간의 접속사 when"
+      ],
+      "warmup": [
+        {
+          "id": "dy3_w1",
+          "korean": "나에게는 영어를 유창하게 말하는 삼촌이 한 분 계신다.",
+          "sentence": "I have an uncle who [speaks / speak] English fluently.",
+          "options": [
+            "speaks",
+            "speak"
+          ],
+          "answer": "speaks",
+          "explanation": "선행사 an uncle이 3인칭 단수이므로 관계사절 동사는 speaks가 정답입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "dy3_ta1",
+          "korean": "그는 사람들을 행복하게 만드는 아름다운 음악을 작곡한다.",
+          "conditions": [
+            "'He composes beautiful music', 'which makes people happy'를 사용할 것",
+            "주격 관계대명사 which와 5형식 사역 구조를 활용할 것"
+          ],
+          "requiredWords": [
+            "He composes beautiful music",
+            "which makes people happy"
+          ],
+          "sampleAnswer": "He composes beautiful music which makes people happy.",
+          "explanation": "사물 선행사 beautiful music 뒤에 which makes people happy를 연결합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "dy3_tb1",
+          "passage": "I really love the singer ⓐwhich wrote this inspiring song ⓑwhen he was young.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "who",
+          "alternativeCorrections": [
+            "that"
+          ],
+          "explanation": "선행사 the singer가 사람이므로 사물 관계대명사 which 대신 who 또는 that을 써야 합니다.",
+          "reason": "선행사 the singer가 사람이므로 사물 관계대명사 which 대신 who 또는 that을 써야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "dy3_td1",
+          "title": "동아(윤정미) 단원 수행평가: 내가 사랑하는 노래 소개",
+          "prompt": "자신에게 큰 위로와 용기를 주는 노래나 음악가에 대해 주격 관계대명사를 활용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "주격 관계대명사 who 또는 which를 1회 이상 사용할 것",
+            "동사의 수 일치에 감점 요인이 없을 것"
+          ],
+          "sampleAnswer": "I often listen to songs which comfort my heart after a tiring day. My favorite singer is a musician who sings with deep passion. His meaningful lyrics always give me fresh energy whenever I feel exhausted.",
+          "sampleEssay": "I often listen to songs which comfort my heart after a tiring day. My favorite singer is a musician who sings with deep passion. His meaningful lyrics always give me fresh energy whenever I feel exhausted."
+        }
+      ]
+    }
+  ]
+}

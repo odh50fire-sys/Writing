@@ -1,0 +1,253 @@
+{
+  "textbookId": "ybm_park_grade2",
+  "title": "YBM(박준언) 중등 영어 2 (2026 최신)",
+  "grade": 2,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Lesson 1. Friends Around the World",
+      "topic": "우정과 전 세계 친구들",
+      "targetGrammar": [
+        "주격 관계대명사 (who, which, that)",
+        "시간의 접속사 when, while"
+      ],
+      "warmup": [
+        {
+          "id": "g2_u1_w1",
+          "question": "Look at the boy __________ (who / which) is playing soccer. (알맞은 관계대명사를 고르시오)",
+          "answer": "who",
+          "explanation": "선행사가 사람(the boy)이므로 주격 관계대명사 who 또는 that을 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "g2_u1_a1",
+          "korean": "나는 옆집에 살고 있는 친절한 소녀를 알고 있다.",
+          "conditions": [
+            "'know the kind girl', 'live next door'를 사용할 것",
+            "주격 관계대명사 'who'를 사용할 것",
+            "관계사절 내부 동사의 수 일치에 주의할 것"
+          ],
+          "requiredWords": [
+            "know the kind girl who lives next door"
+          ],
+          "sampleAnswer": "I know the kind girl who lives next door.",
+          "explanation": "선행사 the kind girl이 3인칭 단수이므로 관계사절 동사 lives로 일치시킵니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "g2_u1_b1",
+          "passage": "Look at those energetic students ⓐwho ⓑis playing basketball on the court.",
+          "wrongSymbol": "ⓑ",
+          "correction": "are playing",
+          "reason": "선행사 those students가 복수명사이므로 주격 관계대명사절 동사는 are playing이 되어야 합니다.",
+          "alternativeCorrections": [
+            "are"
+          ]
+        }
+      ],
+      "typeD": [
+        {
+          "id": "g2_u1_d1",
+          "title": "A Person Who Inspires Me",
+          "prompt": "나에게 긍정적인 영향을 주는 소중한 사람을 소개하는 글을 5~6문장으로 쓰시오.",
+          "conditions": [
+            "주격 관계대명사(who)를 1회 이상 사용할 것",
+            "현재완료 시제(has + p.p.)를 1회 이상 사용할 것",
+            "총 분량: 50~65단어 내외"
+          ],
+          "sampleEssay": "In my school, there is a dedicated teacher who always encourages me with warm words. She has taught English for more than ten years. Whenever I face difficult grammar questions, she explains them patiently. Thanks to her guidance, I have gained great confidence in English writing.",
+          "rubricGuide": "관계대명사 수일치 40점, 현재완료 30점, 문장 표현력 30점"
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Lesson 2. Inventions and Ideas",
+      "topic": "세상을 바꾼 아이디어와 발명",
+      "targetGrammar": [
+        "수동태 (be + p.p. + by)",
+        "to부정사의 형용사적 용법"
+      ],
+      "warmup": [
+        {
+          "id": "g2_u2_w1",
+          "question": "The telephone was __________ (invent / invented) by Alexander Graham Bell.",
+          "answer": "invented",
+          "explanation": "수동태는 be동사 + 과거분사(p.p.) 형태입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "g2_u2_a1",
+          "korean": "이 아름다운 건물은 1950년에 유명한 건축가에 의해 지어졌다.",
+          "conditions": [
+            "'This beautiful building', 'build', 'by a famous architect', 'in 1950'을 사용할 것",
+            "과거 수동태로 작성할 것"
+          ],
+          "requiredWords": [
+            "was built by a famous architect in 1950"
+          ],
+          "sampleAnswer": "This beautiful building was built by a famous architect in 1950.",
+          "explanation": "was built by 수동태 구문입니다."
+        },
+        {
+          "id": "g2_u2_a2",
+          "korean": "나는 앉을 편안한 의자가 필요하다.",
+          "conditions": [
+            "'need a comfortable chair', 'sit'을 사용할 것",
+            "to부정사로 chair를 수식할 것",
+            "문장 끝에 알맞은 전치사를 포함할 것"
+          ],
+          "requiredWords": [
+            "a comfortable chair to sit on"
+          ],
+          "sampleAnswer": "I need a comfortable chair to sit on.",
+          "explanation": "chair 뒤에 to sit on 전치사 on이 필수입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "g2_u2_b1",
+          "passage": "I want to write a thank-you letter to my grandmother, but I have no ⓐpaper ⓑto write.",
+          "wrongSymbol": "ⓑ",
+          "correction": "to write on",
+          "reason": "종이 위에 글을 쓰는 것이므로 to부정사 뒤에 전치사 on을 반드시 붙여야 합니다.",
+          "alternativeCorrections": [
+            "write on"
+          ]
+        }
+      ],
+      "typeD": [
+        {
+          "id": "g2_u2_d1",
+          "title": "An Invention That Changed Our Lives",
+          "prompt": "인류의 삶을 바꾼 발명품을 소개하는 글을 5~6문장으로 쓰시오.",
+          "conditions": [
+            "수동태 문장(be + p.p.)을 2개 이상 포함할 것",
+            "to부정사의 형용사적 용법을 1회 이상 사용할 것",
+            "총 분량: 50~65단어 내외"
+          ],
+          "sampleEssay": "The printing press is regarded as one of the greatest inventions in human history. It was invented by Johannes Gutenberg in the 15th century. Before this invention, all books were written by hand. Thanks to the printing press, people had an affordable way to read and acquire knowledge. It completely changed modern education.",
+          "rubricGuide": "수동태 정확도 40점, 형용사적 용법 30점, 구성력 30점"
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Lesson 3. Healthy Habits, Happy Days",
+      "topic": "건강한 생활 습관과 식습관",
+      "targetGrammar": [
+        "현재완료 (have/has + p.p.)",
+        "so ~ that 구문 (너무 ~해서 ...하다)"
+      ],
+      "warmup": [
+        {
+          "id": "g2_u3_w1",
+          "question": "She has lived in Daegu __________ (for / since) five years. (알맞은 전치사를 고르시오)",
+          "answer": "for",
+          "explanation": "기간(five years) 앞에는 for를 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "g2_u3_a1",
+          "korean": "그 상자는 너무 무거워서 지호는 그것을 혼자서 들 수 없었다.",
+          "conditions": [
+            "'so + 형용사 + that + 주어 + couldn't' 구문을 사용할 것",
+            "'heavy', 'carry it by himself'를 포함할 것",
+            "과거시제로 작성할 것"
+          ],
+          "requiredWords": [
+            "was so heavy that Jiho couldn't carry it by himself"
+          ],
+          "sampleAnswer": "The box was so heavy that Jiho couldn't carry it by himself.",
+          "explanation": "so heavy that couldn't 과거시제 일치 구문입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "g2_u3_b1",
+          "passage": "I ⓐhave bought this smartphone ⓑyesterday at the store.",
+          "wrongSymbol": "ⓐ",
+          "correction": "bought",
+          "reason": "yesterday와 같은 명백한 과거 부사는 현재완료와 함께 쓸 수 없으므로 단순과거 bought로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "g2_u3_d1",
+          "title": "My Challenge and Growth",
+          "prompt": "어려운 도전을 겪고 극복한 경험에 관한 에세이를 5~6문장으로 쓰시오.",
+          "conditions": [
+            "so ~ that 구문을 1회 이상 사용할 것",
+            "사역동사(make/let)를 1회 이상 사용할 것",
+            "총 분량: 55~70단어 내외"
+          ],
+          "sampleEssay": "Last year, I participated in the school marathon for the first time. The weather was so hot that I almost gave up halfway. However, my friends cheered loudly and made me run with renewed energy. Their warm encouragement let me cross the finish line safely. I realized that persistence conquers physical exhaustion.",
+          "rubricGuide": "so that 구문 40점, 사역동사 30점, 단락 구성 30점"
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "Lesson 4. Wonder of Science",
+      "topic": "과학의 신비와 5형식 문장",
+      "targetGrammar": [
+        "사역동사 (make, have, let) + 목적어 + 동사원형",
+        "지각동사 (see, hear, feel) + 목적어 + 동원/-ing"
+      ],
+      "warmup": [
+        {
+          "id": "g2_u4_w1",
+          "question": "My mom made me __________ (to clean / clean) my room. (알맞은 것을 고르시오)",
+          "answer": "clean",
+          "explanation": "사역동사 make의 목적격 보어로는 동사원형이 옵니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "g2_u4_a1",
+          "korean": "그 슬픈 영화는 나를 펑펑 울게 만들었다.",
+          "conditions": [
+            "'The sad movie', 'make', 'cry a lot'을 사용할 것",
+            "과거시제로 작성하고 목적격 보어에 to를 쓰지 말 것"
+          ],
+          "requiredWords": [
+            "made me cry a lot"
+          ],
+          "sampleAnswer": "The sad movie made me cry a lot.",
+          "explanation": "사역동사 made + me + 동원 cry 구조입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "g2_u4_b1",
+          "passage": "While walking in the garden, I ⓐheard a beautiful bird ⓑto sing sweetly in the pine tree.",
+          "wrongSymbol": "ⓑ",
+          "correction": "sing",
+          "alternativeCorrections": [
+            "singing",
+            "singing sweetly"
+          ],
+          "reason": "지각동사 hear의 목적격 보어로는 to부정사가 올 수 없으며 동사원형이나 현재분사를 써야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "g2_u4_d1",
+          "title": "An Unforgettable Science Experiment",
+          "prompt": "인상 깊었던 과학 실험이나 자연 관찰 경험을 5~6문장으로 쓰시오.",
+          "conditions": [
+            "지각동사 또는 사역동사를 1회 이상 사용할 것",
+            "원급 비교(as ~ as)를 1회 이상 사용할 것",
+            "총 분량: 50~65단어 내외"
+          ],
+          "sampleEssay": "In science class yesterday, our teacher let us observe small plant cells under a microscope. We saw tiny green chloroplasts moving inside the cell walls. It was as amazing as watching stars through a telescope. The teacher made us record our observations carefully. This engaging experiment stimulated my deep curiosity about biology.",
+          "rubricGuide": "5형식 동사원형 40점, 원급비교 30점, 문장 완성도 30점"
+        }
+      ]
+    }
+  ]
+}

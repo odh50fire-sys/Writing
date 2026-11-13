@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동도 롸이팅 마스터 - 중학 3년 영어작문 자기주도 학습</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js for Radar/Growth Graph -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Canvas Confetti for celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Pretendard Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body class="bg-[#F8F9FE] text-[#2D3748] font-['Pretendard'] antialiased min-h-screen flex flex-col">
+
+  <!-- ============================================== -->
+  <!-- VIEW 1: AUTH & LANDING LOGIN (첫 시작 화면) -->
+  <!-- ============================================== -->
+  <div id="view-auth" class="min-h-screen flex flex-col justify-between bg-gradient-to-br from-[#0B0F19] via-[#17153B] to-[#2E1065] text-white p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+    <!-- Ambient Glow Orbs -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Top Auth Branding Bar -->
+    <div class="max-w-6xl mx-auto w-full flex items-center justify-between z-10 py-2">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/30 animate-bounce-slow">
+          🐧
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-base sm:text-lg font-black tracking-tight text-white">동도 롸이팅 마스터</h1>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/30 text-indigo-200 font-bold border border-indigo-400/30">중학 3개년</span>
+          </div>
+          <p class="text-xs text-indigo-200/80">대구 동도중 서술형 & 수행평가 1등급 메이커</p>
+        </div>
+      </div>
+      <div>
+        <button onclick="openOnboardingGuide(true)" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold transition-all text-purple-200 flex items-center gap-1.5 backdrop-blur-sm shadow-sm">
+          <span>📖</span> <span>시스템 사용 가이드 미리보기</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Center Content: Hero & Dual Cards -->
+    <div class="max-w-6xl mx-auto w-full z-10 py-6 sm:py-10 space-y-8">
+      
+      <!-- Hero Headline -->
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold backdrop-blur-md">
+          <span>✨</span> 동도중학교 지필·수행평가 1등급 자기주도 완성
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+          하루 30분, 영어작문의 <br>
+          <span class="bg-gradient-to-r from-amber-300 via-indigo-300 to-purple-300 bg-clip-text text-transparent">무감점 1등급 마스터</span>가 되다
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl mx-auto">
+          동도중 현행 교과서부터 마더텅 3800제, 천일문, EBS 공인 문항까지!<br class="hidden sm:inline">
+          기존 학생은 프로필을 선택하고, 처음 방문하셨다면 학생 ID를 등록해 보세요.
+        </p>
+      </div>
+
+      <!-- Dual Cards Grid: Left (기존 학생 로그인) vs Right (신규 등록) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <!-- CARD A: 기존 영작러 로그인 (6 cols) -->
+        <div class="lg:col-span-6 glass-panel rounded-3xl p-6 sm:p-7 space-y-5 flex flex-col justify-between shadow-2xl">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl">🔑</span>
+                <div>
+                  <h3 class="font-extrabold text-base sm:text-lg text-white">등록된 학생 ID 로그인</h3>
+                  <p class="text-xs text-indigo-200/80">아래 학생 ID 목록에서 로그인할 계정을 선택하세요.</p>
+                </div>
+              </div>
+              <span id="auth-users-count" class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-bold border border-indigo-400/30">
+                2명 등록됨
+              </span>
+            </div>
+
+            <!-- Quick ID Custom Dropdown Component (리스트 보여주기 버튼 및 팝업) -->
+            <div class="space-y-1.5 relative" id="auth-custom-dropdown">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold text-indigo-200">📋 등록된 학생 ID 빠른 선택</label>
+                <span class="text-[10px] text-amber-300 font-semibold">클릭하여 리스트 펼치기</span>
+              </div>
+
+              <!-- Trigger Button (리스트 보여주기 버튼) -->
+              <button type="button" id="auth-dropdown-toggle-btn" onclick="toggleAuthIdDropdown(event)" class="w-full px-4 py-3 rounded-2xl bg-[#1E1B4B] hover:bg-[#282365] border-2 border-indigo-400/40 hover:border-amber-400 text-white focus:outline-none transition-all text-xs font-bold flex items-center justify-between shadow-lg shadow-indigo-950/50 cursor-pointer">
+                <div class="flex items-center gap-2 truncate" id="auth-dropdown-selected-label">
+                  <span class="text-base" id="auth-dropdown-selected-avatar">🦊</span>
+                  <span class="font-mono text-amber-300 font-extrabold" id="auth-dropdown-selected-id">🆔 ID: eunnyu</span>
+                  <span class="text-gray-300 text-xs" id="auth-dropdown-selected-info">│ 은뉴 (1학년)</span>
+                </div>
+                <span class="px-2.5 py-1 rounded-xl bg-amber-400/20 text-amber-300 border border-amber-400/40 font-extrabold text-xs ml-2 shrink-0 flex items-center gap-1.5">
+                  <span id="auth-dropdown-arrow">▼</span>
+                  <span class="text-[11px]">리스트 보기</span>
+                </span>
+              </button>
+
+              <!-- Floating Dropdown List Menu -->
+              <div id="auth-dropdown-menu" class="hidden absolute left-0 right-0 top-full mt-2 z-40 bg-[#16123D] border-2 border-amber-400/60 rounded-2xl shadow-2xl p-2.5 space-y-1.5 max-h-64 overflow-y-auto backdrop-blur-2xl ring-4 ring-indigo-950/80 animate-scale-up">
+                <!-- Dynamically populated with student ID items by renderAuthUsersList() -->
+              </div>
+
+              <!-- Fallback synchronized select (hidden) -->
+              <select id="auth-quick-id-dropdown" onchange="selectAuthUserId(this.value)" class="hidden">
+              </select>
+            </div>
+
+            <!-- Existing Users List Container (Cards featuring prominent ID badge) -->
+            <div class="space-y-1.5 pt-1">
+              <label class="text-xs font-bold text-indigo-200">학생 ID 카드 리스트 (클릭하여 선택)</label>
+              <div id="auth-users-list" class="space-y-2.5 max-h-[290px] overflow-y-auto pr-1">
+                <!-- Dynamically populated by renderAuthUsersList() -->
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <!-- Selected User Login Action Button -->
+            <button id="auth-login-selected-btn" onclick="loginSelectedAuthUser()" class="w-full py-3.5 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white font-black rounded-2xl text-sm transition-all shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
+              <span id="auth-login-btn-text">선택한 학생 ID로 메인화면 로그인 ➔</span>
+            </button>
+
+            <div class="p-3 rounded-2xl bg-white/5 border border-white/10 text-[11px] text-indigo-200/90 leading-relaxed flex items-center gap-2.5">
+              <span class="text-base shrink-0">💡</span>
+              <span>학생 ID 카드를 직접 누르거나 위 드롭다운에서 선택하여 바로 로그인할 수 있습니다.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD B: 새로운 영작러 등록 (6 cols) -->
+        <div class="lg:col-span-6 glass-panel rounded-3xl p-6 sm:p-7 space-y-5 shadow-2xl flex flex-col justify-between border-indigo-400/30">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl">🌱</span>
+                <div>
+                  <h3 class="font-extrabold text-base sm:text-lg text-white">처음 오셨나요? 신규 등록</h3>
+                  <p class="text-xs text-indigo-200/80">새 학생 등록 후 시스템 가이드 투어가 시작됩니다.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="autoFillSampleStudent()" class="text-[11px] px-2.5 py-1 rounded-full bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 font-bold border border-amber-400/40 transition-all flex items-center gap-1 cursor-pointer" title="테스트용 예시 ID와 이름을 즉시 자동 입력합니다">
+                  <span>⚡</span> <span>예시 자동입력</span>
+                </button>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-400/30">
+                  온보딩 포함
+                </span>
+              </div>
+            </div>
+
+            <!-- Registration Form with novalidate and active validation feedback -->
+            <form novalidate onsubmit="event.preventDefault(); handleAuthRegister();" class="space-y-3.5">
+              <!-- Inline Error/Guide Feedback Banner -->
+              <div id="auth-register-feedback" class="hidden p-3 rounded-2xl bg-rose-500/20 border border-rose-400/50 text-rose-200 text-xs flex items-center justify-between gap-2 transition-all">
+                <div class="flex items-center gap-2">
+                  <span class="text-base shrink-0">⚠️</span>
+                  <span id="auth-register-feedback-text">학생 ID와 이름을 입력해 주세요.</span>
+                </div>
+                <button type="button" onclick="autoFillSampleStudent()" class="text-[10px] px-2 py-1 rounded-lg bg-amber-400 text-gray-950 font-black shrink-0 hover:bg-amber-300 transition-all">
+                  ⚡ 예시 자동입력
+                </button>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs font-bold text-indigo-200">학생 ID (영문/숫자 3~12자) <span class="text-rose-400">*</span></label>
+                  <span id="auth-id-status" class="text-[10px] text-gray-400">영문 소문자 및 숫자</span>
+                </div>
+                <input type="text" id="auth-new-id" placeholder="예: suhyeon26 (직접 입력하거나 상단 예시 클릭)" class="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm font-medium transition-all" autocomplete="off" oninput="clearAuthValidation()">
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-xs font-bold text-indigo-200">학생 이름 <span class="text-rose-400">*</span></label>
+                <input type="text" id="auth-new-name" placeholder="예: 김수현" class="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm font-medium transition-all" autocomplete="off" oninput="clearAuthValidation()">
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="space-y-1">
+                  <label class="text-xs font-bold text-indigo-200">학년 선택</label>
+                  <select id="auth-new-grade" class="w-full px-3 py-2.5 rounded-xl bg-[#1E1B4B] border border-white/20 text-white focus:outline-indigo-400 text-xs font-semibold">
+                    <option value="1">예비 중1 / 중1</option>
+                    <option value="2">중학교 2학년</option>
+                    <option value="3">중학교 3학년</option>
+                  </select>
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-bold text-indigo-200">목표 학교</label>
+                  <input type="text" id="auth-new-school" value="대구 동도중학교" class="w-full px-3 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white text-xs font-semibold focus:outline-indigo-400">
+                </div>
+              </div>
+
+              <div class="space-y-1.5 pt-1">
+                <label class="text-xs font-bold text-indigo-200">마스코트 튜터 아바타 선택</label>
+                <div class="grid grid-cols-6 gap-2" id="auth-avatar-selector">
+                  <!-- Populated by JS: 🐧, 🦉, 🦊, 🐥, 🐱, 🐶 -->
+                </div>
+              </div>
+
+              <button type="submit" id="auth-register-btn" class="w-full py-3.5 bg-gradient-to-r from-amber-400 via-orange-400 to-indigo-500 hover:from-amber-300 hover:to-indigo-400 text-gray-950 font-black rounded-2xl text-sm transition-all shadow-lg shadow-orange-500/20 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 mt-2 cursor-pointer">
+                <span>🚀</span> <span>신규 학생 등록 & 웰컴 온보딩 가이드 시작</span>
+              </button>
+            </form>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-white/10">
+            <button type="button" onclick="openOnboardingGuide(true)" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/15 border border-white/15 text-indigo-200 hover:text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <span>📖</span> <span>등록 없이 시스템 사용 가이드 먼저 둘러보기 ➔</span>
+            </button>
+            <div class="text-[11px] text-gray-400 text-center">
+              등록 후 3분 실력 진단평가와 교재 선택, 4단계 루틴 가이드가 순서대로 안내됩니다.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="max-w-6xl mx-auto w-full z-10 text-center text-xs text-gray-400 border-t border-white/10 pt-4">
+      대구 동도중학교 영어과 서술형 채점 규정 및 교육부 루브릭 기반 · AI 자기주도 영어작문 마스터
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- VIEW 2: INTERACTIVE ONBOARDING GUIDE (가이드 투어) -->
+  <!-- ============================================== -->
+  <div id="view-onboarding" class="hidden min-h-screen flex flex-col bg-[#F8F9FE] text-[#2D3748] p-4 sm:p-6 lg:p-8">
+    <div class="max-w-4xl mx-auto w-full flex-1 flex flex-col justify-between space-y-6">
+      
+      <!-- Stepper Top Bar -->
+      <div class="bg-white rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-200/80 space-y-3">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl">🧭</span>
+            <div>
+              <h2 class="text-sm sm:text-base font-extrabold text-gray-900 flex items-center gap-2">
+                <span>동도 롸이팅 마스터 시스템 시작 가이드</span>
+                <span id="onboarding-review-pill" class="hidden text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-bold">복습 모드</span>
+              </h2>
+              <p class="text-[11px] text-gray-500" id="onboarding-step-subtitle">1단계: 왜 서술형 영어작문인가? & 4단계 골든 루틴</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-black text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200 shrink-0" id="onboarding-step-indicator">
+              1 / 6 단계
+            </span>
+            <button onclick="logoutToAuthScreen()" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-xl text-xs font-semibold transition-all shrink-0">
+              로그인 화면
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+          <div id="onboarding-progress-bar" class="bg-gradient-to-r from-indigo-500 to-purple-600 h-full transition-all duration-300" style="width: 16.6%;"></div>
+        </div>
+
+        <!-- 6 Step Pills -->
+        <div class="grid grid-cols-6 gap-1 pt-1 text-center" id="onboarding-stepper-pills">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Main Step Interactive Content Area -->
+      <div id="onboarding-step-content" class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-gray-200/80 flex-1 flex flex-col justify-between animate-fade-in min-h-[440px]">
+        <!-- Rendered dynamically by renderOnboardingStep() -->
+      </div>
+
+      <!-- Bottom Step Navigation Buttons -->
+      <div class="flex items-center justify-between bg-white/90 backdrop-blur-sm p-4 rounded-2xl border border-gray-200 shadow-xs" id="onboarding-nav-bar">
+        <button id="onboarding-prev-btn" onclick="prevOnboardingStep()" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-xl text-xs transition-all flex items-center gap-1.5">
+          <span>◀ 이전 단계</span>
+        </button>
+        <div class="text-xs text-gray-400 font-medium" id="onboarding-step-counter-label">
+          Step 1 of 6
+        </div>
+        <button id="onboarding-next-btn" onclick="nextOnboardingStep()" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs transition-all shadow-md flex items-center gap-1.5">
+          <span>다음 단계 ➔</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- VIEW 3: MAIN APP (메인 대시보드 및 학습실) -->
+  <!-- ============================================== -->
+  <div id="view-app" class="hidden min-h-screen flex flex-col flex-1">
+
+  <!-- =============================== -->
+  <!-- Top Navigation Header -->
+  <!-- =============================== -->
+  <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-indigo-100 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+      <!-- Logo & Mascot Branding (줄바꿈 방지) -->
+      <div class="flex items-center space-x-2.5 sm:space-x-3 cursor-pointer shrink-0" onclick="switchTab('tab-home')">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-xl sm:text-2xl shadow-md shadow-indigo-100 animate-bounce-slow shrink-0">
+          🐧
+        </div>
+        <div class="shrink-0">
+          <div class="flex items-center gap-1.5 whitespace-nowrap">
+            <h1 class="text-base sm:text-lg font-black text-gray-800 tracking-tight whitespace-nowrap">
+              동도 롸이팅 마스터
+            </h1>
+            <span class="text-[10px] sm:text-xs px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 font-bold border border-indigo-200 whitespace-nowrap">중학 3개년</span>
+          </div>
+          <p class="text-[11px] text-gray-500 whitespace-nowrap hidden lg:block leading-tight">대구 동도중 서술형 & 수행평가 1등급 메이커</p>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs (한 줄 유지 및 말줄임/줄바꿈 원천 방지) -->
+      <nav class="hidden md:flex items-center space-x-1 bg-gray-100/80 p-1 rounded-2xl border border-gray-200/60 shrink-0">
+        <button onclick="switchTab('tab-home')" id="nav-tab-home" class="nav-btn active-tab px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl text-xs lg:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <span>🏠</span> <span>홈</span>
+        </button>
+        <button onclick="switchTab('tab-study')" id="nav-tab-study" class="nav-btn px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl text-xs lg:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <span>✍️</span> <span>데일리 30분 학습</span>
+        </button>
+        <button onclick="switchTab('tab-report')" id="nav-tab-report" class="nav-btn px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl text-xs lg:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <span>📊</span> <span>성장 & 오답노트</span>
+        </button>
+        <button onclick="switchTab('tab-library')" id="nav-tab-library" class="nav-btn px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl text-xs lg:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <span>📚</span> <span>교재 자료실 & 설정</span>
+        </button>
+      </nav>
+
+      <!-- Active User Profile Pill & Badges (줄바꿈 방지) -->
+      <div class="flex items-center space-x-2 shrink-0">
+        <!-- Streak Indicator -->
+        <div class="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold shadow-xs whitespace-nowrap shrink-0">
+          <span class="animate-pulse">🔥</span>
+          <span id="header-streak">3</span>일
+        </div>
+
+        <!-- Flawless Streak Indicator -->
+        <div id="header-flawless-container" class="hidden xl:flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold shadow-xs whitespace-nowrap shrink-0" title="연속 무감점 콤보 (95점 이상)">
+          <span>👑</span>
+          <span id="header-flawless">0</span>회 무감점
+        </div>
+
+        <!-- System Guide Review Button -->
+        <button onclick="openOnboardingGuide(true)" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 text-xs font-bold transition-all whitespace-nowrap shrink-0" title="시스템 사용 가이드 다시보기">
+          <span>📖</span> <span>가이드</span>
+        </button>
+
+        <!-- Logout Button (고대비 명확한 로그아웃 버튼) -->
+        <button onclick="logoutToAuthScreen()" class="px-3 py-1.5 rounded-xl bg-gray-100 hover:bg-rose-50 border border-gray-200 hover:border-rose-300 text-gray-700 hover:text-rose-600 text-xs font-bold transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 shadow-2xs cursor-pointer" title="로그아웃하고 시작 화면으로 이동">
+          <span>🚪</span> <span>로그아웃</span>
+        </button>
+
+        <!-- User Dropdown Trigger -->
+        <button onclick="openUserModal()" class="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-purple-50 hover:bg-purple-100 border border-purple-200 transition-all text-left shrink-0">
+          <span id="header-avatar" class="text-lg sm:text-xl">🐧</span>
+          <div class="hidden sm:block whitespace-nowrap">
+            <div id="header-user-name" class="text-xs font-bold text-purple-900 leading-tight whitespace-nowrap">민호 (중1)</div>
+            <div id="header-user-level" class="text-[10px] text-purple-600 font-medium whitespace-nowrap">Lv.2 도약하는 영작러</div>
+          </div>
+          <span class="text-xs text-purple-400">▼</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============================== -->
+  <!-- Main Content Container -->
+  <!-- =============================== -->
+  <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full pb-20 md:pb-6">
+
+    <!-- ============================================== -->
+    <!-- TAB 1: HOME (Dashboard) -->
+    <!-- ============================================== -->
+    <section id="tab-home" class="tab-content space-y-6">
+      
+      <!-- Welcome Hero Banner -->
+      <div class="bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 rounded-3xl p-6 sm:p-8 text-white shadow-xl shadow-indigo-100 relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
+        <div class="z-10 space-y-3 max-w-xl text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-medium text-purple-100 border border-white/20">
+            <span>✨</span> 오늘도 영작 만점을 향해 출발!
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug">
+            반가워요, <span id="hero-user-name">민호</span> 학생! <br>
+            오늘의 30분 영작 루틴을 정복해 볼까요?
+          </h2>
+          <p class="text-sm text-purple-100/90">
+            2022 개정 최신(2025~2027) YBM(박준언/김은형) 교과서 핵심 문법과 실전 서술형 킬러 문제들이 준비되어 있어요.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+            <button onclick="startDailyRoutine()" class="px-6 py-3.5 bg-yellow-400 hover:bg-yellow-300 text-yellow-950 font-bold rounded-2xl shadow-lg shadow-yellow-500/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center gap-2">
+              <span>🚀</span> 오늘 30분 학습 시작하기
+            </button>
+            <button onclick="openPlacementModal()" class="px-5 py-3.5 bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-300 hover:to-orange-300 text-gray-900 font-extrabold rounded-2xl border border-amber-300 shadow-md transition-all flex items-center gap-2">
+              <span>⚡</span> 3분 실력 진단평가
+            </button>
+            <button onclick="openLevelGuideModal()" class="px-5 py-3.5 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-2xl border border-white/30 backdrop-blur-sm transition-all flex items-center gap-2">
+              <span>⭐</span> 10단계 로드맵
+            </button>
+            <button onclick="switchTab('tab-report')" class="px-5 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl border border-white/20 backdrop-blur-sm transition-all flex items-center gap-2">
+              <span>📖</span> 내 오답노트
+            </button>
+            <button onclick="openOnboardingGuide(true)" class="px-5 py-3.5 bg-white/10 hover:bg-white/20 text-purple-100 font-semibold rounded-2xl border border-white/20 backdrop-blur-sm transition-all flex items-center gap-2">
+              <span>🧭</span> 시스템 가이드 다시보기
+            </button>
+          </div>
+        </div>
+
+        <!-- Mascot Illustration -->
+        <div class="relative mt-6 md:mt-0 flex flex-col items-center">
+          <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center text-7xl sm:text-8xl shadow-inner animate-float cursor-pointer" onclick="openLevelGuideModal()" title="클릭하여 레벨업 가이드 확인!">
+            🐧
+          </div>
+          <div class="mt-2 px-3 py-1 bg-white/90 text-indigo-900 rounded-full text-xs font-bold shadow-sm cursor-pointer hover:bg-white" onclick="openLevelGuideModal()">
+            튜터 페니: "하루 30분이면 레벨업 쑥쑥!" ⭐
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <!-- Target Time -->
+        <div class="bg-white rounded-2xl p-4 border border-indigo-50 shadow-sm flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl">
+            ⏱️
+          </div>
+          <div>
+            <div class="text-[11px] text-gray-500 font-medium">일일 목표 시간</div>
+            <div id="stat-target-time" class="text-lg font-bold text-gray-800">30분</div>
+          </div>
+        </div>
+
+        <!-- Level & EXP (Clickable for Guide) -->
+        <div onclick="openLevelGuideModal()" class="bg-white hover:bg-purple-50/50 hover:border-purple-200 rounded-2xl p-4 border border-indigo-50 shadow-sm flex items-center gap-3.5 cursor-pointer transition-all group" title="클릭하여 10단계 레벨 로드맵 보기">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 group-hover:scale-110 flex items-center justify-center text-2xl transition-transform">
+            ⭐
+          </div>
+          <div>
+            <div class="flex items-center gap-1">
+              <span class="text-[11px] text-gray-500 font-medium">현재 레벨</span>
+              <span class="text-[9px] text-purple-600 font-bold bg-purple-50 px-1.5 py-0.5 rounded-full border border-purple-100">로드맵 🔍</span>
+            </div>
+            <div id="stat-level-title" class="text-sm font-bold text-gray-800">Lv.1 새싹</div>
+          </div>
+        </div>
+
+        <!-- Total Problems -->
+        <div class="bg-white rounded-2xl p-4 border border-indigo-50 shadow-sm flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl">
+            🎯
+          </div>
+          <div>
+            <div class="text-[11px] text-gray-500 font-medium">완료한 문항</div>
+            <div id="stat-completed-count" class="text-lg font-bold text-gray-800">18문항</div>
+          </div>
+        </div>
+
+        <!-- Wrong Notes Queue -->
+        <div class="bg-white rounded-2xl p-4 border border-indigo-50 shadow-sm flex items-center gap-3.5 cursor-pointer hover:border-pink-200 transition-all" onclick="switchTab('tab-report')">
+          <div class="w-12 h-12 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center text-2xl">
+            💡
+          </div>
+          <div>
+            <div class="text-[11px] text-gray-500 font-medium">복습할 오답노트</div>
+            <div id="stat-wrong-count" class="text-lg font-bold text-pink-600">1개 대기</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Difficulty Track Selector Widget -->
+      <div class="bg-white rounded-3xl p-5 sm:p-6 border border-indigo-50 shadow-sm space-y-3.5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
+          <div>
+            <h3 class="font-bold text-gray-800 text-sm sm:text-base flex items-center gap-2">
+              <span>🎯</span> 나의 학습 난이도 트랙
+              <span id="active-track-badge" class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-700 font-bold">중1 기초 완성</span>
+            </h3>
+            <p class="text-xs text-gray-500 mt-0.5">내 실력이나 선행 정도에 따라 언제든 원하는 난이도 트랙을 선택해 바로 도전할 수 있습니다.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="openPlacementModal()" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-gray-900 text-xs font-extrabold rounded-xl transition-all flex items-center gap-1 shadow-sm">
+              <span>⚡</span> 3분 진단평가
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Tracks Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <!-- Track 1: 중1 기초 -->
+          <div id="track-btn-track1" onclick="switchDifficultyTrack('track1')" class="p-4 rounded-2xl border-2 border-indigo-500 bg-indigo-50/50 cursor-pointer transition-all hover:shadow-md space-y-2 relative">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🌱</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-600 text-white">기초 다지기</span>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-sm text-gray-900">중1 기초 완성</h4>
+              <p class="text-[11px] text-gray-500 mt-0.5">Lv.1 ~ Lv.3 수준 권장</p>
+            </div>
+            <div class="text-[11px] text-indigo-900 bg-white/80 p-2 rounded-xl border border-indigo-100/60 leading-tight">
+              핵심 문법: <strong>Be동사, 일반동사 -s, 과거시제, 조동사</strong>
+            </div>
+          </div>
+
+          <!-- Track 2: 중2 실전 -->
+          <div id="track-btn-track2" onclick="switchDifficultyTrack('track2')" class="p-4 rounded-2xl border border-gray-200 bg-white hover:border-purple-300 cursor-pointer transition-all hover:shadow-md space-y-2 relative">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🏹</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-100 text-purple-700">실전 서술형</span>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-sm text-gray-900">중2 실전 서술형</h4>
+              <p class="text-[11px] text-gray-500 mt-0.5">Lv.4 ~ Lv.6 수준 권장</p>
+            </div>
+            <div class="text-[11px] text-purple-900 bg-purple-50/50 p-2 rounded-xl border border-purple-100/60 leading-tight">
+              핵심 문법: <strong>관계대명사, 현재완료, 수동태, 5형식</strong>
+            </div>
+          </div>
+
+          <!-- Track 3: 중3 심화 킬러 -->
+          <div id="track-btn-track3" onclick="switchDifficultyTrack('track3')" class="p-4 rounded-2xl border border-gray-200 bg-white hover:border-amber-300 cursor-pointer transition-all hover:shadow-md space-y-2 relative">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">👑</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">수성구 1등급</span>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-sm text-gray-900">중3·수성구 킬러 심화</h4>
+              <p class="text-[11px] text-gray-500 mt-0.5">Lv.7 ~ Lv.10 수준 권장</p>
+            </div>
+            <div class="text-[11px] text-amber-900 bg-amber-50/50 p-2 rounded-xl border border-amber-100/60 leading-tight">
+              핵심 문법: <strong>가정법, 분사구문, 관계부사, 어법 오류 수정</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Learning Curriculum Section (Dynamic Units) -->
+      <div class="bg-white rounded-3xl p-6 border border-indigo-50 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">📖</span>
+            <div>
+              <h3 class="font-bold text-gray-800 text-base" id="home-curriculum-title">현재 진행 중인 교재 및 추천 단원</h3>
+              <p class="text-xs text-gray-400" id="home-curriculum-subtitle">동도중학교 YBM(박준언)</p>
+            </div>
+          </div>
+          <button onclick="toggleAllUnitsView()" id="toggle-units-btn" class="text-xs font-bold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 px-3 py-1.5 rounded-xl border border-indigo-100 transition-all flex items-center gap-1">
+            <span>📂</span> 전체 단원 펼쳐보기
+          </button>
+        </div>
+
+        <!-- Dynamic Recommended Units Grid -->
+        <div id="home-units-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <!-- Collapsible All Units View -->
+        <div id="all-units-container" class="hidden pt-3 border-t space-y-3">
+          <h4 class="text-xs font-bold text-gray-600">전체 단원 목록 (원하는 단원을 선택하여 바로 학습 가능)</h4>
+          <div id="all-units-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Quest Widget -->
+      <div class="bg-amber-50/60 rounded-3xl p-6 border border-amber-200/60 space-y-3">
+        <h3 class="font-bold text-amber-900 text-sm flex items-center gap-2">
+          <span>🏆</span> 오늘의 일일 퀘스트 (Daily Quest)
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="bg-white p-3.5 rounded-2xl border border-amber-100 flex items-center gap-3">
+            <span class="text-2xl">📝</span>
+            <div>
+              <div class="text-xs font-bold text-gray-800">조건 영작 2문항 풀기</div>
+              <div class="text-[11px] text-amber-600 font-medium">보상: +50 EXP</div>
+            </div>
+          </div>
+          <div class="bg-white p-3.5 rounded-2xl border border-amber-100 flex items-center gap-3">
+            <span class="text-2xl">🔍</span>
+            <div>
+              <div class="text-xs font-bold text-gray-800">어법 킬러 오류 찾아 고치기</div>
+              <div class="text-[11px] text-amber-600 font-medium">보상: +30 EXP</div>
+            </div>
+          </div>
+          <div class="bg-white p-3.5 rounded-2xl border border-amber-100 flex items-center gap-3">
+            <span class="text-2xl">✨</span>
+            <div>
+              <div class="text-xs font-bold text-gray-800">감점 없는 만점 답안 1회 달성</div>
+              <div class="text-[11px] text-amber-600 font-medium">보상: 특별 뱃지 획득 기회</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ============================================== -->
+    <!-- TAB 2: STUDY ROOM (Daily 30min Routine) -->
+    <!-- ============================================== -->
+    <section id="tab-study" class="tab-content hidden space-y-6">
+      
+      <!-- Top Study Control Bar -->
+      <div class="bg-white rounded-3xl p-5 border border-indigo-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+        <!-- Current Unit Info -->
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-2xl text-indigo-600">
+            ✍️
+          </div>
+          <div>
+            <div id="study-unit-title" class="font-bold text-gray-800 text-base">Lesson 1. All about Me</div>
+            <div id="study-target-grammar" class="text-xs text-indigo-600 font-medium">목표 문법: be동사 / 3인칭 단수 -s</div>
+          </div>
+        </div>
+
+        <!-- 30-Minute Visual Timer -->
+        <div class="flex items-center gap-4 bg-indigo-50/60 px-5 py-2.5 rounded-2xl border border-indigo-100">
+          <div class="text-right">
+            <div class="text-[10px] text-gray-500 font-medium">남은 학습 시간</div>
+            <div id="timer-display" class="text-xl font-black text-indigo-700 tracking-wider">30:00</div>
+          </div>
+          <button id="timer-toggle-btn" onclick="toggleTimer()" class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 transition-all text-sm shadow-sm">
+            ▶
+          </button>
+        </div>
+      </div>
+
+      <!-- 4-Step Routine Progress Tracker -->
+      <div class="grid grid-cols-4 gap-2 sm:gap-4">
+        <div id="step-pill-1" class="step-pill active-step p-3 rounded-2xl border text-center transition-all">
+          <div class="text-[10px] sm:text-xs font-semibold text-gray-500">Step 1 (5분)</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800 truncate">워밍업 빈칸</div>
+        </div>
+        <div id="step-pill-2" class="step-pill p-3 rounded-2xl border bg-white text-center transition-all">
+          <div class="text-[10px] sm:text-xs font-semibold text-gray-500">Step 2 (15분)</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800 truncate">동도중 조건 영작</div>
+        </div>
+        <div id="step-pill-3" class="step-pill p-3 rounded-2xl border bg-white text-center transition-all">
+          <div class="text-[10px] sm:text-xs font-semibold text-gray-500">Step 3 (5분)</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800 truncate">오류 사냥 킬러</div>
+        </div>
+        <div id="step-pill-4" class="step-pill p-3 rounded-2xl border bg-white text-center transition-all">
+          <div class="text-[10px] sm:text-xs font-semibold text-gray-500">Step 4 (5분)</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800 truncate">수행평가 에세이</div>
+        </div>
+      </div>
+
+      <!-- Active Problem Card Container -->
+      <div id="problem-card" class="bg-white rounded-3xl p-6 sm:p-8 border border-indigo-100 shadow-md space-y-6">
+        <!-- Rendered dynamically by app.js -->
+        <div class="text-center py-12 text-gray-400">문제를 불러오는 중입니다...</div>
+      </div>
+
+      <!-- Grading Feedback Result Panel -->
+      <div id="grade-result-panel" class="hidden rounded-3xl p-6 border transition-all animate-fade-in space-y-4">
+        <!-- Dynamic Grading Content -->
+      </div>
+
+      <!-- Bottom Step Navigation Buttons -->
+      <div class="flex items-center justify-between pt-2">
+        <button id="prev-step-btn" onclick="goToPrevStep()" class="px-5 py-2.5 rounded-xl border border-gray-300 text-gray-600 font-semibold text-sm hover:bg-gray-50 transition-all flex items-center gap-1.5">
+          <span>◀</span> 이전 단계
+        </button>
+        <button id="next-step-btn" onclick="goToNextStep()" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition-all shadow-md shadow-indigo-100 flex items-center gap-1.5">
+          다음 단계 <span>▶</span>
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- ============================================== -->
+    <!-- TAB 3: GROWTH REPORT & WRONG NOTES -->
+    <!-- ============================================== -->
+    <section id="tab-report" class="tab-content hidden space-y-6">
+      
+      <!-- Sub-Tabs: 1. 역량 리포트 / 2. 오답 클리닉 / 3. 세특 에세이 보관함 -->
+      <div class="flex items-center space-x-2 border-b border-gray-200 pb-2">
+        <button onclick="switchReportSubTab('sub-radar')" id="subnav-radar" class="subtab-btn active-subtab px-4 py-2 rounded-xl text-sm font-bold text-indigo-600 bg-indigo-50">
+          📊 실력 분석 & 레이더
+        </button>
+        <button onclick="switchReportSubTab('sub-wrong')" id="subnav-wrong" class="subtab-btn px-4 py-2 rounded-xl text-sm font-semibold text-gray-500 hover:bg-gray-100">
+          💡 스마트 오답 클리닉
+        </button>
+        <button onclick="switchReportSubTab('sub-essays')" id="subnav-essays" class="subtab-btn px-4 py-2 rounded-xl text-sm font-semibold text-gray-500 hover:bg-gray-100">
+          📁 학교 세특 에세이 보관함
+        </button>
+      </div>
+
+      <!-- Sub-Tab 1: Radar & Stats -->
+      <div id="sub-radar" class="report-subcontent space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- 5-Axis Radar Chart Card -->
+          <div class="bg-white rounded-3xl p-6 border border-indigo-100 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-gray-800 text-base flex items-center gap-2">
+                <span>🎯</span> 동도중 서술형 5대 역량 분석
+              </h3>
+              <span class="text-xs text-gray-400">최근 학습 기준</span>
+            </div>
+            <div class="relative h-64 sm:h-72 w-full flex items-center justify-center">
+              <canvas id="radarChart"></canvas>
+            </div>
+            <p class="text-xs text-gray-500 text-center">
+              조건 준수, 수 일치, 시제, 철자, 문장 구조 5개 영역의 실시간 밸런스입니다.
+            </p>
+          </div>
+
+          <!-- Level Growth & Badges Card -->
+          <div class="bg-white rounded-3xl p-6 border border-indigo-100 shadow-sm space-y-5">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">경험치 & 승급</span>
+                <span id="report-exp-text" class="text-xs font-bold text-gray-600">180 / 300 EXP</span>
+              </div>
+              <div class="w-full bg-gray-100 h-3.5 rounded-full overflow-hidden">
+                <div id="report-exp-bar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full transition-all duration-500" style="width: 60%"></div>
+              </div>
+            </div>
+
+            <!-- Badges Gallery -->
+            <div class="space-y-3">
+              <h4 class="font-bold text-gray-800 text-sm flex items-center gap-1.5">
+                <span>🏅</span> 획득한 영작 명예 뱃지
+              </h4>
+              <div id="badges-grid" class="grid grid-cols-2 sm:grid-cols-2 gap-3">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Tab 2: Wrong Notes Clinic -->
+      <div id="sub-wrong" class="report-subcontent hidden space-y-4">
+        <div class="bg-white rounded-3xl p-6 border border-indigo-100 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="font-bold text-gray-800 text-base flex items-center gap-2">
+                <span>💡</span> 약점 보완 오답 클리닉
+              </h3>
+              <p class="text-xs text-gray-500 mt-1">내가 감점당했던 문항들을 모아보고, 완벽히 고칠 때까지 재도전하세요.</p>
+            </div>
+            <span id="wrong-total-badge" class="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-bold rounded-full border border-pink-200">1문항 대기</span>
+          </div>
+
+          <div id="wrong-notes-list" class="space-y-3">
+            <!-- Dynamic Wrong Notes -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Tab 3: Essays Portfolio -->
+      <div id="sub-essays" class="report-subcontent hidden space-y-4">
+        <div class="bg-white rounded-3xl p-6 border border-indigo-100 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="font-bold text-gray-800 text-base flex items-center gap-2">
+                <span>📁</span> 학교생활기록부 세특용 에세이 보관함
+              </h3>
+              <p class="text-xs text-gray-500 mt-1">작성한 단락 에세이는 학교 영어 수행평가 제출 전 최종 퇴고용으로 바로 활용할 수 있습니다.</p>
+            </div>
+          </div>
+
+          <div id="essays-list" class="space-y-4">
+            <!-- Dynamic Essays Cards -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ============================================== -->
+    <!-- TAB 4: CURRICULUM LIBRARY & SETTINGS -->
+    <!-- ============================================== -->
+    <section id="tab-library" class="tab-content hidden space-y-6">
+      
+      <!-- Textbooks Catalog -->
+      <div class="bg-white rounded-3xl p-6 border border-indigo-100 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">📚</span>
+            <div>
+              <h3 class="font-bold text-gray-800 text-base">탑재된 정규 교재 및 서술형 킬러 자료실</h3>
+              <p class="text-xs text-gray-500">학생의 현재 학습 목표와 수준에 맞는 교재를 선택하면 단원과 문제가 즉시 맞춤 연동됩니다.</p>
+            </div>
+          </div>
+          <span id="catalog-count-badge" class="text-xs bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-bold border border-indigo-100 self-start sm:self-auto">총 11종 교재 완비</span>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div id="catalog-category-filters" class="flex flex-wrap gap-2 pt-1">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <div id="catalog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-1">
+          <!-- Dynamic Catalog Cards -->
+        </div>
+
+        <!-- AI Assistant Add Notice Card -->
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/80 flex items-start gap-4">
+          <span class="text-3xl">🤖</span>
+          <div class="space-y-1">
+            <h4 class="font-bold text-blue-900 text-sm">교재 및 문제 자료 추가는 AI 어시스턴트에게 맡겨주세요!</h4>
+            <p class="text-xs text-blue-700 leading-relaxed">
+              천재, 능률, 비상 등 타 교과서나 추가 기출 자료가 필요하시면 직접 번거롭게 입력하실 필요가 없습니다.<br>
+              대화창에서 <strong>"OO 교과서 O단원 문제 추가해줘"</strong>라고 말씀하시면 시스템에 즉시 자동 탑재됩니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Card -->
+      <div class="bg-white rounded-3xl p-6 border border-indigo-100 shadow-sm space-y-5 max-w-xl">
+        <h3 class="font-bold text-gray-800 text-base flex items-center gap-2">
+          <span>⚙️</span> 학습 환경 설정
+        </h3>
+
+        <!-- Target Time Selector -->
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-gray-700">하루 목표 학습 시간 설정</label>
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="setDailyTime(15)" id="time-btn-15" class="time-btn py-2.5 rounded-xl border text-xs font-bold transition-all">15분</button>
+            <button onclick="setDailyTime(30)" id="time-btn-30" class="time-btn active-time py-2.5 rounded-xl border text-xs font-bold transition-all">30분 (권장)</button>
+            <button onclick="setDailyTime(45)" id="time-btn-45" class="time-btn py-2.5 rounded-xl border text-xs font-bold transition-all">45분</button>
+            <button onclick="setDailyTime(60)" id="time-btn-60" class="time-btn py-2.5 rounded-xl border text-xs font-bold transition-all">60분</button>
+          </div>
+        </div>
+
+        <!-- Tutor Mascot Selector -->
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-gray-700">나만의 영작 튜터 마스코트 선택</label>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 p-3 rounded-2xl border border-indigo-200 bg-indigo-50/50 cursor-pointer">
+              <input type="radio" name="mascot" value="penny" checked onchange="saveSettings()">
+              <span class="text-2xl">🐧</span>
+              <span class="text-xs font-bold text-gray-800">아기 펭귄 페니</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 rounded-2xl border border-gray-200 bg-white cursor-pointer">
+              <input type="radio" name="mascot" value="ollie" onchange="saveSettings()">
+              <span class="text-2xl">🦉</span>
+              <span class="text-xs font-bold text-gray-800">지혜의 올빼미 올리</span>
+            </label>
+          </div>
+        </div>
+
+        <button onclick="saveSettings()" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl text-sm transition-all shadow-md shadow-indigo-100">
+          설정 저장하기
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =============================== -->
+  <!-- User Profile Management Modal -->
+  <!-- =============================== -->
+  <div id="user-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 max-w-md w-full shadow-2xl space-y-5 animate-scale-up">
+      <div class="flex items-center justify-between border-b pb-3">
+        <h3 class="font-bold text-gray-800 text-base flex items-center gap-2">
+          <span>👥</span> 등록된 학생 계정 전환
+        </h3>
+        <button onclick="closeUserModal()" class="text-gray-400 hover:text-gray-600 text-lg cursor-pointer">✕</button>
+      </div>
+
+      <!-- Existing Users List -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <label class="text-xs font-bold text-gray-500">전환할 학생 프로필 선택</label>
+          <span id="user-count-badge" class="text-[11px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">2명</span>
+        </div>
+        <div id="modal-users-list" class="space-y-2 max-h-60 sm:max-h-72 overflow-y-auto pr-1">
+          <!-- Dynamic Users -->
+        </div>
+      </div>
+
+      <!-- Notice & Logout Section (로그인 후 신규 등록 차단, 로그아웃 후 첫 화면에서만 가능) -->
+      <div class="pt-3 border-t space-y-3">
+        <div class="p-3 bg-amber-50/90 rounded-2xl border border-amber-200/80 text-xs text-amber-900 flex items-start gap-2.5">
+          <span class="text-base shrink-0">🔒</span>
+          <div class="leading-relaxed text-[11px]">
+            <strong>신규 학생 등록 안내:</strong><br>
+            새로운 학생 등록은 3분 진단평가와 맞춤 온보딩 설정을 위해 <strong class="text-amber-950 underline">[로그아웃 후 첫 시작 화면]</strong>에서만 가능합니다.
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <button type="button" onclick="closeUserModal(); logoutToAuthScreen();" class="py-2.5 px-3 rounded-xl bg-gray-100 hover:bg-rose-50 border border-gray-200 hover:border-rose-300 text-gray-700 hover:text-rose-600 text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer">
+            <span>🚪</span> <span>로그아웃</span>
+          </button>
+          <button type="button" onclick="closeUserModal(); logoutToAuthScreen(true);" class="py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-300 hover:to-orange-300 text-gray-950 font-black text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm shadow-orange-500/20 cursor-pointer">
+            <span>🌱</span> <span>신규 학생 등록 ➔</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================== -->
+  <!-- 3-Minute Quick Placement Test Modal -->
+  <!-- =============================== -->
+  <div id="placement-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-7 max-w-2xl w-full shadow-2xl space-y-5 animate-scale-up max-h-[92vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b pb-3.5">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">⚡</span>
+          <div>
+            <h3 class="font-extrabold text-gray-800 text-base sm:text-lg flex items-center gap-2">
+              3분 영작 실력 진단평가
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold">쾌속 레벨 배치</span>
+            </h3>
+            <p class="text-xs text-gray-500">5문항을 풀면 내 실력에 딱 맞는 시작 레벨과 추천 학습 트랙을 즉시 판정해 드립니다.</p>
+          </div>
+        </div>
+        <button onclick="closePlacementModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 flex items-center justify-center transition-all text-sm font-bold">✕</button>
+      </div>
+
+      <!-- Test Content (Questions or Result) -->
+      <div id="placement-body" class="space-y-4 overflow-y-auto pr-1 flex-1">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div id="placement-footer" class="pt-3 border-t flex items-center justify-between text-xs text-gray-500">
+        <div>💡 이미 실력이 있다면 쉬운 단원을 건너뛰고 상위 레벨에서 바로 시작할 수 있어요!</div>
+        <button id="placement-submit-btn" onclick="submitPlacementTest()" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs transition-all shadow-md">
+          진단 결과 확인 및 레벨 배치 🚀
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================== -->
+  <!-- Level Guide Modal (10 Levels Roadmap) -->
+  <!-- =============================== -->
+  <div id="level-guide-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-7 max-w-2xl w-full shadow-2xl space-y-5 animate-scale-up max-h-[90vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b pb-3.5">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">🏆</span>
+          <div>
+            <h3 class="font-extrabold text-gray-800 text-base sm:text-lg flex items-center gap-2">
+              중학 3개년 10단계 레벨 성장 로드맵
+              <span class="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 font-bold">동도중 맞춤형</span>
+            </h3>
+            <p class="text-xs text-gray-500">학습을 진행할수록 경험치(EXP)가 쌓이고 레벨이 자동으로 승급합니다.</p>
+          </div>
+        </div>
+        <button onclick="closeLevelGuideModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 flex items-center justify-center transition-all text-sm font-bold">✕</button>
+      </div>
+
+      <!-- Mascot Tip Banner -->
+      <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-2xl shadow-xs flex-shrink-0 animate-bounce-slow">
+          🐧
+        </div>
+        <div class="text-xs text-amber-900 leading-relaxed">
+          <strong>튜터 페니의 꿀팁:</strong> 하루 30분 데일리 루틴을 마치면 <strong>약 80~100 EXP</strong>를 획득해요!<br>
+          꾸준히 학습하면 <strong>2~3일에 한 번씩</strong> 기분 좋게 레벨업하며 명예 칭호와 뱃지를 모을 수 있어요! ⭐
+        </div>
+      </div>
+
+      <!-- 10 Levels Roadmap Scrollable List -->
+      <div class="space-y-2.5 overflow-y-auto pr-1 flex-1" id="level-roadmap-list">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="pt-3 border-t flex items-center justify-between text-xs text-gray-500">
+        <div>💡 획득한 경험치와 성장 그래프는 <strong>[📊 성장 & 오답노트]</strong>에서 실시간 확인 가능합니다.</div>
+        <button onclick="closeLevelGuideModal()" class="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs transition-all shadow-sm">
+          확인 완료
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-20 md:bottom-6 right-6 bg-gray-900/90 text-white px-5 py-3 rounded-2xl shadow-xl text-xs font-semibold backdrop-blur-md hidden transition-all z-50 flex items-center gap-2">
+    <span id="toast-icon">✨</span>
+    <span id="toast-message">알림 메시지</span>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (md:hidden) -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-indigo-100 py-1.5 px-3 flex items-center justify-around shadow-lg">
+    <button onclick="switchTab('tab-home')" data-tab="tab-home" class="nav-btn active-tab flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-[11px] font-bold">
+      <span class="text-base leading-none">🏠</span>
+      <span class="leading-none mt-0.5">홈</span>
+    </button>
+    <button onclick="switchTab('tab-study')" data-tab="tab-study" class="nav-btn flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-[11px] font-bold">
+      <span class="text-base leading-none">✍️</span>
+      <span class="leading-none mt-0.5">30분 학습</span>
+    </button>
+    <button onclick="switchTab('tab-report')" data-tab="tab-report" class="nav-btn flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-[11px] font-bold">
+      <span class="text-base leading-none">📊</span>
+      <span class="leading-none mt-0.5">오답노트</span>
+    </button>
+    <button onclick="switchTab('tab-library')" data-tab="tab-library" class="nav-btn flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-[11px] font-bold">
+      <span class="text-base leading-none">📚</span>
+      <span class="leading-none mt-0.5">교재·설정</span>
+    </button>
+    <button onclick="logoutToAuthScreen()" class="flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-[11px] font-bold text-gray-500 hover:text-rose-600 cursor-pointer">
+      <span class="text-base leading-none">🚪</span>
+      <span class="leading-none mt-0.5">로그아웃</span>
+    </button>
+  </nav>
+
+  </div> <!-- End of #view-app -->
+
+  <script src="app.js?v=24"></script>
+</body>
+</html>

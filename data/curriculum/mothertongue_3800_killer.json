@@ -1,0 +1,343 @@
+{
+  "textbookId": "mothertongue_3800_killer",
+  "title": "마더텅 중학영문법 3800제 (수성구 1등급 킬러)",
+  "category": "killer",
+  "targetAudience": "수성구 내신 1등급 직결 고난도 조건 영작 문항",
+  "grade": 2,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Chapter 1. 문장의 5형식과 수 일치 킬러 영작",
+      "targetGrammar": [
+        "3인칭 단수와 복합 주어 수 일치",
+        "5형식 사역·지각동사",
+        "목적격 보어"
+      ],
+      "warmup": [
+        {
+          "id": "mt1_w1",
+          "korean": "결과를 기다리는 것은 나를 긴장되게 만든다.",
+          "sentence": "Waiting for the results [makes / make] me nervous.",
+          "options": [
+            "makes",
+            "make"
+          ],
+          "answer": "makes",
+          "explanation": "동명사구 주어(Waiting for the results)는 단수 취급하므로 makes가 정답입니다."
+        },
+        {
+          "id": "mt1_w2",
+          "korean": "그는 선생님이 방에 들어오시는 것을 보았다.",
+          "sentence": "He saw the teacher [enter / to enter] the room.",
+          "options": [
+            "enter",
+            "to enter"
+          ],
+          "answer": "enter",
+          "explanation": "지각동사 see 뒤의 목적격 보어로는 동사원형 enter 또는 현재분사 entering을 씁니다."
+        },
+        {
+          "id": "mt1_w3",
+          "korean": "선생님은 우리에게 교실을 청소하도록 하셨다.",
+          "sentence": "The teacher made us [clean / to clean] the classroom.",
+          "options": [
+            "clean",
+            "to clean"
+          ],
+          "answer": "clean",
+          "explanation": "사역동사 make 뒤의 목적격 보어로는 동사원형 clean을 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "mt1_ta1",
+          "korean": "그의 친절한 조언은 내가 포기하지 않고 계속 나아가도록 도왔다.",
+          "conditions": [
+            "'His kind advice', 'help', 'keep going', 'without giving up', 'me'를 모두 사용할 것",
+            "help의 5형식 목적격 보어로 동사원형을 사용할 것",
+            "주어와 동사의 수 일치에 주의할 것"
+          ],
+          "requiredWords": [
+            "His kind advice",
+            "helped me",
+            "keep going",
+            "without giving up"
+          ],
+          "sampleAnswer": "His kind advice helped me keep going without giving up.",
+          "explanation": "help 뒤에 목적격 보어로 동사원형 keep going을 쓰고, 전치사 without 뒤에 동명사 giving up을 씁니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "mt1_tb1",
+          "passage": "Each of the boys ⓐhave their own dream, and their teacher ⓑmakes them to try their best every day.",
+          "question": "위 문장에서 어법상 틀린 부분 두 곳 중 하나를 골라 기호와 올바른 형태를 쓰시오.",
+          "wrongSymbol": "b",
+          "correction": "try",
+          "alternativeCorrections": [
+            "makes them try"
+          ],
+          "explanation": "사역동사 make의 목적격 보어로 to부정사가 아닌 동사원형(try)을 써야 합니다. (또한 Each of는 단수 취급하므로 ⓐhave를 has로 고쳐도 정답입니다.)",
+          "reason": "사역동사 make의 목적격 보어로 to부정사가 아닌 동사원형(try)을 써야 합니다. (또한 Each of는 단수 취급하므로 ⓐhave를 has로 고쳐도 정답입니다.)"
+        }
+      ],
+      "typeD": [
+        {
+          "id": "mt1_td1",
+          "title": "수성구 기출 서술형: 나에게 긍정적 영향을 준 인물 소개",
+          "prompt": "나를 항상 격려하고 발전하게 만드는 소중한 사람(친구, 부모님, 선생님 등)에 대해 3형식 및 5형식 사역·지각동사 구문을 포함하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "최소 3문장 이상 완전한 영어 문장으로 작성할 것",
+            "make, help 중 하나 이상의 5형식 구문을 정확히 활용할 것",
+            "총 30단어 이상으로 서술할 것"
+          ],
+          "sampleAnswer": "My mother always supports my dream. She makes me believe in my potential when I face difficult challenges. Her warm encouragement always helps me overcome obstacles with confidence.",
+          "sampleEssay": "My mother always supports my dream. She makes me believe in my potential when I face difficult challenges. Her warm encouragement always helps me overcome obstacles with confidence."
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Chapter 2. 현재완료와 수동태 심화 킬러",
+      "targetGrammar": [
+        "현재완료 계속·완료·경험",
+        "행위자가 생략된 수동태",
+        "4·5형식 수동태"
+      ],
+      "warmup": [
+        {
+          "id": "mt2_w1",
+          "korean": "그 오래된 다리는 1950년에 건설되었다.",
+          "sentence": "The old bridge [was built / has been built] in 1950.",
+          "options": [
+            "was built",
+            "has been built"
+          ],
+          "answer": "was built",
+          "explanation": "명확한 과거 시점(in 1950)을 나타내는 부사구와 함께 쓰이므로 단순 과거 수동태 was built가 정답입니다."
+        },
+        {
+          "id": "mt2_w2",
+          "korean": "나는 어렸을 때부터 계속 이 도시에 살아왔다.",
+          "sentence": "I [have lived / lived] in this city since I was young.",
+          "options": [
+            "have lived",
+            "lived"
+          ],
+          "answer": "have lived",
+          "explanation": "since(~이래로) 절과 함께 과거부터 현재까지 이어지므로 현재완료 have lived가 정답입니다."
+        },
+        {
+          "id": "mt2_w3",
+          "korean": "그에게는 과학 분야에서 특별한 상이 수여되었다.",
+          "sentence": "He [was awarded / awarded] a special prize in science.",
+          "options": [
+            "was awarded",
+            "awarded"
+          ],
+          "answer": "was awarded",
+          "explanation": "그가 상을 받은 수동의 의미이므로 was awarded가 정답입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "mt2_ta1",
+          "korean": "이 유명한 소설은 전 세계 많은 독자들에게 10년 넘게 사랑받아 왔다.",
+          "conditions": [
+            "'This famous novel', 'love', 'by many readers around the world', 'for over ten years'를 사용할 것",
+            "현재완료 수동태(has been + p.p.) 시제를 사용할 것"
+          ],
+          "requiredWords": [
+            "This famous novel",
+            "has been loved",
+            "by many readers",
+            "for over ten years"
+          ],
+          "sampleAnswer": "This famous novel has been loved by many readers around the world for over ten years.",
+          "explanation": "10년 동안 사랑받아 온 계속적 완료 수동태이므로 has been loved를 사용합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "mt2_tb1",
+          "passage": "The valuable painting ⓐhas stolen from the national museum ⓑtwo days ago.",
+          "question": "어법상 틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "was stolen",
+          "alternativeCorrections": [
+            "was stolen"
+          ],
+          "explanation": "그림이 도난당한 수동의 의미이며, two days ago라는 명확한 과거 시점이 있으므로 was stolen으로 고쳐야 합니다.",
+          "reason": "그림이 도난당한 수동의 의미이며, two days ago라는 명확한 과거 시점이 있으므로 was stolen으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "mt2_td1",
+          "title": "수성구 기출 서술형: 우리 지역의 역사적 명소 소개",
+          "prompt": "자신이 살고 있는 지역의 역사적 건축물이나 자연 명소에 대해 현재완료 및 수동태 구문을 사용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "수동태(was built 등)와 현재완료 구문을 각각 1회 이상 사용할 것",
+            "최소 3문장 이상, 30단어 이상 완결된 단락으로 쓸 것"
+          ],
+          "sampleAnswer": "Daegu Gyesan Cathedral is an important historical landmark in my city. It was built in 1902 and has been preserved beautifully for over a century. Many tourists have visited this meaningful place to learn about our history.",
+          "sampleEssay": "Daegu Gyesan Cathedral is an important historical landmark in my city. It was built in 1902 and has been preserved beautifully for over a century. Many tourists have visited this meaningful place to learn about our history."
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Chapter 3. 관계사절 심화와 고난도 수 일치",
+      "targetGrammar": [
+        "주격·목적격 관계대명사",
+        "관계대명사 what",
+        "관계부사 where/when/why"
+      ],
+      "warmup": [
+        {
+          "id": "mt3_w1",
+          "korean": "이것이 바로 내가 오랫동안 찾고 있었던 것이다.",
+          "sentence": "This is [what / that] I have been looking for.",
+          "options": [
+            "what",
+            "that"
+          ],
+          "answer": "what",
+          "explanation": "선행사를 포함하며 전치사 for의 목적어 역할을 하는 관계대명사 what이 알맞습니다."
+        },
+        {
+          "id": "mt3_w2",
+          "korean": "영어를 유창하게 구사하는 저 학생들은 내 친구들이다.",
+          "sentence": "The students who [speak / speaks] English fluently are my friends.",
+          "options": [
+            "speak",
+            "speaks"
+          ],
+          "answer": "speak",
+          "explanation": "선행사 The students가 복수이므로 관계사절 동사는 speak가 되어야 합니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "mt3_ta1",
+          "korean": "나는 다른 사람들의 말을 주의 깊게 경청하는 사람들을 존경한다.",
+          "conditions": [
+            "'I respect people', 'listen to others carefully'를 사용할 것",
+            "주격 관계대명사 who를 사용하고 복수 선행사에 동사를 수 일치시킬 것"
+          ],
+          "requiredWords": [
+            "I respect people",
+            "who listen to others",
+            "carefully"
+          ],
+          "sampleAnswer": "I respect people who listen to others carefully.",
+          "explanation": "선행사 people이 복수이므로 who 뒤에 listen으로 수 일치합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "mt3_tb1",
+          "passage": "He finally found the watch ⓐwhat he ⓑhad lost at the playground last week.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "which",
+          "alternativeCorrections": [
+            "that"
+          ],
+          "explanation": "앞에 명백한 선행사 the watch가 있으므로 what을 쓸 수 없으며, 사물 목적격 관계대명사 which 또는 that으로 고쳐야 합니다.",
+          "reason": "앞에 명백한 선행사 the watch가 있으므로 what을 쓸 수 없으며, 사물 목적격 관계대명사 which 또는 that으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "mt3_td1",
+          "title": "수성구 기출 서술형: 내가 존경하는 롤모델 에세이",
+          "prompt": "자신이 가장 존경하는 인물의 성품과 업적에 대해 관계대명사(who, which, what)를 활용하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "관계대명사 who 또는 that을 1회 이상 포함할 것",
+            "관계대명사절 내 동사의 수 일치에 감점 요인이 없을 것"
+          ],
+          "sampleAnswer": "I truly admire Dr. Lee who dedicated his entire life to treating poor patients. He is a brave leader that showed us the true meaning of compassion. What he taught us will inspire future generations forever.",
+          "sampleEssay": "I truly admire Dr. Lee who dedicated his entire life to treating poor patients. He is a brave leader that showed us the true meaning of compassion. What he taught us will inspire future generations forever."
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "Chapter 4. 가정법 과거와 도치·특수구문 킬러",
+      "targetGrammar": [
+        "가정법 과거",
+        "I wish 가정법",
+        "부정어 도치"
+      ],
+      "warmup": [
+        {
+          "id": "mt4_w1",
+          "korean": "내가 날개가 있다면, 너에게 바로 날아갈 텐데.",
+          "sentence": "If I [had / have] wings, I would fly to you right now.",
+          "options": [
+            "had",
+            "have"
+          ],
+          "answer": "had",
+          "explanation": "현재 사실의 반대를 나타내는 가정법 과거이므로 If절에는 과거동사 had를 씁니다."
+        },
+        {
+          "id": "mt4_w2",
+          "korean": "내가 더 많은 자유 시간이 있다면 좋을 텐데.",
+          "sentence": "I wish I [had / have] more free time.",
+          "options": [
+            "had",
+            "have"
+          ],
+          "answer": "had",
+          "explanation": "I wish 뒤에 현재 이룰 수 없는 소망을 나타내므로 가정법 과거 had를 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "mt4_ta1",
+          "korean": "내가 그의 전화번호를 안다면, 지금 당장 그에게 전화할 수 있을 텐데.",
+          "conditions": [
+            "'If I knew his phone number', 'call him right now', 'could'를 사용할 것",
+            "가정법 과거 공식을 엄격히 준수할 것"
+          ],
+          "requiredWords": [
+            "If I knew his phone number",
+            "I could call him",
+            "right now"
+          ],
+          "sampleAnswer": "If I knew his phone number, I could call him right now.",
+          "explanation": "If + 주어 + 과거동사(knew), 주어 + 조동사과거(could) + 동사원형(call) 구조입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "mt4_tb1",
+          "passage": "If she ⓐis in my position, she ⓑwould make the exact same choice.",
+          "question": "틀린 부분의 기호를 쓰고, 올바른 형태로 고쳐 쓰시오.",
+          "wrongSymbol": "a",
+          "correction": "were",
+          "alternativeCorrections": [
+            "were"
+          ],
+          "explanation": "주절에 would make가 있으므로 가정법 과거 구문입니다. if절의 be동사는 were를 쓰는 것이 원칙입니다.",
+          "reason": "주절에 would make가 있으므로 가정법 과거 구문입니다. if절의 be동사는 were를 쓰는 것이 원칙입니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "mt4_td1",
+          "title": "수성구 기출 서술형: 내게 초능력이 생긴다면",
+          "prompt": "자신에게 원하는 특별한 능력(시간여행, 순간이동 등)이 생긴다면 무엇을 하고 싶은지 가정법 과거(If I were/had...) 구문을 포함하여 3문장 이상 서술하시오.",
+          "conditions": [
+            "가정법 과거(If I ..., I would/could ...) 문장을 반드시 1문장 이상 포함할 것",
+            "최소 3문장 이상 논리적으로 완결된 글을 작성할 것"
+          ],
+          "sampleAnswer": "If I had the power to travel through time, I would visit ancient civilizations to learn their wisdom. I could also meet historical heroes who shaped our world today. Using this power, I would help people understand our shared human history.",
+          "sampleEssay": "If I had the power to travel through time, I would visit ancient civilizations to learn their wisdom. I could also meet historical heroes who shaped our world today. Using this power, I would help people understand our shared human history."
+        }
+      ]
+    }
+  ]
+}

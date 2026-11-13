@@ -1,0 +1,465 @@
+{
+  "textbookId": "ybm_kim_grade2",
+  "title": "YBM(김은형) 중등 영어 2 (2026 최신)",
+  "grade": 2,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Lesson 1. Our Day, Our Story",
+      "topic": "우리의 하루와 다양한 친구들의 이야기",
+      "targetGrammar": [
+        "주격 관계대명사 who / which / that",
+        "접속사 whether / if"
+      ],
+      "warmup": [
+        {
+          "id": "k2_u1_w1",
+          "question": "I like the friendly teacher __________ teaches English. (선행사가 사람인 주격 관계대명사를 쓰시오)",
+          "answer": "who",
+          "explanation": "사람 선행사 뒤에 오는 주격 관계대명사는 who(또는 that)입니다."
+        },
+        {
+          "id": "k2_u1_w2",
+          "question": "Look at the colorful bird __________ is singing in the tree. (선행사가 동물인 주격 관계대명사를 쓰시오)",
+          "answer": "which",
+          "explanation": "동물이나 사물 선행사 뒤에는 which(또는 that)를 씁니다."
+        },
+        {
+          "id": "k2_u1_w3",
+          "question": "I wonder __________ it will rain tomorrow or not. ('~인지 아닌지'를 뜻하는 접속사를 쓰시오)",
+          "answer": "whether",
+          "explanation": "'~인지 아닌지'의 의미를 나타내는 명사절 접속사는 whether입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k2_u1_a1",
+          "korean": "나는 매일 아침 꽃들에 물을 주는 그 친절한 소년을 안다.",
+          "conditions": [
+            "주어로 'I'를 사용할 것",
+            "선행사 'the kind boy'와 주격 관계대명사 'who'를 사용할 것",
+            "동사 'know', 'water the flowers every morning'을 사용할 것",
+            "관계사절 동사의 수 일치에 주의할 것"
+          ],
+          "requiredWords": [
+            "I know the kind boy who waters the flowers every morning"
+          ],
+          "sampleAnswer": "I know the kind boy who waters the flowers every morning.",
+          "explanation": "선행사 the kind boy가 3인칭 단수이므로 관계사절 동사도 waters로 수 일치시킵니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k2_u1_b1",
+          "passage": "Look at those cheerful children ⓐwho ⓑis playing basketball on the playground with their teacher.",
+          "wrongSymbol": "ⓑ",
+          "correction": "are playing",
+          "alternativeCorrections": [
+            "are"
+          ],
+          "reason": "선행사 those cheerful children이 복수이므로 관계사절 be동사는 is가 아닌 are playing으로 수 일치시켜야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k2_u1_d1",
+          "title": "수행평가: 내가 존경하는 롤모델 소개하기",
+          "prompt": "자신에게 긍정적인 영향을 준 존경하는 인물을 주격 관계대명사를 활용하여 소개하는 글을 작성하시오.",
+          "conditions": [
+            "주격 관계대명사 who를 1회 이상 사용할 것",
+            "그 인물이 실천한 훌륭한 행동과 존경하는 이유를 구체적으로 서술할 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "I admire Thomas Edison, who invented the electric light bulb. He was a great scientist who never gave up despite countless failures. His passionate effort inspired me to challenge new dreams bravely. I want to become a creative thinker like him.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Lesson 2. All About My Plate",
+      "topic": "건강한 식습관과 세계의 음식 문화",
+      "targetGrammar": [
+        "현재완료 시제 (have/has + p.p.)",
+        "so ~ that 원인·결과 구문"
+      ],
+      "warmup": [
+        {
+          "id": "k2_u2_w1",
+          "question": "I __________ (live) in Daegu for three years. (현재완료 시제로 쓰시오)",
+          "answer": "have lived",
+          "explanation": "주어 I에 대한 현재완료는 have + p.p.(lived)입니다."
+        },
+        {
+          "id": "k2_u2_w2",
+          "question": "The fresh soup was __________ hot that I couldn't eat it right away. (빈칸에 알맞은 말을 쓰시오)",
+          "answer": "so",
+          "explanation": "'너무 ~해서 ...하다'를 나타내는 so ~ that 구문입니다."
+        },
+        {
+          "id": "k2_u2_w3",
+          "question": "He has __________ (finish) his delicious dinner already. (알맞은 형태로 쓰시오)",
+          "answer": "finished",
+          "explanation": "has 뒤에 오는 완료형 과거분사는 finished입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k2_u2_a1",
+          "korean": "그 음식은 너무 맛있어서 우리는 그것을 모두 먹었다.",
+          "conditions": [
+            "주어로 'The food'를 사용할 것",
+            "'so delicious that' 구문을 사용할 것",
+            "과거 시제 'was', 'we ate it all'을 적용할 것",
+            "정확히 총 10단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "The food was so delicious that we ate it all"
+          ],
+          "targetWordCount": 10,
+          "sampleAnswer": "The food was so delicious that we ate it all.",
+          "explanation": "so + 형용사 + that + 주어 + 동사의 과거 시제 일치를 확인합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k2_u2_b1",
+          "passage": "Minho is very healthy. He ⓐhas ate organic vegetables every day ⓑfor two years.",
+          "wrongSymbol": "ⓐ",
+          "correction": "has eaten",
+          "alternativeCorrections": [
+            "eaten"
+          ],
+          "reason": "현재완료는 [have/has + 과거분사(p.p.)] 형태이므로 과거형 ate를 과거분사 eaten으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k2_u2_d1",
+          "title": "수행평가: 청소년의 건강한 균형 잡힌 식단 제안서",
+          "prompt": "건강을 유지하기 위해 지속해 온 식습관과 균형 잡힌 영양소 섭취의 중요성을 현재완료와 so~that 구문으로 영작하시오.",
+          "conditions": [
+            "현재완료 시제(have/has + p.p.)를 1회 이상 사용할 것",
+            "so ~ that 구문을 1회 이상 사용할 것",
+            "최소 4문장, 35단어 이상으로 작성할 것"
+          ],
+          "sampleEssay": "I have eaten fresh vegetables and fruit every morning for two months. Healthy food is so important that it gives us great energy throughout the school day. Eating well helps our body grow strong. Let's make balanced dietary choices for our bright future.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Lesson 3. Click Smart for a Safe Digital Life",
+      "topic": "사이버 보안과 디지털 발자국",
+      "targetGrammar": [
+        "수동태 (be동사 + p.p.)",
+        "목적격 관계대명사 (which / that / 생략)"
+      ],
+      "warmup": [
+        {
+          "id": "k2_u3_w1",
+          "question": "This useful app __________ (invent) by a young Korean developer last year. (수동태 과거형으로 쓰시오)",
+          "answer": "was invented",
+          "explanation": "단수 주어 This useful app에 대한 과거 수동태는 was invented입니다."
+        },
+        {
+          "id": "k2_u3_w2",
+          "question": "The computer was __________ (repair) by my father yesterday. (알맞은 형태로 쓰시오)",
+          "answer": "repaired",
+          "explanation": "수동태 be동사 뒤에는 과거분사(p.p.) repaired가 옵니다."
+        },
+        {
+          "id": "k2_u3_w3",
+          "question": "This is the smartphone __________ I bought yesterday. (사물 목적격 관계대명사를 쓰시오)",
+          "answer": "which",
+          "explanation": "사물 선행사를 수식하는 목적격 관계대명사는 which(또는 that)입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k2_u3_a1",
+          "korean": "그 비밀번호는 모든 사용자에 의해 매달 변경되어야 한다.",
+          "conditions": [
+            "주어로 'The password'를 사용할 것",
+            "조동사 수동태 'must be changed'를 사용할 것",
+            "행위자 'by all users', 시간부사 'every month'를 포함할 것"
+          ],
+          "requiredWords": [
+            "The password must be changed by all users every month"
+          ],
+          "sampleAnswer": "The password must be changed by all users every month.",
+          "explanation": "조동사 수동태는 [조동사 + be + p.p.]의 어순을 지킵니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k2_u3_b1",
+          "passage": "Important personal data ⓐwas stole by hackers yesterday because the security program ⓑwas turned off.",
+          "wrongSymbol": "ⓐ",
+          "correction": "was stolen",
+          "alternativeCorrections": [
+            "stolen"
+          ],
+          "reason": "수동태는 [be동사 + 과거분사] 형태이므로 과거형 stole을 과거분사 stolen으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k2_u3_d1",
+          "title": "수행평가: 안전한 개인정보 보호를 위한 디지털 에티켓",
+          "prompt": "스마트폰과 인터넷 사용 시 개인정보를 안전하게 지키기 위한 수칙을 수동태를 활용하여 작성하시오.",
+          "conditions": [
+            "수동태 문장(be + p.p.)을 1회 이상 사용할 것",
+            "목적격 관계대명사를 활용한 복합 문장을 1회 이상 포함할 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "In modern society, our private information must be protected carefully. Passwords should be changed regularly by smartphone users. Also, be careful with unknown links that you receive online. By following these rules, we can enjoy a safe digital world.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "Lesson 4. Journey into Science & Nature",
+      "topic": "놀라운 자연과학 탐구와 발견",
+      "targetGrammar": [
+        "5형식 동사 + 목적어 + to부정사",
+        "사역동사 (make, have, let) + 동사원형"
+      ],
+      "warmup": [
+        {
+          "id": "k2_u4_w1",
+          "question": "The science teacher told us __________ (observe) the plants carefully. (to부정사 형태로 쓰시오)",
+          "answer": "to observe",
+          "explanation": "동사 tell은 목적격보어로 to부정사를 취합니다."
+        },
+        {
+          "id": "k2_u4_w2",
+          "question": "My mother made me __________ (clean) the laboratory room. (사역동사 뒤 목적격보어 형태로 쓰시오)",
+          "answer": "clean",
+          "explanation": "사역동사 make의 목적격보어로는 동사원형 clean이 옵니다."
+        },
+        {
+          "id": "k2_u4_w3",
+          "question": "She advised him __________ (read) more science books. (알맞은 형태로 쓰시오)",
+          "answer": "to read",
+          "explanation": "동사 advise는 목적격보어로 to부정사를 취합니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k2_u4_a1",
+          "korean": "선생님은 우리가 실험실 규칙을 따르도록 요청하셨다.",
+          "conditions": [
+            "주어로 'The teacher'를 사용할 것",
+            "동사 'asked us to follow' 구조를 사용할 것",
+            "'the laboratory rules'를 포함할 것",
+            "정확히 총 9단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "The teacher asked us to follow the laboratory rules"
+          ],
+          "targetWordCount": 9,
+          "sampleAnswer": "The teacher asked us to follow the laboratory rules.",
+          "explanation": "동사 ask + 목적어 + to부정사의 5형식 구문을 만듭니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k2_u4_b1",
+          "passage": "During the chemistry experiment, the professor ⓐlet the students ⓑto wear safety goggles.",
+          "wrongSymbol": "ⓑ",
+          "correction": "wear",
+          "alternativeCorrections": [
+            "wear safety goggles"
+          ],
+          "reason": "사역동사 let 뒤의 목적격보어 자리에는 to부정사가 아닌 동사원형 wear가 와야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k2_u4_d1",
+          "title": "수행평가: 과학 실험 탐구 보고서 요약하기",
+          "prompt": "수업 시간에 진행한 인상적인 과학 실험과 교사/모둠원의 역할을 5형식 문형을 활용하여 보고서 형태로 서술하시오.",
+          "conditions": [
+            "5형식 문형 [동사 + 목적어 + to부정사]을 1회 이상 사용할 것",
+            "사역동사 [make/let + 목적어 + 동사원형]을 1회 이상 사용할 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Last Tuesday, our group conducted an exciting physics experiment. The teacher encouraged us to observe the motion of light closely. He also let us record our own scientific observations on tablets. This hands-on activity helped me understand science much better.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "Lesson 5. Better Words, Better Worlds",
+      "topic": "따뜻한 언어 소통과 포용 사회",
+      "targetGrammar": [
+        "양보 접속사 though / although",
+        "관계부사 where / when"
+      ],
+      "warmup": [
+        {
+          "id": "k2_u5_w1",
+          "question": "__________ it was raining hard, we decided to play soccer. ('비록 ~일지라도'를 뜻하는 접속사를 쓰시오)",
+          "answer": "Although",
+          "explanation": "양보를 나타내는 부사절 접속사는 Although(또는 Though)입니다."
+        },
+        {
+          "id": "k2_u5_w2",
+          "question": "This is the library __________ I study English every afternoon. (장소를 나타내는 관계부사를 쓰시오)",
+          "answer": "where",
+          "explanation": "장소 선행사 the library를 수식하는 관계부사는 where입니다."
+        },
+        {
+          "id": "k2_u5_w3",
+          "question": "Do you remember the day __________ we first met at school? (시간 관계부사를 쓰시오)",
+          "answer": "when",
+          "explanation": "시간 선행사 the day 뒤에는 관계부사 when을 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k2_u5_a1",
+          "korean": "비록 영작이 다소 어렵더라도, 나는 매일 포기하지 않고 연습한다.",
+          "conditions": [
+            "접속사 'Although'로 문장을 시작할 것",
+            "'English writing is somewhat difficult'를 포함할 것",
+            "'I practice every day without giving up'을 연결할 것"
+          ],
+          "requiredWords": [
+            "Although English writing is somewhat difficult",
+            "I practice every day without giving up"
+          ],
+          "sampleAnswer": "Although English writing is somewhat difficult, I practice every day without giving up.",
+          "explanation": "양보 접속사 Although절과 주절의 시제 및 문장 구조를 바르게 연결합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k2_u5_b1",
+          "passage": "Daegu is the beautiful city ⓐwhich I was born and ⓑgrew up with my lovely family.",
+          "wrongSymbol": "ⓐ",
+          "correction": "where",
+          "alternativeCorrections": [
+            "in which"
+          ],
+          "reason": "뒤따르는 절(I was born and grew up)이 완전한 장소 부사구를 필요로 하므로 관계대명사 which가 아닌 관계부사 where로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k2_u5_d1",
+          "title": "수행평가: 따뜻한 말 한마디가 지닌 힘에 대한 에세이",
+          "prompt": "친구들과 대화할 때 사용하는 배려의 언어와 긍정적인 소통의 힘에 대해 양보 접속사를 활용하여 서술하시오.",
+          "conditions": [
+            "양보 접속사 Although 또는 Though를 1회 이상 사용할 것",
+            "관계부사 where를 1회 이상 사용할 것",
+            "최소 4문장, 35단어 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Kind words have tremendous power to change our community. Although we sometimes have disagreements, respectful communication heals hurt feelings quickly. School should be a peaceful place where every student feels safe. Let's speak warm words to our friends today.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "Lesson 6. Cultural Treasures",
+      "topic": "세계의 찬란한 문화유산과 감동",
+      "targetGrammar": [
+        "to부정사의 형용사적 용법",
+        "간접의문문 (의문사 + 주어 + 동사)"
+      ],
+      "warmup": [
+        {
+          "id": "k2_u6_w1",
+          "question": "I have no paper __________ (write) on. (전치사를 포함한 to부정사 형태로 쓰시오)",
+          "answer": "to write on",
+          "explanation": "명사 paper를 수식하며 뒤에 전치사 on이 필수적인 to부정사 형용사적 용법입니다."
+        },
+        {
+          "id": "k2_u6_w2",
+          "question": "Do you know __________ the museum opens? (간접의문문 어순으로 '언제'를 넣어 완성하시오)",
+          "answer": "when",
+          "explanation": "간접의문문은 [의문사 + 주어 + 동사]의 평서문 어순을 따릅니다."
+        },
+        {
+          "id": "k2_u6_w3",
+          "question": "She asked me where __________ (be) the nearest subway station. (과거 간접의문문 동사로 쓰시오)",
+          "answer": "was",
+          "explanation": "where the nearest subway station was의 어순입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k2_u6_a1",
+          "korean": "나는 그 박물관이 언제 문을 여는지 알고 싶다.",
+          "conditions": [
+            "주어로 'I'를 사용할 것",
+            "동사 'want to know'를 사용할 것",
+            "간접의문문 'when the museum opens' 어순을 지킬 것",
+            "정확히 총 8단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "I want to know when the museum opens"
+          ],
+          "targetWordCount": 8,
+          "sampleAnswer": "I want to know when the museum opens.",
+          "explanation": "want to know 뒤에 의문사(when) + 주어(the museum) + 동사(opens) 어순을 맞춥니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k2_u6_b1",
+          "passage": "Can you tell me ⓐwhere does the historical museum locate and ⓑhow I can get there?",
+          "wrongSymbol": "ⓐ",
+          "correction": "where the historical museum is located",
+          "alternativeCorrections": [
+            "where the historical museum is"
+          ],
+          "reason": "간접의문문은 [의문사 + 주어 + 동사] 어순이므로 도치 의문문 does the historical museum locate를 평서문 어순으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k2_u6_d1",
+          "title": "수행평가: 전 세계 친구들에게 알리고 싶은 대한민국의 문화유산",
+          "prompt": "외국인 친구들에게 소개하고 싶은 한국의 대표적인 문화유산을 to부정사와 간접의문문을 사용하여 영작하시오.",
+          "conditions": [
+            "to부정사의 형용사적 용법(명사 + to V)을 1회 이상 사용할 것",
+            "간접의문문 [의문사 + 주어 + 동사]을 1회 이상 포함할 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Korea has many historic treasures to show the entire world. One famous example is Bulguksa Temple in Gyeongju. Many foreign tourists wonder why its stone architecture is so magnificent. It is truly a great masterpiece to be proud of.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    }
+  ]
+}

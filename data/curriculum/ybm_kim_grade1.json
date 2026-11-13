@@ -1,0 +1,494 @@
+{
+  "textbookId": "ybm_kim_grade1",
+  "title": "YBM(김은형) 중등 영어 1 (2025 최신)",
+  "grade": 1,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Lesson 1. All About Me",
+      "topic": "나의 소개와 특별한 친구들",
+      "targetGrammar": [
+        "be동사의 현재형",
+        "일반동사의 3인칭 단수 현재형(-s/-es)"
+      ],
+      "warmup": [
+        {
+          "id": "k1_u1_w1",
+          "question": "Subin __________ (be) a cheerful middle school student. (괄호 안의 be동사를 알맞게 바꾸시오)",
+          "answer": "is",
+          "explanation": "주어 Subin이 3인칭 단수이므로 be동사 현재형 is를 씁니다."
+        },
+        {
+          "id": "k1_u1_w2",
+          "question": "He always __________ (help) his friends with a warm smile. (괄호 안의 동사를 알맞은 형태로 쓰시오)",
+          "answer": "helps",
+          "explanation": "주어 He가 3인칭 단수이므로 일반동사 help 뒤에 -s를 붙여 helps로 씁니다."
+        },
+        {
+          "id": "k1_u1_w3",
+          "question": "Minsu __________ (not, eat) spicy food for lunch. (부정문을 완성하시오)",
+          "answer": "doesn't eat",
+          "explanation": "3인칭 단수 주어의 일반동사 부정형은 doesn't + 동사원형입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k1_u1_a1",
+          "korean": "수빈이와 민수는 친절하고 성실한 학생들이다.",
+          "conditions": [
+            "주어로 'Subin and Minsu'를 사용할 것",
+            "be동사 현재형을 사용할 것",
+            "'kind', 'diligent students'를 포함할 것",
+            "정확히 총 7단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "Subin and Minsu",
+            "kind",
+            "diligent students"
+          ],
+          "targetWordCount": 7,
+          "sampleAnswer": "Subin and Minsu are kind diligent students.",
+          "explanation": "복수 주어 Subin and Minsu 뒤에는 be동사 are를 사용합니다."
+        },
+        {
+          "id": "k1_u1_a2",
+          "korean": "그녀는 매일 아침 도서관에서 책을 읽는다.",
+          "conditions": [
+            "주어로 'She'를 사용할 것",
+            "동사 'read a book', 장소/시간 부사 'in the library', 'every morning'을 사용할 것",
+            "3인칭 단수 주어에 맞추어 동사를 알맞게 변형할 것"
+          ],
+          "requiredWords": [
+            "She",
+            "reads a book",
+            "in the library",
+            "every morning"
+          ],
+          "sampleAnswer": "She reads a book in the library every morning.",
+          "explanation": "주어 She가 3인칭 단수이므로 read 뒤에 -s를 붙여 reads로 씁니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k1_u1_b1",
+          "passage": "My brother loves sports. He ⓐplay soccer with his classmates every weekend. He is ⓑvery energetic.",
+          "wrongSymbol": "ⓐ",
+          "correction": "plays",
+          "alternativeCorrections": [
+            "plays soccer"
+          ],
+          "reason": "주어 He가 3인칭 단수 현재형이므로 play 뒤에 -s를 붙여 plays로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k1_u1_d1",
+          "title": "수행평가: 나만의 특별한 단짝 친구 소개하기",
+          "prompt": "나의 가장 친한 친구의 이름, 성격, 취미를 포함하여 4문장 이상의 완성된 영어 단락으로 소개하는 글을 작성하시오.",
+          "conditions": [
+            "친구의 이름과 나이를 소개하는 문장을 포함할 것",
+            "be동사 현재형과 일반동사 3인칭 단수 현재형(-s)을 각각 1회 이상 사용할 것",
+            "친구의 성격과 좋아하는 취미를 구체적으로 표현할 것",
+            "최소 4문장, 35단어 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Hello! Let me introduce my best friend, Minsu. He is a warm and cheerful student in my class. He plays basketball every afternoon because he loves sports. We always help each other and study English together.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Lesson 2. Think Wise, Stay Safe",
+      "topic": "지혜로운 일상과 안전 수칙",
+      "targetGrammar": [
+        "조동사 can의 용법과 부정문",
+        "명령문 (긍정/부정 명령문)"
+      ],
+      "warmup": [
+        {
+          "id": "k1_u2_w1",
+          "question": "__________ (wear) your helmet when riding a bicycle! (명령문으로 알맞게 쓰시오)",
+          "answer": "Wear",
+          "explanation": "명령문은 주어 없이 동사원형으로 시작하며, 문장 첫 글자는 대문자로 씁니다."
+        },
+        {
+          "id": "k1_u2_w2",
+          "question": "__________ (not, push) your friends on the stairs! (부정 명령문으로 쓰시오)",
+          "answer": "Don't push",
+          "explanation": "부정 명령문은 Don't + 동사원형으로 시작합니다."
+        },
+        {
+          "id": "k1_u2_w3",
+          "question": "She __________ (can, swim) very fast across the pool. (알맞은 형태로 쓰시오)",
+          "answer": "can swim",
+          "explanation": "조동사 can 뒤에는 반드시 동사원형이 옵니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k1_u2_a1",
+          "korean": "교실 안에서 뛰지 마라. 너는 다칠 수 있다.",
+          "conditions": [
+            "부정명령문 'Don't run in the classroom'을 사용할 것",
+            "조동사 can과 수동 표현 'can get hurt'를 사용할 것",
+            "정확히 두 문장으로 나누어 완성할 것"
+          ],
+          "requiredWords": [
+            "Don't run in the classroom",
+            "can get hurt"
+          ],
+          "sampleAnswer": "Don't run in the classroom. You can get hurt.",
+          "explanation": "부정명령문 Don't 뒤에는 동사원형 run을 쓰고, 조동사 can 뒤에도 동사원형 get을 씁니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k1_u2_b1",
+          "passage": "Safety rules are very important. Please ⓐcarefully to listen to the teacher and ⓑdon't run in the hallway.",
+          "wrongSymbol": "ⓐ",
+          "correction": "listen carefully",
+          "alternativeCorrections": [
+            "listen to the teacher carefully",
+            "listen"
+          ],
+          "reason": "명령문에서는 동사원형이 먼저 와야 하므로 carefully to listen을 listen carefully로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k1_u2_d1",
+          "title": "수행평가: 우리 교실 행복 안전 수칙 포스터 만들기",
+          "prompt": "우리 반 친구들이 안전하고 즐겁게 생활하기 위해 지켜야 할 규칙 3가지를 명령문과 조동사 can을 활용하여 단락으로 작성하시오.",
+          "conditions": [
+            "긍정 명령문과 부정 명령문(Don't ~)을 각각 1회 이상 포함할 것",
+            "조동사 can을 사용하여 규칙을 지켰을 때의 좋은 점을 서술할 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Here are our classroom safety rules. First, listen carefully to your teacher during class. Second, don't run in the hallway or on the stairs. Third, keep your desk clean every day. With these simple rules, we can create a happy and safe school.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Lesson 3. Wonderful Stories from School",
+      "topic": "학교 축제와 잊지 못할 추억",
+      "targetGrammar": [
+        "일반동사의 과거시제(규칙/불규칙)",
+        "과거진행형(was/were + v-ing)"
+      ],
+      "warmup": [
+        {
+          "id": "k1_u3_w1",
+          "question": "We __________ (go) to the science museum yesterday. (괄호 안의 동사를 과거형으로 쓰시오)",
+          "answer": "went",
+          "explanation": "go의 불규칙 과거형은 went입니다."
+        },
+        {
+          "id": "k1_u3_w2",
+          "question": "At four yesterday, Jisu __________ (practice) the violin. (과거진행형으로 쓰시오)",
+          "answer": "was practicing",
+          "explanation": "단수 주어 Jisu에 대한 과거진행형은 was + practicing입니다."
+        },
+        {
+          "id": "k1_u3_w3",
+          "question": "They __________ (not, watch) TV last night. (과거 부정문으로 쓰시오)",
+          "answer": "didn't watch",
+          "explanation": "일반동사 과거 부정문은 didn't + 동사원형입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k1_u3_a1",
+          "korean": "어제 지호는 도서관에 갔지만, 그의 책을 찾지 못했다.",
+          "conditions": [
+            "어제('yesterday')와 접속사 'but'을 사용할 것",
+            "동사 'go to the library', 'find his book'의 과거형 및 부정형을 사용할 것",
+            "정확히 총 12단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "yesterday",
+            "went to the library",
+            "didn't find his book"
+          ],
+          "targetWordCount": 12,
+          "sampleAnswer": "Yesterday Jiho went to the library, but he didn't find his book.",
+          "explanation": "과거시제 went와 부정형 didn't find를 정확히 연결합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k1_u3_b1",
+          "passage": "Last Friday was our school talent show. While Minho ⓐwas sang on the stage, the audience ⓑcheered loudly.",
+          "wrongSymbol": "ⓐ",
+          "correction": "was singing",
+          "alternativeCorrections": [
+            "singing"
+          ],
+          "reason": "과거진행형은 [was/were + 동사원형-ing] 형태이므로 was sang을 was singing으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k1_u3_d1",
+          "title": "수행평가: 잊지 못할 지난 주말의 추억 일기 쓰기",
+          "prompt": "지난 주말에 가족이나 친구와 함께 보낸 특별한 경험을 과거시제와 과거진행형을 사용하여 생생하게 작성하시오.",
+          "conditions": [
+            "지난 주말에 한 일과 당시의 감정을 포함할 것",
+            "일반동사의 불규칙 과거형을 2개 이상 사용할 것",
+            "과거진행형(was/were -ing) 문장을 1회 이상 사용할 것",
+            "최소 4문장, 35단어 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Last Saturday was an unforgettable day for me. I went to the amusement park with my family. When we arrived, many children were smiling happily. I rode a huge roller coaster and had a wonderful time.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "Lesson 4. Make a Difference in Our Community",
+      "topic": "우리 동네를 변화시키는 따뜻한 나눔",
+      "targetGrammar": [
+        "to부정사의 명사적 용법 (주어/목적어/보어)",
+        "미래를 나타내는 조동사 will"
+      ],
+      "warmup": [
+        {
+          "id": "k1_u4_w1",
+          "question": "My dream is __________ (become) a passionate doctor. (to부정사 형태로 쓰시오)",
+          "answer": "to become",
+          "explanation": "보어 자리에 오는 to부정사 명사적 용법입니다."
+        },
+        {
+          "id": "k1_u4_w2",
+          "question": "We plan __________ (clean) the park this Saturday. (알맞은 형태로 쓰시오)",
+          "answer": "to clean",
+          "explanation": "동사 plan은 목적어로 to부정사를 취합니다."
+        },
+        {
+          "id": "k1_u4_w3",
+          "question": "I __________ (visit) my grandparents next weekend. (미래형 will을 사용하여 쓰시오)",
+          "answer": "will visit",
+          "explanation": "미래를 나타내는 조동사 will 뒤에는 동사원형이 옵니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k1_u4_a1",
+          "korean": "나는 아픈 동물들을 돌보는 수의사가 되기를 원한다.",
+          "conditions": [
+            "주어로 'I'를 사용할 것",
+            "동사 'want'의 목적어로 to부정사 'to become a vet'을 사용할 것",
+            "'take care of sick animals'를 포함할 것"
+          ],
+          "requiredWords": [
+            "want to become a vet",
+            "take care of sick animals"
+          ],
+          "sampleAnswer": "I want to become a vet to take care of sick animals.",
+          "explanation": "want to become과 목적을 나타내는 to take care of를 알맞게 연결합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k1_u4_b1",
+          "passage": "Many students joined the green club yesterday. They decided ⓐplanting trees, and they ⓑwill water them every Friday.",
+          "wrongSymbol": "ⓐ",
+          "correction": "to plant",
+          "alternativeCorrections": [
+            "to plant trees"
+          ],
+          "reason": "동사 decide는 목적어로 동명사가 아닌 to부정사를 취하므로 planting을 to plant로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k1_u4_d1",
+          "title": "수행평가: 미래의 나의 꿈과 사회 기여 계획서",
+          "prompt": "자신의 장래희망과 그 꿈을 이루어 사회나 우리 이웃에게 어떻게 도움이 되고 싶은지 영작하시오.",
+          "conditions": [
+            "to부정사의 명사적 용법(want to / hope to 등)을 2회 이상 포함할 것",
+            "미래 조동사 will을 사용하여 포부를 밝힐 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "My dream is to become an environmental scientist. I want to protect clean rivers and forests from pollution. In the future, I will invent eco-friendly technology for our community. I will study hard every day to achieve my precious dream.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "Lesson 5. Love Yourself, Live Your Life",
+      "topic": "건강한 마음과 나만의 소중한 취미",
+      "targetGrammar": [
+        "감각동사 + 형용사 보어",
+        "동명사의 명사적 역할(주어/목적어/보어)"
+      ],
+      "warmup": [
+        {
+          "id": "k1_u5_w1",
+          "question": "Fresh bakery bread smells __________ (sweet / sweetly). (알맞은 것을 고르시오)",
+          "answer": "sweet",
+          "explanation": "감각동사 smell 뒤에는 부사가 아닌 형용사 보어가 와야 합니다."
+        },
+        {
+          "id": "k1_u5_w2",
+          "question": "__________ (read) poetry makes my mind peaceful. (동명사 주어로 쓰시오)",
+          "answer": "Reading",
+          "explanation": "문장의 주어 역할을 하는 동명사는 동사원형에 -ing를 붙여 Reading으로 씁니다."
+        },
+        {
+          "id": "k1_u5_w3",
+          "question": "Minho enjoys __________ (listen) to acoustic guitar music. (알맞은 형태로 쓰시오)",
+          "answer": "listening",
+          "explanation": "동사 enjoy는 목적어로 동명사(-ing)만을 취합니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k1_u5_a1",
+          "korean": "엄마가 만들어 주신 신선한 과일 파이는 달콤한 냄새가 나고 맛이 좋다.",
+          "conditions": [
+            "주어로 'The fresh fruit pie'를 사용할 것",
+            "감각동사 'smell sweet', 'taste delicious'를 사용할 것",
+            "3인칭 단수 주어에 수 일치시킬 것",
+            "정확히 총 9단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "The fresh fruit pie",
+            "smells sweet",
+            "tastes delicious"
+          ],
+          "targetWordCount": 9,
+          "sampleAnswer": "The fresh fruit pie smells sweet and tastes delicious.",
+          "explanation": "감각동사 뒤에는 형용사 보어 sweet와 delicious를 쓰며, 3인칭 단수 -s를 붙입니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k1_u5_b1",
+          "passage": "After exercising in the park, the cold lemonade ⓐtastes sweetly. I enjoy ⓑdrinking it under the tree.",
+          "wrongSymbol": "ⓐ",
+          "correction": "tastes sweet",
+          "alternativeCorrections": [
+            "sweet"
+          ],
+          "reason": "감각동사 taste 뒤에는 부사가 아닌 형용사가 보어로 와야 하므로 sweetly를 sweet로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k1_u5_d1",
+          "title": "수행평가: 스트레스를 날리는 나만의 힐링 취미 소개하기",
+          "prompt": "스트레스를 해소하고 기분을 좋게 만드는 자신만의 취미 활동을 감각동사와 동명사를 활용하여 소개하시오.",
+          "conditions": [
+            "동명사(V-ing)를 주어나 목적어로 2회 이상 사용할 것",
+            "감각동사(feel, look, sound 등) + 형용사 표현을 1회 이상 사용할 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Listening to cheerful pop songs is my favorite hobby. Whenever I feel tired, music makes me feel energetic. I also enjoy dancing in my room along with the rhythm. It is a wonderful way to refresh my mind.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "Lesson 6. A Smart Digital Life",
+      "topic": "현명하고 안전한 디지털 세상",
+      "targetGrammar": [
+        "형용사와 부사의 비교급 표현",
+        "접속사 because, when"
+      ],
+      "warmup": [
+        {
+          "id": "k1_u6_w1",
+          "question": "Summer in Daegu is much __________ (hot) than spring. (비교급으로 쓰시오)",
+          "answer": "hotter",
+          "explanation": "단모음+단자음 형용사 hot의 비교급은 자음을 겹쳐 쓰고 hotter입니다."
+        },
+        {
+          "id": "k1_u6_w2",
+          "question": "This digital tablet is __________ (convenient) than the old one. (비교급으로 쓰시오)",
+          "answer": "more convenient",
+          "explanation": "3음절 이상의 긴 형용사는 앞에 more를 붙여 비교급을 만듭니다."
+        },
+        {
+          "id": "k1_u6_w3",
+          "question": "I was very surprised __________ I heard the exciting news. (때를 나타내는 접속사를 쓰시오)",
+          "answer": "when",
+          "explanation": "'~할 때'를 나타내는 시간 접속사는 when입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k1_u6_a1",
+          "korean": "새로운 스마트폰은 이전 것보다 훨씬 더 빠르고 더 유용하다.",
+          "conditions": [
+            "주어로 'The new smartphone'을 사용할 것",
+            "비교급 표현 'faster', 'more useful'과 'than'을 사용할 것",
+            "정확히 총 12단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "The new smartphone",
+            "is faster and more useful than",
+            "the old one"
+          ],
+          "targetWordCount": 12,
+          "sampleAnswer": "The new smartphone is faster and more useful than the old one.",
+          "explanation": "faster와 more useful의 올바른 비교급 형태를 병렬 연결합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k1_u6_b1",
+          "passage": "Online books are becoming ⓐpopularer than paper books because they are ⓑlighter to carry.",
+          "wrongSymbol": "ⓐ",
+          "correction": "more popular",
+          "alternativeCorrections": [
+            "more popular than"
+          ],
+          "reason": "popular는 3음절 형용사이므로 popularer가 아닌 more popular로 비교급을 만들어야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k1_u6_d1",
+          "title": "수행평가: 스마트폰의 현명한 활용과 디지털 디톡스",
+          "prompt": "스마트폰의 편리한 점과 지나친 사용으로 인한 문제점을 비교급과 접속사를 활용하여 조화롭게 영작하시오.",
+          "conditions": [
+            "비교급 표현(more ~ than 또는 ~er than)을 1회 이상 사용할 것",
+            "접속사 because 또는 when을 1회 이상 사용할 것",
+            "자신만의 디지털 사용 실천 다짐을 포함할 것",
+            "최소 4문장, 35단어 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Smartphones make our school lives much easier than before. We can find useful information quickly when we do homework. However, playing games too long makes our eyes tired. Therefore, I will use my smartphone wisely and spend more time reading books.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    }
+  ]
+}

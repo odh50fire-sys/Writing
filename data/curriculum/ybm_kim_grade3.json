@@ -1,0 +1,316 @@
+{
+  "textbookId": "ybm_kim_grade3",
+  "title": "YBM(김은형) 중등 영어 3 (2027 최신)",
+  "grade": 3,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Lesson 1. Voices of Tomorrow",
+      "topic": "청소년의 목소리와 미래 사회",
+      "targetGrammar": [
+        "가정법 과거 (If + S + were/과거동사)",
+        "I wish + 가정법 과거"
+      ],
+      "warmup": [
+        {
+          "id": "k3_u1_w1",
+          "question": "If I __________ (be) rich, I would donate half of my fortune. (가정법 be동사를 쓰시오)",
+          "answer": "were",
+          "explanation": "가정법 과거의 if절 be동사는 주어 인칭에 상관없이 were를 씁니다."
+        },
+        {
+          "id": "k3_u1_w2",
+          "question": "If she had enough time, she __________ (join) the environmental campaign. (알맞은 형태로 쓰시오)",
+          "answer": "would join",
+          "explanation": "가정법 과거의 주절은 [조동사 과거형(would/could) + 동사원형]입니다."
+        },
+        {
+          "id": "k3_u1_w3",
+          "question": "I wish I __________ (can) speak French fluently. (가정법 과거 조동사를 쓰시오)",
+          "answer": "could",
+          "explanation": "I wish 뒤에는 가정법 과거 시제로 조동사 could를 씁니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k3_u1_a1",
+          "korean": "내가 만약 날개가 있다면, 나는 전 세계를 자유롭게 날아다닐 텐데.",
+          "conditions": [
+            "가정법 과거 'If I had wings'를 사용할 것",
+            "주절에 조동사 과거형 'I could fly freely around the world'를 사용할 것",
+            "정확히 총 11단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "If I had wings",
+            "I could fly freely around the world"
+          ],
+          "targetWordCount": 11,
+          "sampleAnswer": "If I had wings, I could fly freely around the world.",
+          "explanation": "가정법 과거 시제(had / could fly)의 호응을 맞춥니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k3_u1_b1",
+          "passage": "If I ⓐam the president of our school, I ⓑwould create more sports clubs for all students.",
+          "wrongSymbol": "ⓐ",
+          "correction": "were",
+          "alternativeCorrections": [
+            "were the president"
+          ],
+          "reason": "현재 사실의 반대를 나타내는 가정법 과거이므로 am을 were로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k3_u1_d1",
+          "title": "수행평가: 내가 만약 세상을 바꿀 수 있는 초능력이 있다면",
+          "prompt": "자신에게 초능력이 주어진다면 어떤 사회적 문제를 해결하고 싶은지 가정법 과거를 활용하여 논리적으로 서술하시오.",
+          "conditions": [
+            "가정법 과거(If + S + were/과거동사, S + would/could + V)를 1회 이상 사용할 것",
+            "I wish 가정법 구문을 1회 이상 사용할 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "If I had the power to heal all illnesses, I would help sick children all around the globe. Many families suffer from severe diseases without proper medicine. I wish everyone could live a healthy and peaceful life. True change begins with small empathy and collective action.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Lesson 2. Wonders of Human Mind",
+      "topic": "뇌 과학과 인간 심리의 신비",
+      "targetGrammar": [
+        "선행사를 포함한 관계대명사 what",
+        "접속사 as if + 가정법"
+      ],
+      "warmup": [
+        {
+          "id": "k3_u2_w1",
+          "question": "__________ surprises me most is his extraordinary memory. ('~하는 것'을 뜻하는 관계대명사를 쓰시오)",
+          "answer": "What",
+          "explanation": "선행사를 포함하여 '~하는 것'의 의미로 주어 역할을 하는 관계대명사는 What입니다."
+        },
+        {
+          "id": "k3_u2_w2",
+          "question": "He talks as if he __________ (know) everything about artificial intelligence. (가정법 과거 형태로 쓰시오)",
+          "answer": "knew",
+          "explanation": "as if 뒤에 현재 사실과 반대되는 가정을 할 때는 과거시제 knew를 씁니다."
+        },
+        {
+          "id": "k3_u2_w3",
+          "question": "Show me __________ you have in your bag. (관계대명사를 쓰시오)",
+          "answer": "what",
+          "explanation": "목적어 자리에 오며 선행사를 포함하는 관계대명사는 what입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k3_u2_a1",
+          "korean": "나에게 가장 중요한 것은 나의 가족과 함께 행복한 시간을 보내는 것이다.",
+          "conditions": [
+            "관계대명사 'What is most important to me'로 시작할 것",
+            "보어로 to부정사 'to spend happy time with my family'를 사용할 것",
+            "be동사 단수 현재형 'is'를 사용할 것"
+          ],
+          "requiredWords": [
+            "What is most important to me",
+            "is to spend happy time with my family"
+          ],
+          "sampleAnswer": "What is most important to me is to spend happy time with my family.",
+          "explanation": "관계대명사 what절은 단수 취급하므로 be동사 is로 연결합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k3_u2_b1",
+          "passage": "This is ⓐthat I have looked for all day long in the school library.",
+          "wrongSymbol": "ⓐ",
+          "correction": "what",
+          "alternativeCorrections": [
+            "the thing that",
+            "the thing which"
+          ],
+          "reason": "선행사가 없으면서 look for의 목적어 역할을 하는 명사절을 이끌어야 하므로 that을 관계대명사 what으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k3_u2_d1",
+          "title": "수행평가: 긍정적인 마음가짐이 뇌에 미치는 영향 분석",
+          "prompt": "긍정적인 생각과 꾸준한 노력이 우리의 두뇌와 성장에 미치는 놀라운 효과를 관계대명사 what을 활용하여 영작하시오.",
+          "conditions": [
+            "관계대명사 what을 주어로 하는 문장을 1회 이상 사용할 것",
+            "as if 구문을 1회 이상 사용할 것",
+            "최소 4문장, 35단어 이상으로 작성할 것"
+          ],
+          "sampleEssay": "What scientists discovered recently is truly fascinating. Our brain changes continuously when we learn new challenges enthusiastically. Even if a problem seems tough, acting as if you were confident boosts your actual performance. Believing in yourself is the key to mental growth.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Lesson 3. Connecting Cultures",
+      "topic": "지구촌 다문화와 상호 존중",
+      "targetGrammar": [
+        "분사구문 (V-ing)",
+        "with + 명사 + 분사 (부대상황)"
+      ],
+      "warmup": [
+        {
+          "id": "k3_u3_w1",
+          "question": "__________ (walk) along the street, I ran into an old friend. (분사구문 형태로 쓰시오)",
+          "answer": "Walking",
+          "explanation": "While I walked를 간결하게 줄인 현재분사 Walking으로 시작합니다."
+        },
+        {
+          "id": "k3_u3_w2",
+          "question": "She was listening to music with her eyes __________ (close). (알맞은 분사형을 쓰시오)",
+          "answer": "closed",
+          "explanation": "눈은 감겨지는 수동의 관계이므로 과거분사 closed를 씁니다."
+        },
+        {
+          "id": "k3_u3_w3",
+          "question": "__________ (feel) exhausted, he went to bed earlier than usual. (분사구문으로 쓰시오)",
+          "answer": "Feeling",
+          "explanation": "이유를 나타내는 분사구문 Feeling입니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k3_u3_a1",
+          "korean": "거리를 따라 걷다가, 나는 우연히 오랜 친구를 마주쳤다.",
+          "conditions": [
+            "분사구문 'Walking along the street'로 시작할 것",
+            "주절에 과거동사 'ran into an old friend'를 사용할 것",
+            "정확히 총 10단어로 영작할 것"
+          ],
+          "requiredWords": [
+            "Walking along the street",
+            "I ran into an old friend"
+          ],
+          "targetWordCount": 10,
+          "sampleAnswer": "Walking along the street, I ran into an old friend.",
+          "explanation": "분사구문 Walking과 주절의 과거시제 ran into를 올바르게 조합합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k3_u3_b1",
+          "passage": "ⓐArrived at the airport, Minho looked around for his foreign host family.",
+          "wrongSymbol": "ⓐ",
+          "correction": "Arriving",
+          "alternativeCorrections": [
+            "When he arrived",
+            "On arriving"
+          ],
+          "reason": "주어 Minho가 공항에 도착하는 능동의 관계이므로 과거분사 Arrived를 현재분사 Arriving으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k3_u3_d1",
+          "title": "수행평가: 다양한 문화적 배경을 가진 친구들과의 조화로운 공존",
+          "prompt": "다문화 사회에서 서로 다른 문화적 배경을 존중하고 편견을 극복하는 방법에 대해 분사구문을 활용하여 작성하시오.",
+          "conditions": [
+            "분사구문(V-ing로 시작하는 절)을 1회 이상 사용할 것",
+            "with + 명사 + 분사 부대상황 구문을 1회 이상 사용할 것",
+            "최소 4문장 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Living in a multicultural society, we encounter diverse traditions every day. Respecting differences with open minds, we can build a warmer and richer community. Prejudices disappear when we listen sincerely with our hearts opened. Harmony begins with mutual understanding.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "Lesson 4. Science in Motion",
+      "topic": "미래 인공지능과 우주 항공 과학",
+      "targetGrammar": [
+        "부정어 도치 구문 (Never/Little + 조동사/be + S)",
+        "It ~ that 강조 구문"
+      ],
+      "warmup": [
+        {
+          "id": "k3_u4_w1",
+          "question": "Never __________ I imagined that robots could paint like artists. (도치 구문 조동사 과거형을 쓰시오)",
+          "answer": "had",
+          "explanation": "부정어 Never가 문두에 올 때 [조동사 + 주어 + 본동사]로 도치됩니다."
+        },
+        {
+          "id": "k3_u4_w2",
+          "question": "It was yesterday __________ Minho solved the difficult physics puzzle. (강조 구문 접속사를 쓰시오)",
+          "answer": "that",
+          "explanation": "시간 부사 yesterday를 강조하는 It was ~ that 강조 구문입니다."
+        },
+        {
+          "id": "k3_u4_w3",
+          "question": "Little did he __________ (know) about the surprising cosmic discovery. (알맞은 형태로 쓰시오)",
+          "answer": "know",
+          "explanation": "도치 조동사 did 뒤에는 동사원형 know가 옵니다."
+        }
+      ],
+      "typeA": [
+        {
+          "id": "k3_u4_a1",
+          "korean": "민호가 교실에서 그 스마트폰을 잃어버린 것은 바로 어제였다.",
+          "conditions": [
+            "강조 구문 'It was yesterday that'으로 시작할 것",
+            "'Minho lost the smartphone in the classroom'을 연결할 것",
+            "과거 시제를 정확히 지킬 것"
+          ],
+          "requiredWords": [
+            "It was yesterday that",
+            "Minho lost the smartphone in the classroom"
+          ],
+          "sampleAnswer": "It was yesterday that Minho lost the smartphone in the classroom.",
+          "explanation": "It was ~ that 사이에 시간 부사 yesterday를 강조합니다."
+        }
+      ],
+      "typeB": [
+        {
+          "id": "k3_u4_b1",
+          "passage": "Never I ⓐhave seen such an astonishing scientific invention before in my entire life.",
+          "wrongSymbol": "ⓐ",
+          "correction": "have I",
+          "alternativeCorrections": [
+            "have I seen"
+          ],
+          "reason": "부정어 Never가 문두에 위치하므로 [조동사 + 주어] 어순으로 도치되어 have I seen으로 고쳐야 합니다."
+        }
+      ],
+      "typeD": [
+        {
+          "id": "k3_u4_d1",
+          "title": "수행평가: 10년 후 미래 AI 사회의 변화와 인간의 역할",
+          "prompt": "인공지능과 우주 항공 과학의 발전이 가져올 10년 뒤의 세상에 대해 강조 구문을 활용하여 에세이를 작성하시오.",
+          "conditions": [
+            "It ~ that 강조 구문을 1회 이상 사용할 것",
+            "부정어 도치 또는 고급 연결사를 활용할 것",
+            "인간 고유의 창의성과 도덕성의 중요성을 강조할 것",
+            "최소 4문장, 35단어 이상으로 작성할 것"
+          ],
+          "sampleEssay": "Technology is advancing faster than ever in human history. It is human creativity and warmth that artificial intelligence can never replace. Never should we forget ethical responsibility while developing new science. With wisdom, we will lead an inspiring future for all.",
+          "scoringRubric": {
+            "content": 40,
+            "grammar": 30,
+            "mechanics": 30
+          }
+        }
+      ]
+    }
+  ]
+}
