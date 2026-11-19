@@ -1,0 +1,107 @@
+{
+  "userId": "eunnyu",
+  "textbookId": "ybm_park_grade1",
+  "unit": 1,
+  "currentStep": 4,
+  "stepSubIndex": 0,
+  "stepAnswers": {
+    "1": {
+      "0": "am",
+      "1": "likes",
+      "2": "doesn't play"
+    },
+    "2": {
+      "0": "Minho and Jisu are kind middle school students.",
+      "1": "Jinwoo gets up early and cleans his room every morning"
+    },
+    "3": {
+      "0": {
+        "symbol": "a",
+        "correction": "works"
+      },
+      "1": {
+        "symbol": "a",
+        "correction": "drink"
+      }
+    },
+    "4": {}
+  },
+  "stepGrades": {
+    "1": {
+      "0": {
+        "score": 100,
+        "passed": true,
+        "deductions": [
+          "감점 요인 없음 (정답)"
+        ],
+        "sampleAnswer": "am",
+        "feedback": "🎉 정답입니다! 아주 훌륭한 문법 감각이에요."
+      },
+      "1": {
+        "score": 100,
+        "passed": true,
+        "deductions": [
+          "감점 요인 없음 (정답)"
+        ],
+        "sampleAnswer": "likes",
+        "feedback": "🎉 정답입니다! 아주 훌륭한 문법 감각이에요."
+      },
+      "2": {
+        "score": 100,
+        "passed": true,
+        "deductions": [
+          "감점 요인 없음 (정답)"
+        ],
+        "sampleAnswer": "doesn't play",
+        "feedback": "🎉 정답입니다! 아주 훌륭한 문법 감각이에요."
+      }
+    },
+    "2": {
+      "0": {
+        "score": 100,
+        "passed": true,
+        "deductions": [
+          "감점 요인 없음 (만점)"
+        ],
+        "praises": [],
+        "sampleAnswer": "Minho and Jisu are kind middle school students.",
+        "feedback": "🎉 완벽합니다! 감점 없는 완벽한 동도중학교 만점 답안입니다!"
+      },
+      "1": {
+        "score": 95,
+        "passed": true,
+        "deductions": [
+          "문장 끝 구두점(마침표 . 또는 느낌표 !)이 누락되었습니다 (-5점)"
+        ],
+        "praises": [
+          "주어에 맞춘 3인칭 단수 동사 변형 'gets'을 정확히 작성했습니다!"
+        ],
+        "sampleAnswer": "Jinwoo gets up early and cleans his room every morning.",
+        "feedback": "👏 아주 잘했습니다! 몇 가지 사소한 규칙만 다듬으면 완벽해집니다."
+      }
+    },
+    "3": {
+      "0": {
+        "score": 100,
+        "passed": true,
+        "deductions": [
+          "감점 요인 없음 (만점)"
+        ],
+        "sampleAnswer": "ⓐ -> works (이유: 주어 He가 3인칭 단수 현재형이므로 일반동사 뒤에 -s를 붙여야 합니다.)",
+        "feedback": "🎯 완벽하게 킬러 어법 오류를 잡아냈습니다!"
+      },
+      "1": {
+        "score": 100,
+        "passed": true,
+        "deductions": [
+          "감점 요인 없음 (만점)"
+        ],
+        "sampleAnswer": "ⓐ -> doesn't drink (이유: 조동사 doesn't 뒤에는 동사원형이 와야 하므로 drinks의 s를 제거해야 합니다.)",
+        "feedback": "🎯 완벽하게 킬러 어법 오류를 잡아냈습니다!"
+      }
+    },
+    "4": {}
+  },
+  "timerSeconds": 1670,
+  "savedAt": 1794572057188
+}

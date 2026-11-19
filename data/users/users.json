@@ -8,6 +8,14 @@
       "avatar": "🐶",
       "targetSchool": "대구 동도중학교",
       "createdAt": "2026-11-13"
+    },
+    {
+      "id": "eunnyu",
+      "name": "은뉴",
+      "grade": 1,
+      "avatar": "🦊",
+      "targetSchool": "대구 동도중학교",
+      "createdAt": "2026-11-13"
     }
   ]
 }
