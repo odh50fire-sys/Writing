@@ -1,12 +1,30 @@
 {
   "notice": "학습자의 목표와 상황에 꼭 맞는 자료를 선택해 보세요! 교재 변경 시 홈 화면과 데일리 학습실의 모든 문항이 즉시 맞춤 연동됩니다.",
   "categories": [
-    { "id": "all", "name": "전체 보기 (11종)" },
-    { "id": "dongdo", "name": "동도중 맞춤 (3종)" },
-    { "id": "revision", "name": "2022 개정 최신 (3종)" },
-    { "id": "killer", "name": "수성구 1등급 킬러 (2종)" },
-    { "id": "nationwide", "name": "전국 최다 채택 (2종)" },
-    { "id": "official", "name": "교육부 공인 루브릭 (1종)" }
+    {
+      "id": "all",
+      "name": "전체 보기 (11종)"
+    },
+    {
+      "id": "dongdo",
+      "name": "동도중 맞춤 (3종)"
+    },
+    {
+      "id": "revision",
+      "name": "2022 개정 최신 (3종)"
+    },
+    {
+      "id": "killer",
+      "name": "수성구 1등급 킬러 (2종)"
+    },
+    {
+      "id": "nationwide",
+      "name": "전국 최다 채택 (2종)"
+    },
+    {
+      "id": "official",
+      "name": "교육부 공인 루브릭 (1종)"
+    }
   ],
   "textbooks": [
     {
@@ -21,7 +39,20 @@
       "fitForExplanation": "해당 자료는 대구 동도중학교 실제 채택 현행 교과서이므로, 동도중 1학년 학생의 학교 지필·수행평가 완벽 대비에 최적입니다.",
       "unitsCount": 8,
       "dataFile": "ybm_park_grade1.json",
-      "description": "2025년 최신 현행! 동도중학교 1학년 자유학기제 과정중심 수행평가 및 조건제시형 영작 완벽 대비"
+      "description": "2025년 최신 현행! 동도중학교 1학년 자유학기제 과정중심 수행평가 및 조건제시형 영작 완벽 대비",
+      "difficultyRank": 10,
+      "difficultyTotal": 11,
+      "difficultyTier": "중하",
+      "difficultyTierFull": "중하 (Lv.2)",
+      "difficultyScore": 2.0,
+      "difficultyIcon": "🌱",
+      "difficultyGauge": "●●○○○",
+      "difficultyLabel": "11권 중 10위 (중하)",
+      "difficultyHighlight": "동도중 1학년 자유학기제 과정중심 수행평가 기초",
+      "themeColor": "emerald",
+      "badgeBg": "from-emerald-700 to-teal-600",
+      "textColor": "text-emerald-700",
+      "lightBg": "bg-emerald-50 border-emerald-200"
     },
     {
       "id": "ybm_park_grade2",
@@ -35,7 +66,20 @@
       "fitForExplanation": "해당 자료는 대구 동도중학교 실제 채택 현행 교과서이므로, 동도중 2학년 지필고사 서술형 킬러 문항과 감점 요인을 완벽히 포섭합니다.",
       "unitsCount": 4,
       "dataFile": "ybm_park_grade2.json",
-      "description": "2026년 최신 현행! 관계대명사, 현재완료, 수동태 등 동도중 2학년 지필평가 서술형 킬러 문항 집중 대비"
+      "description": "2026년 최신 현행! 관계대명사, 현재완료, 수동태 등 동도중 2학년 지필평가 서술형 킬러 문항 집중 대비",
+      "difficultyRank": 5,
+      "difficultyTotal": 11,
+      "difficultyTier": "중상",
+      "difficultyTierFull": "중상 (Lv.3.5)",
+      "difficultyScore": 3.8,
+      "difficultyIcon": "🎯",
+      "difficultyGauge": "●●●◐○",
+      "difficultyLabel": "11권 중 5위 (중상)",
+      "difficultyHighlight": "동도중 2학년 지필고사 킬러 (관계사·현재완료·수동태)",
+      "themeColor": "yellow",
+      "badgeBg": "from-amber-600 to-yellow-600",
+      "textColor": "text-amber-700",
+      "lightBg": "bg-amber-50 border-amber-200"
     },
     {
       "id": "ybm_park_grade3",
@@ -49,7 +93,20 @@
       "fitForExplanation": "해당 자료는 대구 동도중학교 실제 채택 교과서로, 수성구 고교 진학 후 내신 1등급으로 직결되는 심화 서술형을 마스터할 수 있습니다.",
       "unitsCount": 3,
       "dataFile": "ybm_park_grade3.json",
-      "description": "2027년 최신 연계! 가정법, 분사구문, 관계부사 등 수성구 일반고 내신 1등급 직결 심화 구문 마스터"
+      "description": "2027년 최신 연계! 가정법, 분사구문, 관계부사 등 수성구 일반고 내신 1등급 직결 심화 구문 마스터",
+      "difficultyRank": 3,
+      "difficultyTotal": 11,
+      "difficultyTier": "상",
+      "difficultyTierFull": "상 (Lv.4.5)",
+      "difficultyScore": 4.5,
+      "difficultyIcon": "⚡",
+      "difficultyGauge": "●●●●○",
+      "difficultyLabel": "11권 중 3위 (상)",
+      "difficultyHighlight": "동도중 3학년 현행 고난도 서술형 & 고교 연계",
+      "themeColor": "amber",
+      "badgeBg": "from-amber-700 to-orange-600",
+      "textColor": "text-orange-600",
+      "lightBg": "bg-orange-50 border-orange-200"
     },
     {
       "id": "ybm_kim_grade1",
@@ -63,7 +120,20 @@
       "fitForExplanation": "해당 자료는 2022 개정 최신 교육과정 전국 공통 교과서이므로, 최신 실용 의사소통 및 단계별 영작 훈련에 최적입니다.",
       "unitsCount": 6,
       "dataFile": "ybm_kim_grade1.json",
-      "description": "2025년 최신 적용! 단계별 나선형 문법과 실용 의사소통 중심의 2022 개정 신규 교육과정 완벽 반영"
+      "description": "2025년 최신 적용! 단계별 나선형 문법과 실용 의사소통 중심의 2022 개정 신규 교육과정 완벽 반영",
+      "difficultyRank": 11,
+      "difficultyTotal": 11,
+      "difficultyTier": "하",
+      "difficultyTierFull": "하/입문 (Lv.1.5)",
+      "difficultyScore": 1.5,
+      "difficultyIcon": "🐣",
+      "difficultyGauge": "●○○○○",
+      "difficultyLabel": "11권 중 11위 (하/입문)",
+      "difficultyHighlight": "2022 개정 기초 의사소통 & 나선형 입문 기초 영작",
+      "themeColor": "teal",
+      "badgeBg": "from-teal-700 to-emerald-500",
+      "textColor": "text-teal-700",
+      "lightBg": "bg-teal-50 border-teal-200"
     },
     {
       "id": "ybm_kim_grade2",
@@ -77,7 +147,20 @@
       "fitForExplanation": "해당 자료는 2026학년도부터 전국 중2에 신규 도입된 최신 교과서로, 최신 기출 트렌드의 서술형 문항을 집중 학습합니다.",
       "unitsCount": 6,
       "dataFile": "ybm_kim_grade2.json",
-      "description": "2026년 최신 적용! 관계사, 현재완료, 5형식 등 중2 핵심 지필평가 서술형 집중 대비"
+      "description": "2026년 최신 적용! 관계사, 현재완료, 5형식 등 중2 핵심 지필평가 서술형 집중 대비",
+      "difficultyRank": 6,
+      "difficultyTotal": 11,
+      "difficultyTier": "중상",
+      "difficultyTierFull": "중상 (Lv.3.5)",
+      "difficultyScore": 3.6,
+      "difficultyIcon": "🎯",
+      "difficultyGauge": "●●●◐○",
+      "difficultyLabel": "11권 중 6위 (중상)",
+      "difficultyHighlight": "2022 개정 중2 핵심 문법 표준 훈련 (5형식·관계사)",
+      "themeColor": "amber",
+      "badgeBg": "from-amber-600 to-yellow-500",
+      "textColor": "text-amber-700",
+      "lightBg": "bg-amber-50 border-amber-200"
     },
     {
       "id": "ybm_kim_grade3",
@@ -91,7 +174,20 @@
       "fitForExplanation": "해당 자료는 2022 개정 중3 최신 교재로, 가정법·분사구문·도치 등 고난도 문법을 선제적으로 마스터할 수 있습니다.",
       "unitsCount": 4,
       "dataFile": "ybm_kim_grade3.json",
-      "description": "2027년 최신 적용! 가정법 과거, 도치 구문, 분사구문 등 고교 연계 최상위 영작"
+      "description": "2027년 최신 적용! 가정법 과거, 도치 구문, 분사구문 등 고교 연계 최상위 영작",
+      "difficultyRank": 4,
+      "difficultyTotal": 11,
+      "difficultyTier": "상",
+      "difficultyTierFull": "상 (Lv.4.5)",
+      "difficultyScore": 4.3,
+      "difficultyIcon": "⚡",
+      "difficultyGauge": "●●●●○",
+      "difficultyLabel": "11권 중 4위 (상)",
+      "difficultyHighlight": "2022 개정 중3 심화 문법 (가정법·도치·분사)",
+      "themeColor": "orange",
+      "badgeBg": "from-orange-700 to-amber-600",
+      "textColor": "text-orange-600",
+      "lightBg": "bg-orange-50 border-orange-200"
     },
     {
       "id": "mothertongue_3800_killer",
@@ -105,7 +201,20 @@
       "fitForExplanation": "해당 자료는 수성구 내신 1등급 직결 고난도 조건 영작 문항이다. 교과서 단원과 상관없이 지필고사 킬러 서술형을 무감점으로 돌파할 수 있는 고난도 훈련 문항을 다량 제공합니다.",
       "unitsCount": 4,
       "dataFile": "mothertongue_3800_killer.json",
-      "description": "대한민국 1위 문법서 기반! 5형식 사역·지각, 현재완료 수동태, 가정법 과거 등 수성구 킬러 서술형 총망라"
+      "description": "대한민국 1위 문법서 기반! 5형식 사역·지각, 현재완료 수동태, 가정법 과거 등 수성구 킬러 서술형 총망라",
+      "difficultyRank": 2,
+      "difficultyTotal": 11,
+      "difficultyTier": "최상",
+      "difficultyTierFull": "최상 (Lv.5)",
+      "difficultyScore": 4.8,
+      "difficultyIcon": "🔥",
+      "difficultyGauge": "●●●●●",
+      "difficultyLabel": "11권 중 2위 (최상)",
+      "difficultyHighlight": "수성구 내신 1등급 직결 조건 제시형 킬러 영작",
+      "themeColor": "rose",
+      "badgeBg": "from-rose-800 to-red-600",
+      "textColor": "text-red-600",
+      "lightBg": "bg-red-50 border-red-200"
     },
     {
       "id": "cedu_1001_sentence",
@@ -119,7 +228,20 @@
       "fitForExplanation": "해당 자료는 수성구 내신 1등급 직결 고난도 조건 영작 문항이다. 단순 암기가 아닌 영어 문장 뼈대와 분사구문·비교구문 구조를 훈련하여 어떤 변형 문제도 해결할 수 있습니다.",
       "unitsCount": 3,
       "dataFile": "cedu_1001_sentence.json",
-      "description": "천일문식 구문 영작 바이블! 수식어구 확장, 분사구문 압축, 최상급 비교구문 등 특목/일반고 1등급 직결 구문"
+      "description": "천일문식 구문 영작 바이블! 수식어구 확장, 분사구문 압축, 최상급 비교구문 등 특목/일반고 1등급 직결 구문",
+      "difficultyRank": 1,
+      "difficultyTotal": 11,
+      "difficultyTier": "최상",
+      "difficultyTierFull": "최상 (Lv.5)",
+      "difficultyScore": 5.0,
+      "difficultyIcon": "🔥",
+      "difficultyGauge": "●●●●●",
+      "difficultyLabel": "11권 중 1위 (최상)",
+      "difficultyHighlight": "특목/자사고 및 수성구 1등급 킬러 긴 복문 구문",
+      "themeColor": "purple",
+      "badgeBg": "from-purple-900 via-rose-900 to-rose-700",
+      "textColor": "text-rose-600",
+      "lightBg": "bg-rose-50 border-rose-200"
     },
     {
       "id": "donga_yoon",
@@ -133,7 +255,20 @@
       "fitForExplanation": "해당 자료는 전국에서 가장 채택률이 높은 교과서이므로, 타 학교 학생이나 타 교재를 쓰는 학습자까지 완벽히 포섭할 수 있다.",
       "unitsCount": 3,
       "dataFile": "donga_yoon.json",
-      "description": "전국 1위 최다 채택 교과서! to부정사 형용사적 용법, 과거진행형, 조건 if, 주격 관계사 등 학교 정규 서술형 완벽 대비"
+      "description": "전국 1위 최다 채택 교과서! to부정사 형용사적 용법, 과거진행형, 조건 if, 주격 관계사 등 학교 정규 서술형 완벽 대비",
+      "difficultyRank": 8,
+      "difficultyTotal": 11,
+      "difficultyTier": "중",
+      "difficultyTierFull": "중 (Lv.3)",
+      "difficultyScore": 3.0,
+      "difficultyIcon": "📘",
+      "difficultyGauge": "●●●○○",
+      "difficultyLabel": "11권 중 8위 (중)",
+      "difficultyHighlight": "전국 1위 최다 채택 표준 중등 영어 교과서 서술형",
+      "themeColor": "blue",
+      "badgeBg": "from-blue-700 to-sky-600",
+      "textColor": "text-blue-600",
+      "lightBg": "bg-blue-50 border-blue-200"
     },
     {
       "id": "chunjae_lee",
@@ -147,7 +282,20 @@
       "fitForExplanation": "해당 자료는 전국에서 가장 채택률이 높은 교과서이므로, 타 학교 학생이나 타 교재를 쓰는 학습자까지 완벽히 포섭할 수 있다.",
       "unitsCount": 3,
       "dataFile": "chunjae_lee.json",
-      "description": "전국 2위 최다 채택 교과서! 빈도부사 위치, 4형식/3형식 전환, 수동태와 목적격 관계사 등 전국 학교 단골 서술형 집중 대비"
+      "description": "전국 2위 최다 채택 교과서! 빈도부사 위치, 4형식/3형식 전환, 수동태와 목적격 관계사 등 전국 학교 단골 서술형 집중 대비",
+      "difficultyRank": 9,
+      "difficultyTotal": 11,
+      "difficultyTier": "중",
+      "difficultyTierFull": "중 (Lv.3)",
+      "difficultyScore": 2.8,
+      "difficultyIcon": "📘",
+      "difficultyGauge": "●●●○○",
+      "difficultyLabel": "11권 중 9위 (중)",
+      "difficultyHighlight": "전국 2위 최다 채택 중등 기출 변형 서술형",
+      "themeColor": "sky",
+      "badgeBg": "from-sky-700 to-cyan-600",
+      "textColor": "text-sky-700",
+      "lightBg": "bg-sky-50 border-sky-200"
     },
     {
       "id": "ebs_middle_writing",
@@ -161,7 +309,20 @@
       "fitForExplanation": "해당 자료는 공신력 있다. 교육부 표준 루브릭 기반으로 감점 없는 서술형 대비에 최적이다.",
       "unitsCount": 3,
       "dataFile": "ebs_middle_writing.json",
-      "description": "국가 공공 포털 공인 자료! 수 일치, 시제/수동태, 관계사 문장 결합 등 교사들이 사용하는 공인 루브릭 기반 무감점 서술형 훈련"
+      "description": "국가 공공 포털 공인 자료! 수 일치, 시제/수동태, 관계사 문장 결합 등 교사들이 사용하는 공인 루브릭 기반 무감점 서술형 훈련",
+      "difficultyRank": 7,
+      "difficultyTotal": 11,
+      "difficultyTier": "중",
+      "difficultyTierFull": "중 (Lv.3)",
+      "difficultyScore": 3.2,
+      "difficultyIcon": "📘",
+      "difficultyGauge": "●●●○○",
+      "difficultyLabel": "11권 중 7위 (중)",
+      "difficultyHighlight": "교육부 표준 루브릭 기반 무감점 서술형 정밀 훈련",
+      "themeColor": "indigo",
+      "badgeBg": "from-indigo-700 to-blue-600",
+      "textColor": "text-indigo-600",
+      "lightBg": "bg-indigo-50 border-indigo-200"
     }
   ]
 }

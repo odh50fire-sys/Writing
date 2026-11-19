@@ -404,6 +404,65 @@ async function addNewUser() {
 // ==========================================
 // Catalog & Textbook Management (Multi-Curriculum & Custom Explanations)
 // ==========================================
+const DIFFICULTY_METADATA_FALLBACK = {
+  "cedu_1001_sentence": { difficultyRank: 1, difficultyTotal: 11, difficultyTier: "최상", difficultyTierFull: "최상 (Lv.5)", difficultyIcon: "🔥", difficultyGauge: "●●●●●", difficultyLabel: "11권 중 1위 (최상)", difficultyHighlight: "특목/자사고 및 수성구 1등급 킬러 긴 복문 구문", badgeBg: "from-purple-950 via-rose-900 to-rose-700", textColor: "text-rose-700", lightBg: "bg-rose-50 border-rose-300" },
+  "mothertongue_3800_killer": { difficultyRank: 2, difficultyTotal: 11, difficultyTier: "최상", difficultyTierFull: "최상 (Lv.5)", difficultyIcon: "🔥", difficultyGauge: "●●●●●", difficultyLabel: "11권 중 2위 (최상)", difficultyHighlight: "수성구 내신 1등급 직결 조건 제시형 킬러 영작", badgeBg: "from-rose-900 to-red-600", textColor: "text-red-700", lightBg: "bg-red-50 border-red-300" },
+  "ybm_park_grade3": { difficultyRank: 3, difficultyTotal: 11, difficultyTier: "상", difficultyTierFull: "상 (Lv.4.5)", difficultyIcon: "⚡", difficultyGauge: "●●●●○", difficultyLabel: "11권 중 3위 (상)", difficultyHighlight: "동도중 3학년 현행 고난도 서술형 & 고교 연계", badgeBg: "from-amber-700 to-orange-600", textColor: "text-orange-700", lightBg: "bg-orange-50 border-orange-300" },
+  "ybm_kim_grade3": { difficultyRank: 4, difficultyTotal: 11, difficultyTier: "상", difficultyTierFull: "상 (Lv.4.5)", difficultyIcon: "⚡", difficultyGauge: "●●●●○", difficultyLabel: "11권 중 4위 (상)", difficultyHighlight: "2022 개정 중3 심화 문법 (가정법·도치·분사)", badgeBg: "from-orange-700 to-amber-600", textColor: "text-orange-700", lightBg: "bg-orange-50 border-orange-300" },
+  "ybm_park_grade2": { difficultyRank: 5, difficultyTotal: 11, difficultyTier: "중상", difficultyTierFull: "중상 (Lv.3.5)", difficultyIcon: "🎯", difficultyGauge: "●●●◐○", difficultyLabel: "11권 중 5위 (중상)", difficultyHighlight: "동도중 2학년 지필고사 킬러 (관계사·현재완료·수동태)", badgeBg: "from-amber-600 to-yellow-600", textColor: "text-amber-800", lightBg: "bg-amber-50 border-amber-300" },
+  "ybm_kim_grade2": { difficultyRank: 6, difficultyTotal: 11, difficultyTier: "중상", difficultyTierFull: "중상 (Lv.3.5)", difficultyIcon: "🎯", difficultyGauge: "●●●◐○", difficultyLabel: "11권 중 6위 (중상)", difficultyHighlight: "2022 개정 중2 핵심 문법 표준 훈련 (5형식·관계사)", badgeBg: "from-amber-600 to-yellow-500", textColor: "text-amber-800", lightBg: "bg-amber-50 border-amber-300" },
+  "ebs_middle_writing": { difficultyRank: 7, difficultyTotal: 11, difficultyTier: "중", difficultyTierFull: "중 (Lv.3)", difficultyIcon: "📘", difficultyGauge: "●●●○○", difficultyLabel: "11권 중 7위 (중)", difficultyHighlight: "교육부 표준 루브릭 기반 무감점 서술형 정밀 훈련", badgeBg: "from-indigo-800 to-blue-600", textColor: "text-indigo-700", lightBg: "bg-indigo-50 border-indigo-300" },
+  "donga_yoon": { difficultyRank: 8, difficultyTotal: 11, difficultyTier: "중", difficultyTierFull: "중 (Lv.3)", difficultyIcon: "📘", difficultyGauge: "●●●○○", difficultyLabel: "11권 중 8위 (중)", difficultyHighlight: "전국 1위 최다 채택 표준 중등 영어 교과서 서술형", badgeBg: "from-blue-800 to-sky-600", textColor: "text-blue-700", lightBg: "bg-blue-50 border-blue-300" },
+  "chunjae_lee": { difficultyRank: 9, difficultyTotal: 11, difficultyTier: "중", difficultyTierFull: "중 (Lv.3)", difficultyIcon: "📘", difficultyGauge: "●●●○○", difficultyLabel: "11권 중 9위 (중)", difficultyHighlight: "전국 2위 최다 채택 중등 기출 변형 서술형", badgeBg: "from-sky-800 to-cyan-600", textColor: "text-sky-800", lightBg: "bg-sky-50 border-sky-300" },
+  "ybm_park_grade1": { difficultyRank: 10, difficultyTotal: 11, difficultyTier: "중하", difficultyTierFull: "중하 (Lv.2)", difficultyIcon: "🌱", difficultyGauge: "●●○○○", difficultyLabel: "11권 중 10위 (중하)", difficultyHighlight: "동도중 1학년 자유학기제 과정중심 수행평가 기초", badgeBg: "from-emerald-800 to-teal-600", textColor: "text-emerald-800", lightBg: "bg-emerald-50 border-emerald-300" },
+  "ybm_kim_grade1": { difficultyRank: 11, difficultyTotal: 11, difficultyTier: "하", difficultyTierFull: "하/입문 (Lv.1.5)", difficultyIcon: "🐣", difficultyGauge: "●○○○○", difficultyLabel: "11권 중 11위 (하/입문)", difficultyHighlight: "2022 개정 기초 의사소통 & 나선형 입문 기초 영작", badgeBg: "from-teal-800 to-emerald-600", textColor: "text-teal-800", lightBg: "bg-teal-50 border-teal-300" }
+};
+
+function getTextbookDifficulty(tbId) {
+  const tb = (state.catalog || []).find(t => t.id === tbId);
+  const fb = DIFFICULTY_METADATA_FALLBACK[tbId] || {
+    difficultyRank: 10, difficultyTotal: 11, difficultyTier: "중하", difficultyTierFull: "중하",
+    difficultyIcon: "🌱", difficultyGauge: "●●○○○", difficultyLabel: "11권 중 10위 (중하)",
+    difficultyHighlight: "표준 중학 영작", badgeBg: "from-indigo-600 to-blue-500", textColor: "text-indigo-600", lightBg: "bg-indigo-50 border-indigo-200"
+  };
+  return Object.assign({}, fb, tb || {});
+}
+
+function renderDifficultyBadgeLarge(tbId) {
+  const meta = getTextbookDifficulty(tbId);
+  const rank = meta.difficultyRank || 10;
+  const rankDesc = rank <= 2 ? '최고난도' : (rank <= 4 ? '고난도' : (rank <= 6 ? '심화' : (rank <= 9 ? '표준' : '기초/입문')));
+  return `
+    <div class="p-3 sm:p-3.5 rounded-2xl bg-gradient-to-r ${meta.badgeBg || 'from-indigo-800 to-blue-600'} text-white shadow-md flex items-center justify-between border border-white/25">
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <span class="text-2xl sm:text-3xl drop-shadow-sm flex-shrink-0">${meta.difficultyIcon || '📖'}</span>
+        <div class="space-y-0.5">
+          <div class="text-xs sm:text-sm font-black tracking-wide flex items-center gap-1.5 flex-wrap">
+            <span class="text-yellow-200 font-black">11권 중 ${rank}위</span>
+            <span class="bg-white/25 px-2 py-0.5 rounded-full text-[11px] font-extrabold border border-white/30 tracking-tight">난이도 [${meta.difficultyTier}]</span>
+          </div>
+          <div class="text-[11px] text-white/90 font-medium truncate max-w-[180px] sm:max-w-[260px]">${meta.difficultyHighlight || ''}</div>
+        </div>
+      </div>
+      <div class="text-right flex flex-col items-end flex-shrink-0 pl-1">
+        <span class="text-xs sm:text-sm font-black tracking-widest text-yellow-200 font-mono">${meta.difficultyGauge || '●●●○○'}</span>
+        <span class="text-[10px] text-white/80 font-bold">${rankDesc}</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderDifficultyBadgeInline(tbId) {
+  const meta = getTextbookDifficulty(tbId);
+  return `
+    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-black shadow-2xs border ${meta.lightBg || 'bg-indigo-50 border-indigo-300'} ${meta.textColor || 'text-indigo-800'}">
+      <span>${meta.difficultyIcon || '📖'}</span>
+      <span>11권 중 ${meta.difficultyRank}위 (${meta.difficultyTier})</span>
+      <span class="text-[10px] font-mono tracking-tighter opacity-80">${meta.difficultyGauge || ''}</span>
+    </span>
+  `;
+}
+
 const CATALOG_CATEGORIES = [
   { id: "all", name: "전체 보기 (11종)" },
   { id: "dongdo", name: "🏫 동도중 맞춤 (3종)" },
@@ -431,6 +490,49 @@ function setCatalogCategoryFilter(catId) {
   renderCatalogUI();
 }
 
+function setCatalogSort(sortType) {
+  state.catalogSort = sortType;
+  const descBtn = document.getElementById("sort-btn-diff-desc");
+  const ascBtn = document.getElementById("sort-btn-diff-asc");
+  if (descBtn && ascBtn) {
+    if (sortType === "difficulty_desc") {
+      descBtn.className = "px-2.5 py-1 rounded-lg font-bold border transition-all text-xs bg-indigo-50 border-indigo-300 text-indigo-700 shadow-xs";
+      ascBtn.className = "px-2.5 py-1 rounded-lg font-bold border transition-all text-xs bg-white border-gray-200 text-gray-600 hover:bg-gray-50";
+    } else {
+      ascBtn.className = "px-2.5 py-1 rounded-lg font-bold border transition-all text-xs bg-indigo-50 border-indigo-300 text-indigo-700 shadow-xs";
+      descBtn.className = "px-2.5 py-1 rounded-lg font-bold border transition-all text-xs bg-white border-gray-200 text-gray-600 hover:bg-gray-50";
+    }
+  }
+  renderCatalogUI();
+}
+
+function renderCatalogDifficultyLadder() {
+  const container = document.getElementById("catalog-difficulty-ladder-list");
+  if (!container) return;
+
+  const allTbs = [...(state.catalog || [])].sort((a, b) => (a.difficultyRank || 99) - (b.difficultyRank || 99));
+  if (allTbs.length === 0) return;
+
+  container.innerHTML = allTbs.map(tb => {
+    const isCurrent = tb.id === state.currentTextbookId;
+    return `
+      <div onclick="selectTextbook('${tb.id}')" class="flex-shrink-0 w-36 sm:w-40 p-2.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between space-y-1.5 ${isCurrent ? 'bg-indigo-600/90 border-amber-300 ring-2 ring-amber-300/60 shadow-md' : 'bg-white/10 hover:bg-white/20 border-white/15'}">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-black flex items-center gap-1 ${isCurrent ? 'text-amber-200' : 'text-yellow-300'}">
+            <span>${tb.difficultyIcon}</span> ${tb.difficultyRank}위
+          </span>
+          <span class="text-[10px] font-extrabold px-1.5 py-0.2 rounded-md bg-white/20 text-white">${tb.difficultyTier}</span>
+        </div>
+        <div class="text-[11px] font-bold text-white truncate leading-tight">${tb.title}</div>
+        <div class="flex items-center justify-between text-[10px] pt-1 border-t border-white/10">
+          <span class="text-amber-200 font-mono tracking-tighter">${tb.difficultyGauge}</span>
+          <span class="${isCurrent ? 'text-amber-300 font-black' : 'text-gray-300'}">${isCurrent ? '학습중 ✓' : '선택 ➔'}</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
 function renderCatalogCategoryFilters() {
   const container = document.getElementById("catalog-category-filters");
   if (!container) return;
@@ -450,10 +552,19 @@ function renderCatalogUI() {
   const catalogList = document.getElementById("catalog-list");
   if (!catalogList) return;
 
+  renderCatalogDifficultyLadder();
+
   const currentCat = state.catalogCategory || "all";
-  const filtered = (currentCat === "all")
-    ? state.catalog
+  let filtered = (currentCat === "all")
+    ? [...state.catalog]
     : state.catalog.filter(t => t.category === currentCat);
+
+  const sort = state.catalogSort || "difficulty_desc";
+  if (sort === "difficulty_desc") {
+    filtered.sort((a, b) => (a.difficultyRank || 99) - (b.difficultyRank || 99));
+  } else if (sort === "difficulty_asc") {
+    filtered.sort((a, b) => (b.difficultyRank || 99) - (a.difficultyRank || 99));
+  }
 
   const countBadge = document.getElementById("catalog-count-badge");
   if (countBadge) {
@@ -465,7 +576,10 @@ function renderCatalogUI() {
     return `
       <div class="p-5 rounded-3xl border-2 ${isCurrent ? 'border-indigo-600 bg-indigo-50/40 shadow-md ring-2 ring-indigo-200/60' : 'border-gray-200 bg-white hover:border-indigo-300'} hover:shadow-lg transition-all flex flex-col justify-between space-y-4">
         <div class="space-y-3">
-          <div class="flex items-center justify-between gap-1 flex-wrap">
+          <!-- 난이도 순위 및 티어 강조 대형 배지 (Large Difficulty Rank Stamp) -->
+          ${renderDifficultyBadgeLarge(tb.id)}
+
+          <div class="flex items-center justify-between gap-1 flex-wrap pt-0.5">
             <span class="text-[11px] font-black text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-200">
               ${tb.categoryBadge || tb.edition}
             </span>
@@ -635,7 +749,9 @@ async function renderHomeUnitsUI() {
     }
   }
 
+  const diffBadgeEl = document.getElementById("home-textbook-diff-badge");
   if (titleEl) titleEl.textContent = `${tbData.title || "교과서"} 추천 단원`;
+  if (diffBadgeEl) diffBadgeEl.innerHTML = renderDifficultyBadgeInline(tbId);
   if (subEl) subEl.textContent = `${tbData.targetSchool ? tbData.targetSchool + " 맞춤 · " : ""}총 ${tbData.units?.length || 8}개 단원 구성`;
 
   const units = tbData.units || [];
@@ -726,6 +842,10 @@ async function loadAndStartUnit(unitNum) {
     const routine = await res.json();
     state.currentRoutine = routine;
 
+    const tbBadgeEl = document.getElementById("study-textbook-badge");
+    if (tbBadgeEl) {
+      tbBadgeEl.innerHTML = `${renderDifficultyBadgeInline(state.currentTextbookId)} <span class="text-xs font-bold text-gray-700 ml-1.5 align-middle">${routine.textbookTitle || ''}</span>`;
+    }
     document.getElementById("study-unit-title").textContent = routine.title;
     document.getElementById("study-target-grammar").textContent = `목표 문법: ${(routine.targetGrammar || []).join(" / ")}`;
 
@@ -4197,14 +4317,17 @@ function renderOnboardingStep5(container) {
         </p>
       </div>
 
-      <!-- Textbooks Carousel Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[360px] overflow-y-auto pr-1">
-        ${catalog.map(tb => {
+      <!-- Textbooks Carousel Grid (Sorted by Difficulty) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 max-h-[380px] overflow-y-auto pr-1">
+        ${[...(catalog || [])].sort((a, b) => (a.difficultyRank || 99) - (b.difficultyRank || 99)).map(tb => {
           const isSelected = tb.id === currentTbId;
           return `
             <div onclick="selectOnboardingTextbook('${tb.id}')" class="p-3.5 rounded-2xl border-2 transition-all cursor-pointer flex flex-col justify-between space-y-2.5 ${isSelected ? 'border-indigo-600 bg-indigo-50/70 shadow-sm ring-2 ring-indigo-200' : 'border-gray-200 bg-white hover:border-indigo-300'}">
-              <div class="space-y-1.5">
-                <div class="flex items-center justify-between">
+              <div class="space-y-2">
+                <!-- 난이도 순위 및 티어 강조 대형 배지 -->
+                ${renderDifficultyBadgeLarge(tb.id)}
+
+                <div class="flex items-center justify-between pt-0.5">
                   <span class="text-[10px] font-black text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-200 truncate max-w-[130px]">
                     ${tb.categoryBadge || tb.edition}
                   </span>
@@ -4282,10 +4405,13 @@ function renderOnboardingStep6(container) {
           </div>
         </div>
 
-        <div class="p-3 rounded-2xl bg-white/10 backdrop-blur-sm space-y-1 text-xs">
+        <div class="p-3.5 rounded-2xl bg-white/10 backdrop-blur-sm space-y-1.5 text-xs">
           <div class="text-[10px] text-purple-200 font-bold">현재 선택된 학습 교재</div>
-          <div class="font-bold text-white truncate">${currentTb.title}</div>
-          <div class="text-[10px] text-indigo-200">${currentTb.categoryBadge}</div>
+          <div class="font-bold text-white leading-snug">${currentTb.title}</div>
+          <div class="flex items-center gap-2 flex-wrap pt-0.5">
+            ${renderDifficultyBadgeInline(currentTb.id)}
+            <span class="text-[10px] text-indigo-200 font-medium">${currentTb.categoryBadge}</span>
+          </div>
         </div>
       </div>
 

@@ -339,5 +339,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 2,
+  "difficultyTotal": 11,
+  "difficultyTier": "최상",
+  "difficultyTierFull": "최상 (Lv.5)",
+  "difficultyScore": 4.8,
+  "difficultyIcon": "🔥",
+  "difficultyGauge": "●●●●●",
+  "difficultyLabel": "11권 중 2위 (최상)",
+  "difficultyHighlight": "수성구 내신 1등급 직결 조건 제시형 킬러 영작",
+  "themeColor": "rose",
+  "badgeBg": "from-rose-800 to-red-600",
+  "textColor": "text-red-600",
+  "lightBg": "bg-red-50 border-red-200"
 }

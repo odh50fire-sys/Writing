@@ -490,5 +490,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 11,
+  "difficultyTotal": 11,
+  "difficultyTier": "하",
+  "difficultyTierFull": "하/입문 (Lv.1.5)",
+  "difficultyScore": 1.5,
+  "difficultyIcon": "🐣",
+  "difficultyGauge": "●○○○○",
+  "difficultyLabel": "11권 중 11위 (하/입문)",
+  "difficultyHighlight": "2022 개정 기초 의사소통 & 나선형 입문 기초 영작",
+  "themeColor": "teal",
+  "badgeBg": "from-teal-700 to-emerald-500",
+  "textColor": "text-teal-700",
+  "lightBg": "bg-teal-50 border-teal-200"
 }

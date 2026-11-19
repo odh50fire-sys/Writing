@@ -193,5 +193,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 3,
+  "difficultyTotal": 11,
+  "difficultyTier": "상",
+  "difficultyTierFull": "상 (Lv.4.5)",
+  "difficultyScore": 4.5,
+  "difficultyIcon": "⚡",
+  "difficultyGauge": "●●●●○",
+  "difficultyLabel": "11권 중 3위 (상)",
+  "difficultyHighlight": "동도중 3학년 현행 고난도 서술형 & 고교 연계",
+  "themeColor": "amber",
+  "badgeBg": "from-amber-700 to-orange-600",
+  "textColor": "text-orange-600",
+  "lightBg": "bg-orange-50 border-orange-200"
 }

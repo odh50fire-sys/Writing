@@ -461,5 +461,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 6,
+  "difficultyTotal": 11,
+  "difficultyTier": "중상",
+  "difficultyTierFull": "중상 (Lv.3.5)",
+  "difficultyScore": 3.6,
+  "difficultyIcon": "🎯",
+  "difficultyGauge": "●●●◐○",
+  "difficultyLabel": "11권 중 6위 (중상)",
+  "difficultyHighlight": "2022 개정 중2 핵심 문법 표준 훈련 (5형식·관계사)",
+  "themeColor": "amber",
+  "badgeBg": "from-amber-600 to-yellow-500",
+  "textColor": "text-amber-700",
+  "lightBg": "bg-amber-50 border-amber-200"
 }

@@ -543,11 +543,14 @@
 
       <!-- Current Learning Curriculum Section (Dynamic Units) -->
       <div class="bg-white rounded-3xl p-6 border border-indigo-50 shadow-sm space-y-4">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between flex-wrap gap-2">
           <div class="flex items-center gap-2">
             <span class="text-xl">📖</span>
             <div>
-              <h3 class="font-bold text-gray-800 text-base" id="home-curriculum-title">현재 진행 중인 교재 및 추천 단원</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="font-bold text-gray-800 text-base" id="home-curriculum-title">현재 진행 중인 교재 및 추천 단원</h3>
+                <span id="home-textbook-diff-badge"></span>
+              </div>
               <p class="text-xs text-gray-400" id="home-curriculum-subtitle">동도중학교 YBM(박준언)</p>
             </div>
           </div>
@@ -616,6 +619,7 @@
             ✍️
           </div>
           <div>
+            <div id="study-textbook-badge" class="mb-1"></div>
             <div id="study-unit-title" class="font-bold text-gray-800 text-base">Lesson 1. All about Me</div>
             <div id="study-target-grammar" class="text-xs text-indigo-600 font-medium">목표 문법: be동사 / 3인칭 단수 -s</div>
           </div>
@@ -797,9 +801,51 @@
           <span id="catalog-count-badge" class="text-xs bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-bold border border-indigo-100 self-start sm:self-auto">총 11종 교재 완비</span>
         </div>
 
-        <!-- Category Filter Tabs -->
-        <div id="catalog-category-filters" class="flex flex-wrap gap-2 pt-1">
-          <!-- Rendered dynamically by app.js -->
+        <!-- 11종 교재 난이도 서열 랭킹 래더 맵 (Difficulty Ranking Ladder Map) -->
+        <div id="catalog-difficulty-ladder-container" class="p-4 rounded-2xl bg-gradient-to-r from-gray-950 via-indigo-950 to-purple-950 text-white shadow-md space-y-2.5 border border-indigo-900/60">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🏆</span>
+              <div>
+                <h4 class="text-xs sm:text-sm font-black text-amber-300 flex items-center gap-1.5">
+                  <span>11종 교재 난이도 서열 랭킹 맵 (어려운 순 ➔ 쉬운 순)</span>
+                </h4>
+                <p class="text-[11px] text-gray-300">
+                  전체 11개 교재의 체감 난이도와 서열을 비교해 보세요. 카드를 클릭하면 해당 교재로 바로 이동합니다.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] sm:text-[11px] flex-wrap">
+              <span class="px-2 py-0.5 rounded-md bg-rose-500/30 text-rose-300 border border-rose-500/40 font-bold">🔥 최상(1~2위)</span>
+              <span class="px-2 py-0.5 rounded-md bg-amber-500/30 text-amber-300 border border-amber-500/40 font-bold">⚡ 상(3~4위)</span>
+              <span class="px-2 py-0.5 rounded-md bg-yellow-500/30 text-yellow-300 border border-yellow-500/40 font-bold">🎯 중상(5~6위)</span>
+              <span class="px-2 py-0.5 rounded-md bg-blue-500/30 text-blue-300 border border-blue-500/40 font-bold">📘 중(7~9위)</span>
+              <span class="px-2 py-0.5 rounded-md bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-bold">🌱 중하~하(10~11위)</span>
+            </div>
+          </div>
+          <!-- Ladder Horizontal Scroll List -->
+          <div id="catalog-difficulty-ladder-list" class="flex gap-2 overflow-x-auto pb-1.5 pt-1 scrollbar-thin">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+
+        <!-- Filter & Sort Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+          <!-- Category Filter Tabs -->
+          <div id="catalog-category-filters" class="flex flex-wrap gap-2">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+
+          <!-- Sort Selector -->
+          <div class="flex items-center gap-1.5 flex-shrink-0 self-start sm:self-auto text-xs">
+            <span class="text-gray-400 font-bold text-[11px]">정렬:</span>
+            <button onclick="setCatalogSort('difficulty_desc')" id="sort-btn-diff-desc" class="px-2.5 py-1 rounded-lg font-bold border transition-all text-xs bg-indigo-50 border-indigo-300 text-indigo-700">
+              🔥 난이도 높은순
+            </button>
+            <button onclick="setCatalogSort('difficulty_asc')" id="sort-btn-diff-asc" class="px-2.5 py-1 rounded-lg font-bold border transition-all text-xs bg-white border-gray-200 text-gray-600 hover:bg-gray-50">
+              🌱 난이도 낮은순
+            </button>
+          </div>
         </div>
 
         <div id="catalog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-1">
@@ -1020,6 +1066,6 @@
 
   </div> <!-- End of #view-app -->
 
-  <script src="app.js?v=26"></script>
+  <script src="app.js?v=28"></script>
 </body>
 </html>

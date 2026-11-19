@@ -312,5 +312,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 4,
+  "difficultyTotal": 11,
+  "difficultyTier": "상",
+  "difficultyTierFull": "상 (Lv.4.5)",
+  "difficultyScore": 4.3,
+  "difficultyIcon": "⚡",
+  "difficultyGauge": "●●●●○",
+  "difficultyLabel": "11권 중 4위 (상)",
+  "difficultyHighlight": "2022 개정 중3 심화 문법 (가정법·도치·분사)",
+  "themeColor": "orange",
+  "badgeBg": "from-orange-700 to-amber-600",
+  "textColor": "text-orange-600",
+  "lightBg": "bg-orange-50 border-orange-200"
 }

@@ -222,5 +222,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 1,
+  "difficultyTotal": 11,
+  "difficultyTier": "최상",
+  "difficultyTierFull": "최상 (Lv.5)",
+  "difficultyScore": 5.0,
+  "difficultyIcon": "🔥",
+  "difficultyGauge": "●●●●●",
+  "difficultyLabel": "11권 중 1위 (최상)",
+  "difficultyHighlight": "특목/자사고 및 수성구 1등급 킬러 긴 복문 구문",
+  "themeColor": "purple",
+  "badgeBg": "from-purple-900 via-rose-900 to-rose-700",
+  "textColor": "text-rose-600",
+  "lightBg": "bg-rose-50 border-rose-200"
 }

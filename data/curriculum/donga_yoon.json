@@ -219,5 +219,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 8,
+  "difficultyTotal": 11,
+  "difficultyTier": "중",
+  "difficultyTierFull": "중 (Lv.3)",
+  "difficultyScore": 3.0,
+  "difficultyIcon": "📘",
+  "difficultyGauge": "●●●○○",
+  "difficultyLabel": "11권 중 8위 (중)",
+  "difficultyHighlight": "전국 1위 최다 채택 표준 중등 영어 교과서 서술형",
+  "themeColor": "blue",
+  "badgeBg": "from-blue-700 to-sky-600",
+  "textColor": "text-blue-600",
+  "lightBg": "bg-blue-50 border-blue-200"
 }

@@ -208,5 +208,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 9,
+  "difficultyTotal": 11,
+  "difficultyTier": "중",
+  "difficultyTierFull": "중 (Lv.3)",
+  "difficultyScore": 2.8,
+  "difficultyIcon": "📘",
+  "difficultyGauge": "●●●○○",
+  "difficultyLabel": "11권 중 9위 (중)",
+  "difficultyHighlight": "전국 2위 최다 채택 중등 기출 변형 서술형",
+  "themeColor": "sky",
+  "badgeBg": "from-sky-700 to-cyan-600",
+  "textColor": "text-sky-700",
+  "lightBg": "bg-sky-50 border-sky-200"
 }

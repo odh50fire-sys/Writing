@@ -597,5 +597,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 10,
+  "difficultyTotal": 11,
+  "difficultyTier": "중하",
+  "difficultyTierFull": "중하 (Lv.2)",
+  "difficultyScore": 2.0,
+  "difficultyIcon": "🌱",
+  "difficultyGauge": "●●○○○",
+  "difficultyLabel": "11권 중 10위 (중하)",
+  "difficultyHighlight": "동도중 1학년 자유학기제 과정중심 수행평가 기초",
+  "themeColor": "emerald",
+  "badgeBg": "from-emerald-700 to-teal-600",
+  "textColor": "text-emerald-700",
+  "lightBg": "bg-emerald-50 border-emerald-200"
 }

@@ -209,5 +209,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 7,
+  "difficultyTotal": 11,
+  "difficultyTier": "중",
+  "difficultyTierFull": "중 (Lv.3)",
+  "difficultyScore": 3.2,
+  "difficultyIcon": "📘",
+  "difficultyGauge": "●●●○○",
+  "difficultyLabel": "11권 중 7위 (중)",
+  "difficultyHighlight": "교육부 표준 루브릭 기반 무감점 서술형 정밀 훈련",
+  "themeColor": "indigo",
+  "badgeBg": "from-indigo-700 to-blue-600",
+  "textColor": "text-indigo-600",
+  "lightBg": "bg-indigo-50 border-indigo-200"
 }

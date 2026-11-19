@@ -249,5 +249,18 @@
         }
       ]
     }
-  ]
+  ],
+  "difficultyRank": 5,
+  "difficultyTotal": 11,
+  "difficultyTier": "중상",
+  "difficultyTierFull": "중상 (Lv.3.5)",
+  "difficultyScore": 3.8,
+  "difficultyIcon": "🎯",
+  "difficultyGauge": "●●●◐○",
+  "difficultyLabel": "11권 중 5위 (중상)",
+  "difficultyHighlight": "동도중 2학년 지필고사 킬러 (관계사·현재완료·수동태)",
+  "themeColor": "yellow",
+  "badgeBg": "from-amber-600 to-yellow-600",
+  "textColor": "text-amber-700",
+  "lightBg": "bg-amber-50 border-amber-200"
 }

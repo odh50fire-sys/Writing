@@ -346,10 +346,11 @@ def select_free_writing_topic(user_id, textbook_id, exclude_topic_id=None):
                 t_id = t.get("id", "").strip()
                 t_title = t.get("title", "").strip()
                 if t_id not in completed_topics and t_title not in completed_topics:
+                    diff_str = f" [{cur_tb.get('difficultyIcon','')} {cur_tb.get('difficultyLabel','')}]" if cur_tb.get('difficultyLabel') else ""
                     return {
                         "topic": t,
                         "sourceType": "current_textbook",
-                        "sourceBadge": f"🏫 현재 교재 맞춤 ({cur_tb.get('title', '선택 교재')})",
+                        "sourceBadge": f"🏫 현재 교재 맞춤{diff_str} ({cur_tb.get('title', '선택 교재')})",
                         "unitTitle": u.get("title", "")
                     }
 
@@ -368,10 +369,11 @@ def select_free_writing_topic(user_id, textbook_id, exclude_topic_id=None):
                     t_id = t.get("id", "").strip()
                     t_title = t.get("title", "").strip()
                     if t_id not in completed_topics and t_title not in completed_topics:
+                        diff_str = f" [{other_tb.get('difficultyIcon','')} {other_tb.get('difficultyLabel','')}]" if other_tb.get('difficultyLabel') else ""
                         return {
                             "topic": t,
                             "sourceType": "other_textbook",
-                            "sourceBadge": f"🔄 타 교재 순환 추천 ({other_tb.get('title', other_id)})",
+                            "sourceBadge": f"🔄 타 교재 순환 추천{diff_str} ({other_tb.get('title', other_id)})",
                             "unitTitle": u.get("title", "")
                         }
 
@@ -821,7 +823,13 @@ class WritingAppHandler(SimpleHTTPRequestHandler):
                 unit_data = tb_data["units"][0]
 
             routine = {
+                "textbookId": tb_id,
                 "textbookTitle": tb_data.get("title", "YBM(박준언) 중1"),
+                "difficultyRank": tb_data.get("difficultyRank", 10),
+                "difficultyTier": tb_data.get("difficultyTier", "중하"),
+                "difficultyLabel": tb_data.get("difficultyLabel", "11권 중 10위 (중하)"),
+                "difficultyIcon": tb_data.get("difficultyIcon", "🌱"),
+                "difficultyGauge": tb_data.get("difficultyGauge", "●●○○○"),
                 "unit": unit_data.get("unit", 1),
                 "title": unit_data.get("title", ""),
                 "targetGrammar": unit_data.get("targetGrammar", []),
