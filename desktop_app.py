@@ -20,6 +20,23 @@ def setup_windows_taskbar_icon():
     except Exception:
         pass
 
+def ensure_taskbar_pinned_shortcut():
+    """Ensure Start Menu shortcut with AppUserModelID exists for reliable taskbar pinning."""
+    try:
+        start_menu_dir = os.path.expandvars(r"%APPDATA%\Microsoft\Windows\Start Menu\Programs")
+        shortcut_file = os.path.join(start_menu_dir, "동도 롸이팅 마스터.lnk")
+        ps_script = os.path.join(BASE_DIR, "create_pinned_shortcut.ps1")
+        if not os.path.exists(shortcut_file) and os.path.exists(ps_script):
+            real_pythonw = sys.executable.lower().replace("python.exe", "pythonw.exe")
+            import subprocess
+            subprocess.run(
+                ["powershell", "-ExecutionPolicy", "Bypass", "-File", ps_script, "-PythonwPath", real_pythonw],
+                creationflags=0x08000000 if os.name == 'nt' else 0, # CREATE_NO_WINDOW
+                timeout=5
+            )
+    except Exception:
+        pass
+
 def apply_window_icon_thread():
     """Continuously tries to find the window and assign WM_SETICON (big and small)"""
     if not os.path.isfile(ICON_PATH):
@@ -84,6 +101,7 @@ def start_backend_server(port):
 def main():
     setup_windows_taskbar_icon()
     threading.Thread(target=apply_window_icon_thread, daemon=True).start()
+    threading.Thread(target=ensure_taskbar_pinned_shortcut, daemon=True).start()
 
     port = 8000
     server_already_running = False
